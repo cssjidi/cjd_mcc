@@ -1,0 +1,113 @@
+2016-05-14 1:13:41 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+----------------------------------------------------------------
+MOD: 无需FTP配置使用OCMOD方式上传安装扩充功能
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND!
+----------------------------------------------------------------
+2016-05-14 1:15:33 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+----------------------------------------------------------------
+MOD: 无需FTP配置使用OCMOD方式上传安装扩充功能
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND!
+----------------------------------------------------------------
+MOD: 自定义导航菜单
+FILE: admin/controller/common/menu.php
+CODE: $data['zone']
+LINE: 199
+CODE: $data['text_zone']
+LINE: 98
+FILE: admin/language/zh-CN/common/menu.php
+CODE: $_['text_zone']
+LINE: 86
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="dashboard"><a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i> <span><?php echo $text_dashboard; ?></span></a></li>
+LINE: 4
+FILE: catalog/model/extension/module.php
+CODE: public function getModule($module_id) {
+LINE: 13
+----------------------------------------------------------------
+2016-05-14 1:17:19 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+----------------------------------------------------------------
+MOD: 无需FTP配置使用OCMOD方式上传安装扩充功能
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),
+NOT FOUND!
+----------------------------------------------------------------
+MOD: 自定义导航菜单
+FILE: admin/controller/common/menu.php
+CODE: $data['zone']
+LINE: 199
+CODE: $data['text_zone']
+LINE: 98
+FILE: admin/language/zh-CN/common/menu.php
+CODE: $_['text_zone']
+LINE: 86
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="dashboard"><a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i> <span><?php echo $text_dashboard; ?></span></a></li>
+LINE: 4
+FILE: catalog/model/extension/module.php
+CODE: public function getModule($module_id) {
+LINE: 13
+----------------------------------------------------------------
