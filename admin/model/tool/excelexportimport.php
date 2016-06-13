@@ -2285,7 +2285,7 @@ class ModelToolExcelExportImport extends Model {
 			// parse uploaded spreadsheet file
 			$inputFileType = PHPExcel_IOFactory::identify($filename);
 			$objReader = PHPExcel_IOFactory::createReader($inputFileType);
-			$objReader->setReadDataOnly(true);
+			//$objReader->setReadDataOnly(true);
 			$reader = $objReader->load($filename);
 
 			// read the various worksheets and load them to the database

@@ -9,12 +9,5 @@ class ModelExtensionModule extends Model {
 			return array();	
 		}
 	}
-	public function getModuleByCode($module_code) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "module WHERE code = '" . $module_code . "'");
-		if ($query->row) {
-			return json_decode($query->row['setting'], true);
-		} else {
-			return array();
-		}
-	}
+
 }

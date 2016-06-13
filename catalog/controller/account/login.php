@@ -4,7 +4,7 @@ class ControllerAccountLogin extends Controller {
 
 	public function index() {
 		$this->load->model('account/customer');
-
+		$other_login = 0;
 		// Login override for admin users
 		if (!empty($this->request->get['token'])) {
 			$this->customer->logout();
@@ -48,6 +48,17 @@ class ControllerAccountLogin extends Controller {
 		$this->load->language('account/login');
 
 		$this->document->setTitle($this->language->get('heading_title'));
+
+		if($this->config->get('qq_login_status')){
+			$other_login++;
+			$data['is_qq_login'] = $this->config->get('qq_login_status');
+			$data['goto_qq_login'] = $this->url->link('account/login/getCode');
+		}
+		if($other_login > 0){
+			$data['text_other_login'] = $this->language->get('text_other_login');
+		}
+
+		$data['other_login'] = $other_login;
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			// Unset guest
@@ -245,4 +256,10 @@ class ControllerAccountLogin extends Controller {
 
 		return !$this->error;
 	}
+
+	public function getCode(){
+		$qqauth = new QQAuth($this->config->get('qq_login_appid'),$this->config->get('qq_login_appkey'),$this->config->get('qq_login_callback'));
+		$qqauth->qq_login();
+	}
+
 }

@@ -19,5 +19,6 @@ class ModelExtensionModule extends Model {
 		} else {
 			return array();	
 		}
-	}		
+	}
+
 }

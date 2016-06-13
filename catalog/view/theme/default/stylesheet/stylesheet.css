@@ -754,7 +754,16 @@ div#tab-description img {
 }
 
 
-
+/*all categories */
+.allcate{
+	position: absolute;
+	left:-2px;
+	top:-2px;
+	z-index: 9999;
+	border-top-right-radius:0;
+	border-bottom-right-radius: 0;
+	width:211px;
+}
 
 
 
@@ -824,19 +833,7 @@ div#tab-description img {
 }
 
 
-
-/*all categories */
-
 /*common all cate*/
-.allcate{
-	position: absolute;
-	left:-2px;
-	top:-2px;
-	z-index: 9999;
-	border-top-right-radius:0;
-	border-bottom-right-radius: 0;
-	width:211px;
-}
 .allcate.navbar{
 	border-right:none;
 }

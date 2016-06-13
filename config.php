@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:9090/');
+define('HTTP_SERVER', 'http://open.xwfshop.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:9090/');
+define('HTTPS_SERVER', 'http://open.xwfshop.com/');
 
 // DIR
 define('DIR_APPLICATION', 'D:/www/mycncart/src/catalog/');

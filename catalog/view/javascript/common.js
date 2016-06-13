@@ -139,42 +139,7 @@ $(document).ready(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
 
-	$('#allSortTab a').on('click',function (e) {
-		e.preventDefault();
-		$('.categories').height($('#allSortTab').height());
-		var idx = $(this).data('idx');
-		var selector = '[data-idx='+idx+']';
-		var offset = $(selector,'.category-items').offset().top - $('#allSortTab').height() - 20;
-		$('body').animate({'scrollTop':offset},500);
-		$(this).addClass('selected').siblings().removeClass('selected');
-		setTimeout(function () {
-			$(document).trigger('mousewheel');
-		},500);
-	});
-	//var myTop = $('.categories').offset().top;
-	var myTop = $('.categories').offset().top - $('.categories').height();
-	$(document).on('mousewheel',function (event, delta, deltaX, deltaY) {
-		var direction = event.originalEvent.wheelDelta;
-		var scrollTop = $('body').scrollTop();
-		//console.log(event, delta, deltaX, deltaY)
-		//var scrollTop1 = $(document).offset().top;
-		console.log(myTop,scrollTop,(myTop - $('#allSortTab').height()*2));
-		//console.log(direction);
-		switch(direction){
-			case 120:
-				if(scrollTop < (myTop + $('#allSortTab').height()*2)){
-					console.log(2);
-					$('#allSortTab').removeClass('fix-categories');
-				}
-				break;
-			case -120:
-				if(scrollTop > myTop){
-					console.log(1);
-					$('#allSortTab').addClass('fix-categories');
-				}
-				break;
-		}
-	})
+	
 });
 
 // Cart add remove functions

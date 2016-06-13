@@ -15,7 +15,6 @@ var cjdMenu ;
                 $('#nestable').nestable();
                 this.updateOut();
             }else{
-                console.log(0)
                 this.menuList = api.options.items;
                 $('#setting').val(this.menuList);
             }
@@ -42,9 +41,9 @@ var cjdMenu ;
             var self = this;
             this.addMenu();
             //this.changeForm();
-            $(document).on('change',this.$edit_form, function () {
+            $(document).delegate(this.$edit_form,'change', function () {
                 var that = $(this);
-                self.changeForm(that,that.data('type'));
+                self.changeForm(event);
             });
             this.$nestable.nestable().on('change', self.updateMenu);
         },
@@ -79,27 +78,25 @@ var cjdMenu ;
                 self.updateOut();
             });
         },
-        editMenu:function () {
-
-        },
         delMenu:function (obj) {
             var self = $(obj);
             var html = '<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>至少要保留一个菜单<button type="button" class="close" data-dismiss="alert">&times;</button> </div>';
+            var del_html = self.parent().html();
 
             if($('#nestable>ol').children().size() == 1){
                 $('.alert.alert-danger').remove();
                 $('.container-fluid').eq(1).prepend(html);
             }else{
-                self.parent().parent().remove();
+                if(self.parent().parent().parent().parent().children().eq(0).data('action') == 'collapse'){
+                    self.parent().parent().parent().parent().children().eq(0).remove();
+                    self.parent().parent().parent().remove();
+                }else {
+                    self.parent().parent().remove();
+                }
             }
             this.updateOut();
         },
-        submitMenu:function () {
-
-        },
         dropdownMenu:function (e) {
-            //$(document).on('click','.down-list',function(){
-            console.log(e);
             var self = $(e),
                 title = self.parent().parent().data('title'),
                 icon = self.parent().parent().data('icon'),
@@ -122,6 +119,7 @@ var cjdMenu ;
             var list = e.length ? e : $(e.target),
                 output = list.data('output');
             api.options.items = output;
+            console.log(output.val());
             if (window.JSON) {
                 output.val(window.JSON.stringify(list.nestable('serialize'))); //, null, 2));
             } else {
@@ -131,13 +129,13 @@ var cjdMenu ;
         updateOut:function () {
             this.updateMenu($('#nestable').data('output', $('#setting')));
         },
-        changeForm: function (element,type) {
-            var self = element;
+        changeForm: function (event) {
+            var self = $(event.target),
+                type = self.data('type');
             if(type == 'title'){
-                self.parents('.dd-item').find('.dd3-content .dd-title').text(self.val());
+                self.parents('.dd3-content').find('.dd-title').text(self.val());
             }
-            console.log(self.parents('.dd-item').find('.dd3-content .dd-title').text())
-            self.parents('.dd-item').data(type,self.val());
+            self.parent().parent().parent().parent('.dd-item').data(type,self.val());
             this.updateOut();
         },
         menuDom:function (title,url,icon) {

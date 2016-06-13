@@ -12,6 +12,7 @@ $_['text_register_account']        = '注册一个账户以便您更快捷地购
 $_['text_returning_customer']      = '会员登录';
 $_['text_i_am_returning_customer'] = '如果您已经是本站会员，请直接登录。';
 $_['text_forgotten']               = '忘记密码？';
+$_['text_other_login']             = '更多合作网站账号登录：';
 
 // Entry
 $_['entry_email']                  = 'E-Mail 地址';

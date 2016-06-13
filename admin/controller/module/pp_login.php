@@ -13,8 +13,7 @@ class ControllerModulePPLogin extends Controller {
 			$this->model_setting_setting->editSetting('pp_login', $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
-			print_r($this->request->post);
-			//$this->response->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], true));
+			$this->response->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], true));
 		}
 
 		$data['heading_title'] = $this->language->get('heading_title');

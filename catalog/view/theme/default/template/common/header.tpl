@@ -153,18 +153,32 @@
       <ul class="nav navbar-nav">
         <?php foreach ($navs as $category) { ?>
         <?php if (isset($category['children'])) { ?>
-        <li class="dropdown"><a href="<?php echo $category['link']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['title']; ?></a>
+        <li class="dropdown">
+          <a href="<?php echo $category['link']; ?>" class="dropdown-toggle" data-toggle="dropdown">
+            <?php echo $category['title']; ?>
+            <span class="<?php echo $category['icon']; ?>"></span>
+          </a>
           <div class="dropdown-menu">
             <div class="dropdown-inner">
               <ul class="list-unstyled">
                 <?php foreach ($category['children'] as $child) { ?>
-                <li><a href="<?php echo $child['link']; ?>"><?php echo $child['title']; ?></a></li>
+                <li>
+                  <a href="<?php echo $child['link']; ?>">
+                    <?php echo $child['title']; ?>
+                    <span class="<?php echo $child['icon']; ?>"></span>
+                  </a>
+                </li>
                 <?php } ?>
               </ul>
             </div>
         </li>
         <?php } else { ?>
-        <li><a href="<?php echo $category['link']; ?>"><?php echo $category['title']; ?></a></li>
+        <li>
+          <a href="<?php echo $category['link']; ?>">
+            <?php echo $category['title']; ?>
+            <span class="<?php echo $category['icon']; ?>"></span>
+          </a>
+        </li>
         <?php } ?>
         <?php } ?>
         <li><a href="<?php echo $blog; ?>"><?php echo $text_blog; ?></a></li>

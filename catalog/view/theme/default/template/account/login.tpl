@@ -50,6 +50,16 @@
               <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
               <?php } ?>
             </form>
+            <?php if($other_login > 0){ ?>
+              <div class="other-login">
+                <h5><?php echo $text_other_login; ?></h5>
+                <?php if(isset($is_qq_login)){ ?>
+                  <a href="<?php echo $goto_qq_login; ?>" class="qq_login_icon">
+                    <img src="/image/qq_icon_16_16.png" alt="">
+                  </a>
+                <?php } ?>
+              </div>
+            <?php } ?>
           </div>
         </div>
       </div>
