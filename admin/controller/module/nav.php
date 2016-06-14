@@ -121,13 +121,13 @@ class ControllerModuleNav extends Controller {
         $informations =$this->model_catalog_information->getInformations($filter_data);
         foreach ($informations as $information) {
             $link = 'information_id=' . $information['information_id'];
-            $old_link = 'index.php?route=information/information&information_id=' . $information['information_id'];
+            $old_link = 'information/information&information_id=' . $information['information_id'].'?'.$link;
             $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['informations'][] = array(
                 'information_id' => $information['information_id'],
                 'title' => $information['title'],
                 'sort_order' => $information['sort_order'],
-                'href'  => isset($row['keyword']) ? $row['keyword'] : $old_link ,
+                'href'  => $old_link ,
                 'id' => $information['information_id']
             );
         }
@@ -135,12 +135,12 @@ class ControllerModuleNav extends Controller {
         $cates = $this->model_catalog_category->getCategories($filter_data);
         foreach ($cates as $cate) {
             $link = 'category_id=' . $cate['category_id'];
-            $old_link = 'index.php?route=product/category&path=' . $cate['category_id'];
+            $old_link = 'product/category&path=' . $cate['category_id'].'?'.$link;
             $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['categories'][] = array(
                 'category_id' => $cate['category_id'],
                 'name'        => $cate['category_name'],
-                'href'  => isset($row['keyword']) ? $row['keyword'] : $old_link ,
+                'href'  => $old_link ,
                 'id' => $cate['category_id']
             );
         }

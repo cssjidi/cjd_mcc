@@ -84,7 +84,6 @@
   </div>
 </header>
 <div class="container">
-
   <div class="m-allcate">
     <a href="<?php echo $allsort; ?>" class="btn btn-danger btn-block"><span class="pull-left"></span><?php echo $text_allcate; ?><i class="fa fa-angle-right pull-right"></i></a>
   </div>
@@ -152,9 +151,9 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <?php foreach ($navs as $category) { ?>
-        <?php if (isset($category['children'])) { ?>
+        <?php if (isset($category['children']) && count($category['children']) > 0) { ?>
         <li class="dropdown">
-          <a href="<?php echo $category['link']; ?>" class="dropdown-toggle" data-toggle="dropdown">
+          <a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown">
             <?php echo $category['title']; ?>
             <span class="<?php echo $category['icon']; ?>"></span>
           </a>
@@ -162,19 +161,42 @@
             <div class="dropdown-inner">
               <ul class="list-unstyled">
                 <?php foreach ($category['children'] as $child) { ?>
-                <li>
-                  <a href="<?php echo $child['link']; ?>">
-                    <?php echo $child['title']; ?>
-                    <span class="<?php echo $child['icon']; ?>"></span>
-                  </a>
-                </li>
+                  <?php if (isset($child['children']) && count($child['children']) > 0) { ?>
+                    <li class="dropdown">
+                      <a href="<?php echo $child['href']; ?>">
+                        <?php echo $child['title']; ?>
+                        <span class="<?php echo $child['icon']; ?>"></span>
+                      </a>
+                      <div class="dropdown-menu">
+                        <div class="dropdown-inner">
+                          <ul class="list-unstyled">
+                            <?php foreach ($child['children'] as $c_level3) { ?>
+                            <li>
+                              <a href="<?php echo $c_level3['href']; ?>">
+                                <?php echo $c_level3['title']; ?>
+                                <span class="<?php echo $c_level3['icon']; ?>"></span>
+
+                              </a>
+                            </li>
+                            <?php } ?>
+                          </ul>
+                        </div>
+                    </li>
+                <?php }else{ ?>
+                  <li>
+                    <a href="<?php echo $child['href']; ?>">
+                      <?php echo $child['title']; ?>
+                      <span class="<?php echo $child['icon']; ?>"></span>
+                    </a>
+                  </li>
+                <?php } ?>
                 <?php } ?>
               </ul>
             </div>
         </li>
         <?php } else { ?>
         <li>
-          <a href="<?php echo $category['link']; ?>">
+          <a href="<?php echo $category['href']; ?>">
             <?php echo $category['title']; ?>
             <span class="<?php echo $category['icon']; ?>"></span>
           </a>

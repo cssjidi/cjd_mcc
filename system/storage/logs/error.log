@@ -11498,3 +11498,413 @@
 2016-06-12 19:43:09 - PHP Notice:  Undefined index: captcha in D:\www\mycncart\src\catalog\controller\captcha\basic_captcha.php on line 24
 2016-06-12 19:43:38 - PHP Notice:  Undefined index: captcha in D:\www\mycncart\src\catalog\controller\captcha\basic_captcha.php on line 24
 2016-06-12 19:44:09 - PHP Notice:  Undefined index: captcha in D:\www\mycncart\src\catalog\controller\captcha\basic_captcha.php on line 24
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:28 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:28 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:28 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:28 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:28 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:28 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:28 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:13:32 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:13:32 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:13:32 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:00 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:00 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:00 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:14 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:14 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:14 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:29 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:29 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:29 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:29 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:29 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:29 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:29 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:52 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:52 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:52 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:52 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:14:52 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:14:52 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:14:52 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:19:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:19:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:19:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:19:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:19:18 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:19:18 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:19:18 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:00 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:00 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:00 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:00 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:00 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: children in D:\www\mycncart\src\catalog\controller\common\header.php on line 34
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: children in D:\www\mycncart\src\catalog\controller\common\header.php on line 34
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: children in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:25 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:25 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:25 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:25 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:25 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:37 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:37 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:37 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:37 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:22:37 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:22:37 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:22:37 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:23:30 - PHP Notice:  Undefined index: children in D:\www\mycncart\src\catalog\controller\common\header.php on line 24
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:23:30 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:23:30 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:23:30 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:23:30 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:23:30 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:23:30 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:23:30 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:32 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:32 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:32 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:32 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:32 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'link' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:45 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:45 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:45 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:45 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:24:45 - PHP Notice:  Undefined index: link in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:24:45 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:24:45 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:25:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:25:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:25:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:25:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:25:18 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:25:18 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:25:18 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:23 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:23 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:23 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:23 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:23 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:23 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:23 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:47 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:47 - PHP Notice:  Undefined index: name in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:47 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:26:57 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:26:57 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:26:57 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:07 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:07 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:07 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:07 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:07 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:07 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:07 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:47 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:47 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:27:47 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:27:47 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:27:47 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:18 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:18 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:18 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:18 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:18 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:57 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:57 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:28:57 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:28:57 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:28:57 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:29:20 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:20 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:20 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:20 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:20 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 177
+2016-06-14 11:29:20 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:20 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Notice:  Undefined variable: data in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 152
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:51 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:29:51 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:29:51 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:29:51 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:29:51 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:08 - PHP Notice:  Use of undefined constant navs - assumed 'navs' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 152
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:08 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:08 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:08 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:08 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:08 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:08 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:08 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:19 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:19 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:19 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:19 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:30:19 - PHP Notice:  Undefined index: href in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 11:30:19 - PHP Notice:  Undefined index: title in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 11:30:19 - PHP Notice:  Undefined index: icon in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 11:40:35 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:40:35 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:40:35 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:40:35 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:40:35 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:42:08 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:42:08 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:42:08 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:42:08 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 11:42:08 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:06:59 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 26
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'href' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 12:36:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 178
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'title' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 12:36:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
+2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 12:36:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180

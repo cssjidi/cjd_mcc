@@ -4,6 +4,7 @@ class ControllerCommonHeader extends Controller {
 		// Analytics
 		$this->load->model('extension/extension');
 		$this->load->model('extension/module');
+		$this->load->model('catalog/url_alias');
 
 		$data['analytics'] = array();
 
@@ -17,15 +18,55 @@ class ControllerCommonHeader extends Controller {
 
 		if(isset($setting["setting"])) {
 			$navs = json_decode(htmlspecialchars_decode($setting["setting"]), true);
+
+			foreach ($navs as $index=>$nav){
+				$nav_child_data = array();
+				$nav_link_1 = explode('?',$nav['link']);
+				$n_row_1 = $this->model_catalog_url_alias->getUrlAliasByQuery($nav_link_1[1]);
+				//var_dump($n_row_1);
+				if(isset($nav['children'])){
+					foreach ($nav['children'] as $index2=>$c_level2){
+						$nav_link_2 = explode('?',$c_level2['link']);
+						$n_row_2 = $this->model_catalog_url_alias->getUrlAliasByQuery($nav_link_2[1]);
+						$nav_child_data[$index2] = array(
+							'title'		=>	$c_level2['title'],
+							'href' 	 	=> isset($n_row_2['keyword']) ? $n_row_2['keyword'] : $this->url->link($nav_link_2[0]),
+							'icon'  	=> $c_level2['icon'],
+							'children'	=> array()
+						);
+						if(isset($c_level2['children'])){
+							foreach ($c_level2['children'] as $index3=>$c_level3){
+								$nav_link_3 = explode('?',$c_level3['link']);
+								$n_row_3 = $this->model_catalog_url_alias->getUrlAliasByQuery($nav_link_3[1]);
+								array_push($nav_child_data[$index2]['children'],array(
+									'title'		=>	$c_level3['title'],
+									'href' 	 	=> isset($n_row_3['keyword']) ? $n_row_3['keyword'] : $this->url->link($nav_link_3[0]),
+									'icon'  	=> $c_level3['icon'],
+								));
+							}
+						}
+					}
+				}
+				$data['navs'][] = array(
+					'title'		=>	$nav['title'],
+					'href' 	 	=> isset($n_row_1['keyword']) ? $n_row_1['keyword'] : $this->url->link($nav_link_1[0]),
+					'icon'  	=> $nav['icon'],
+					'children'	=> $nav_child_data
+				);
+			}
+
 		}else{
 			$navs = '';
 		}
 
-		if(!isset($navs)){
+		//echo '<pre>';print_r($data['navs']);echo '</pre>';
+
+
+		/*if(!isset($navs)){
 			$data['navs'] = '';
 		}else{
 			$data['navs'] = $navs;
-		}
+		}*/
 		//print_r($this->getNavFromJson($navs));
 		$analytics = $this->model_extension_extension->getExtensions('analytics');
 
@@ -146,12 +187,14 @@ class ControllerCommonHeader extends Controller {
 				// Level 2
 				$children_data = array();
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
-
+				$link_level1 = 'category_id=' . $category['category_id'];
+				$row_level1 = $this->model_catalog_url_alias->getUrlAliasByQuery($link_level1);
 				//$children_level3_data = array();
 
 				//$children_data['level3'] =  array();
 				foreach ($children as $index => $child) {
-
+					$link_level2 = 'category_id=' . $child['category_id'];
+					$row_level2 = $this->model_catalog_url_alias->getUrlAliasByQuery($link_level2);
 					$children_level3 = $this->model_catalog_category->getCategories($child['category_id']);
 
 					$filter_data = array(
@@ -161,7 +204,7 @@ class ControllerCommonHeader extends Controller {
 
 					$children_data[$index] = array(
 						'name' => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
+						'href' => isset($row_level2['keyword']) ? $row_level2['keyword'] : $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
 
 						'children' => array()
 					);
@@ -171,12 +214,14 @@ class ControllerCommonHeader extends Controller {
 						//echo "<pre>";print_r($child['category_id']);echo "<pre>";
 						//echo '<pre>';print_r($children_level3);'</pre>';
 						foreach ($children_level3 as $level3) {
+							$link_level3 = 'category_id=' . $level3['category_id'];
+							$row_level3 = $this->model_catalog_url_alias->getUrlAliasByQuery($link_level3);
 							$filter_data = array(
 								'filter_category_id' => $level3['category_id'],
 							);
 							array_push($children_data[$index]['children'], array(
 								'name' => $level3['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-								'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']) . '_' . $level3['category_id']
+								'href' => isset($row_level3['keyword']) ? $row_level3['keyword'] : $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']) . '_' . $level3['category_id']
 							));
 
 						}
@@ -189,7 +234,7 @@ class ControllerCommonHeader extends Controller {
 					'name'     => $category['name'],
 					'children' => $children_data,
 					'column'   => $category['column'] ? $category['column'] : 1,
-					'href'     => $this->url->link('product/category', 'path=' . $category['category_id'])
+					'href'     => isset($row_level1['keyword']) ? $row_level1['keyword'] : $this->url->link('product/category', 'path=' . $category['category_id'])
 				);
 			}
 		}
