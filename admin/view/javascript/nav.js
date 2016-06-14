@@ -62,7 +62,10 @@ var cjdMenu ;
                         $(self.$menu_list).append(html);
                         self.updateOut();
                     }
+                    $(this).prop('checked',false);
+                    that.parent().prev().find('input:checkbox').prop('checked',false);
                 });
+                $('html, body').animate({scrollTop: '0px'},500);
             });
             //添加自定义菜单
             $(this.$add_my_menu).on('click',function(){

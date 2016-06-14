@@ -11908,3 +11908,16 @@
 2016-06-14 12:36:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 179
 2016-06-14 12:36:14 - PHP Warning:  Illegal string offset 'icon' in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
 2016-06-14 12:36:14 - PHP Notice:  Uninitialized string offset: 0 in D:\www\mycncart\src\catalog\view\theme\default\template\common\header.tpl on line 180
+2016-06-14 19:12:11 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 19:12:11 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:11 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 19:12:11 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:11 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 19:12:11 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:11 - PHP Notice:  Undefined offset: 1 in D:\www\mycncart\src\catalog\controller\common\header.php on line 25
+2016-06-14 19:12:11 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:58 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:58 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:58 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 19:12:58 - PHP Notice:  Undefined variable: c_level2 in D:\www\mycncart\src\catalog\controller\common\header.php on line 54
+2016-06-14 23:05:14 - PHP Notice:  Undefined index: state in D:\www\mycncart\src\system\library\qqauth.php on line 33

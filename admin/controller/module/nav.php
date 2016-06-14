@@ -121,7 +121,7 @@ class ControllerModuleNav extends Controller {
         $informations =$this->model_catalog_information->getInformations($filter_data);
         foreach ($informations as $information) {
             $link = 'information_id=' . $information['information_id'];
-            $old_link = 'information/information&information_id=' . $information['information_id'].'?'.$link;
+            $old_link = 'information/information&information_id=' . $information['information_id'];
             $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['informations'][] = array(
                 'information_id' => $information['information_id'],
@@ -135,7 +135,12 @@ class ControllerModuleNav extends Controller {
         $cates = $this->model_catalog_category->getCategories($filter_data);
         foreach ($cates as $cate) {
             $link = 'category_id=' . $cate['category_id'];
-            $old_link = 'product/category&path=' . $cate['category_id'].'?'.$link;
+            if($cate['parent_id'] == 0){
+                $old_link = 'product/category&path=' . $cate['category_id'];
+            }else{
+                $old_link = 'product/category&path=' .$cate['parent_id'].'_'. $cate['category_id'];
+            }
+
             $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['categories'][] = array(
                 'category_id' => $cate['category_id'],
