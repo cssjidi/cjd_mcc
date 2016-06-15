@@ -63,23 +63,22 @@ class ControllerAccountQQCallback extends Controller {
 	}
 
 	public function reg(){
+		$qc = new QC($this->config->get('qq_login_appid'),$this->config->get('qq_login_appkey'),$this->config->get('qq_login_callback'),$this->session->data['qq_access_token'],$this->session->data['qq_open_id']);
+		$this->user_info = $qc->get_user_info();
 		$json = array();
-		echo '<pre>';print_r($this->user_info);echo '</pre>';
+		//echo '<pre>';print_r($this->user_info);echo '</pre>';
 		$this->load->language('account/qq_callback');
 		//$this->load->model('account/');
 
 		if($this->request->server['REQUEST_METHOD'] && $this->validate()){
 			foreach ($this->user_info as $index=>$u){
-				$json['1234'] = 'wefew';
-				$json[][$index] .= $u;
+				//$json['1234'] = 'wefew';
+				$json[$index] = $u;
 			}
 			//$json['user'] = gettype($this->user_info);
 		}
-		foreach ($this->user_info as $index=>$u){
-			$json['1234'] = 'wefew';
-			$json[][$index] .= $u;
-		}
-		$json['user'] = var_dump($this->user_info);
+
+
 
 		//$json['msg'] = $this->error;
 		$json['status'] = 200;
