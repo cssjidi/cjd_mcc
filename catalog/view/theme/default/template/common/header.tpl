@@ -84,68 +84,14 @@
   </div>
 </header>
 <div class="container">
-  <div class="m-allcate">
-    <a href="<?php echo $allsort; ?>" class="btn btn-danger btn-block"><span class="pull-left"></span><?php echo $text_allcate; ?><i class="fa fa-angle-right pull-right"></i></a>
-  </div>
+
 
   <nav id="menu" class="navbar">
     <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
     </div>
 
-    <?php if ($categories && $is_allcate) { ?>
-      <nav id="allcate" class="navbar allcate <?php echo $allcate_theme; ?>">
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <div class="allcate-title" id="cate-menu">
-            <a href="<?php echo $allsort; ?>">
-              <?php echo $text_allcate; ?>
-              <span class="fa fa-angle-down"></span>
-            </a>
-          </div>
-          <ul class="nav navbar-nav">
-            <?php foreach ($categories as $index=>$category) { ?>
-            <?php if ($index < 10) { ?>
-            <?php if ($category['children']) { ?>
-            <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?>
-                <span class="pull-right fa fa-angle-right"></span>
-              </a>
-              <div class="dropdown-menu">
-                <div class="dropdown-inner">
-                  <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                  <ul class="list-unstyled">
-                    <?php foreach ($children as $child) { ?>
-                    <li>
-                      <?php if(isset($child['children'])) { ?>
-                        <dl>
-                          <dt>
-                            <a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?>
-                              <?php if(count($child['children'])>0) { ?>
-                               <i class="fa fa-angle-right"></i>
-                              <?php } ?>
-                            </a>
-                          </dt>
-                          <dd>
-                          <?php foreach ($child['children'] as $level3) { ?>
-                            <a href="<?php echo $level3['href']; ?>"><?php echo $level3['name']; ?></a>
-                          <?php } ?>
-                          </dd>
-                        </dl>
-                      <?php }?>
-                    </li>
-                    <?php } ?>
-                  </ul>
-                  <?php } ?>
-                </div>
-            </li>
-            <?php } else { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-          </ul>
-        </div>
-      </nav>
-    <?php } ?>
+    <?php if(isset($allcate)){ echo $allcate;} ?>
 
     <?php if(isset($navs) && $nav_status){ ?>
       <div class="collapse navbar-collapse navbar-ex1-collapse">

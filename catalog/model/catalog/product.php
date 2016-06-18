@@ -192,7 +192,6 @@ class ModelCatalogProduct extends Model {
 		foreach ($query->rows as $result) {
 			$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
 		}
-
 		return $product_data;
 	}
 
@@ -507,5 +506,11 @@ class ModelCatalogProduct extends Model {
 		} else {
 			return 0;
 		}
+	}
+
+	public function get_category_manufacturer($category_id){
+		$sql = 'SELECT distinct mm.manufacturer_id,mm.name,mm.image,mm.sort_order FROM ' . DB_PREFIX . 'manufacturer mm LEFT JOIN ' . DB_PREFIX . 'product mp ON mp.manufacturer_id=mm.manufacturer_id LEFT JOIN ' . DB_PREFIX . 'product_to_category mptc ON mp.product_id=mptc.product_id WHERE mptc.category_id='.$category_id;
+		$query = $this->db->query($sql);
+		return $query->rows;
 	}
 }

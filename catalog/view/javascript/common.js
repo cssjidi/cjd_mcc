@@ -79,7 +79,7 @@ $(document).ready(function() {
 	});
 
 
-	$('#allcate')
+	$('#allcate:not(".home-hover")')
 		.on('mouseenter',function () {
 			$(this).addClass('hover').find('.allcate-title span').css('transform','rotate(180deg)');
 

@@ -11964,3 +11964,322 @@
 2016-06-15 0:03:51 - PHP Notice:  Undefined index: captcha in D:\www\mycncart\src\catalog\controller\captcha\basic_captcha.php on line 24
 2016-06-15 0:04:15 - PHP Notice:  Undefined index: captcha in D:\www\mycncart\src\catalog\controller\captcha\basic_captcha.php on line 24
 2016-06-15 0:04:17 - PHP Notice:  Undefined index: state in D:\www\mycncart\src\system\library\qqauth.php on line 33
+2016-06-17 23:27:04 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 5
+2016-06-17 23:27:04 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 14
+2016-06-17 23:27:28 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 5
+2016-06-17 23:27:28 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 14
+2016-06-17 23:48:22 - PHP Notice:  Undefined index: allcate in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 13
+2016-06-18 0:07:01 - PHP Notice:  Undefined variable: is_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 2
+2016-06-18 0:07:18 - PHP Notice:  Undefined variable: is_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 2
+2016-06-18 0:10:32 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 5
+2016-06-18 0:10:32 - PHP Notice:  Undefined variable: allcate_theme in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 10
+2016-06-18 0:10:32 - PHP Notice:  Undefined variable: text_allcate in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 14
+2016-06-18 0:11:17 - PHP Notice:  Undefined variable: allcate_theme in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 10
+2016-06-18 0:11:51 - PHP Notice:  Undefined variable: allcate_theme in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 10
+2016-06-18 7:59:06 - PHP Notice:  Array to string conversion in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 25
+2016-06-18 8:04:37 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:37 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:46 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:04:46 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:38 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:38 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:52 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:05:52 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:06:05 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 8:06:05 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 11:13:54 - PHP Notice:  Undefined index: route in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 20
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 27
+2016-06-18 11:13:54 - PHP Notice:  Undefined variable: base_url in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 28
+2016-06-18 20:51:25 - PHP Notice:  Undefined variable: text_brands_action in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 72
+2016-06-18 20:51:25 - PHP Notice:  Undefined variable: text_brands_action in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 72
+2016-06-18 20:51:25 - PHP Notice:  Undefined variable: text_brands_action in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 72
+2016-06-18 20:51:25 - PHP Notice:  Undefined variable: text_brands_action in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 72
+2016-06-18 20:51:25 - PHP Notice:  Undefined variable: text_brands_action in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 72
+2016-06-18 22:31:40 - PHP Notice:  Undefined variable: categroies in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 20
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:35:29 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:27 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:36:33 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:37:48 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-18 22:42:40 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:44:55 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:44:55 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 22
+2016-06-18 22:45:07 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:46:09 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:46:16 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:46:22 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:46:24 - PHP Notice:  Undefined index: REDIRECT_URL in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 21
+2016-06-18 22:54:39 - PHP Warning:  strpos() expects parameter 1 to be string, array given in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 23
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:19:44 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:19:44 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:19:44 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:20:27 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:20:27 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:20:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:21:01 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:01 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:01 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Notice:  Undefined index: column in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Division by zero in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  array_chunk(): Size parameter expected to be greater than 0 in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 41
+2016-06-19 1:21:34 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:21:34 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:22:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:27:48 - PHP Warning:  Illegal string offset 'category_id' in D:\www\mycncart\src\catalog\model\catalog\product.php on line 512
+2016-06-19 1:41:27 - PHP Notice:  Undefined variable: brands_data in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 95
+2016-06-19 1:41:27 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'image' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'image' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'image' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'image' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'image' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:27 - PHP Warning:  Illegal string offset 'name' in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 76
+2016-06-19 1:41:44 - PHP Notice:  Undefined variable: brands_data in D:\www\mycncart\src\catalog\controller\module\allcate.php on line 95
+2016-06-19 1:41:45 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Notice:  Undefined variable: brands in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:46:24 - PHP Warning:  Invalid argument supplied for foreach() in D:\www\mycncart\src\catalog\view\theme\default\template\module\allcate.tpl on line 74
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37

@@ -25,7 +25,7 @@
       </div>
       <div class="panel-body">
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-account" class="form-horizontal">
-          <div class="form-group">
+          <div class="form-group" style="display: none;">
             <label class="col-sm-2 control-label" for="input-theme"><?php echo $entry_theme; ?></label>
             <div class="col-sm-10">
               <select name="allcate_theme" id="input-theme" class="form-control">

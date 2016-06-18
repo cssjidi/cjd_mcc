@@ -1,6 +1,9 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+
+		$data['allcate'] = $this->load->controller('module/allcate');
+
 		// Analytics
 		$this->load->model('extension/extension');
 		$this->load->model('extension/module');
@@ -127,7 +130,7 @@ class ControllerCommonHeader extends Controller {
 		$data['text_register'] = $this->language->get('text_register');
 		$data['text_login'] = $this->language->get('text_login');
 		$data['text_order'] = $this->language->get('text_order');
-		$data['text_allcate'] = $this->language->get('text_allcate');
+		//$data['text_allcate'] = $this->language->get('text_allcate');
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_download'] = $this->language->get('text_download');
 		$data['text_logout'] = $this->language->get('text_logout');
@@ -159,7 +162,7 @@ class ControllerCommonHeader extends Controller {
 
 		// Menu
 
-		$cate_theme = $this->config->get('allcate_theme');
+		/*$cate_theme = $this->config->get('allcate_theme');
 		switch ((int)$cate_theme){
 			case 1:
 				$data['allcate_theme'] = 'blue';
@@ -172,9 +175,9 @@ class ControllerCommonHeader extends Controller {
 				break;
 			default:
 				$data['allcate_theme'] = 'blue';
-		}
+		}*/
 
-		$data['is_allcate'] = $this->config->get('allcate_status');
+		//$data['is_allcate'] = $this->config->get('allcate_status');
 
 		$this->load->model('catalog/category');
 
