@@ -12283,3 +12283,14 @@
 2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
 2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
 2016-06-19 1:49:52 - PHP Notice:  Undefined index: image in D:\www\mycncart\src\catalog\view\theme\default\template\product\manufacturer_list.tpl on line 37
+2016-06-19 9:38:14 - PHP Notice:  Undefined variable: categroies in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 121
+2016-06-19 9:38:18 - PHP Notice:  Undefined variable: categroies in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 121
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19
+2016-06-19 23:20:03 - PHP Notice:  Undefined variable: allsort_link in D:\www\mycncart\src\catalog\view\theme\default\template\product\allsort.tpl on line 19

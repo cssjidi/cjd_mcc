@@ -3,6 +3,7 @@ class ControllerModuleAllcate extends Controller {
 	public function index() {
 
 		$this->document->addStyle('catalog/view/theme/default/stylesheet/allcate.css');
+		$this->document->addScript('catalog/view/javascript/allcate.js');
 
 		$this->load->language('module/allcate');
 

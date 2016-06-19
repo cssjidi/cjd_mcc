@@ -1,7 +1,12 @@
 
 /*common all cate*/
+.allcate+.navbar-header+.navbar-collapse{
+    margin-left:210px;
+}
 .allcate.navbar{
     border-right:none;
+    position: absolute;
+    z-index: 9999;
 }
 .allcate .navbar-nav>li{
     float: none;
@@ -20,6 +25,7 @@
 .allcate.hover .allcate-title+.nav.navbar-nav{
     display: block;
 }
+
 .allcate.home-hover .allcate-title+.nav.navbar-nav{
     display: block;
 }
@@ -302,7 +308,7 @@
 #menu .orange.allcate .dropdown-inner dl dd{
     border-bottom:1px solid #eee;
     padding-bottom:5px;
-    width:auto;
+    width: 470px;
 }
 #menu .orange.allcate .dropdown-inner .list-unstyled{
     float:left;
@@ -328,8 +334,13 @@
     font-weight:500;
 }
 #menu .orange.allcate .dropdown-inner .brands .brands-list a{
-    display: inline;
+    display: inline-block;
     min-width:100px;
+    width:110px;
+    height:100px;
+    text-align: left;
+    padding: 0;
+    margin-top:5px;
 }
 #menu .orange.allcate .dropdown-inner dl dt a{
     text-align: left;
@@ -353,6 +364,80 @@
 /*end orange cate*/
 
 
+
+
+
+
+/*all sort*/
+.list .categories a:hover,.list .categories a.hover, .list .categories a.selected {
+    background: #337ab7;
+    color: #fff;
+    text-decoration: none;
+}
+.list .categories{
+    margin-bottom:20px;
+    position: relative;
+}
+.list .categories #allSortTab{
+    padding-bottom:10px;
+    background: #fff;
+    width:100%;
+}
+.list .categories a {
+    float: left;
+    display: inline-block;
+    padding: 7px 20px;
+    margin-top: 6px;
+    margin-right: 8px;
+    background: #ddd;
+    color: #000;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.list .categories a:active{
+
+}
+.categories .fix-categories{
+    position: fixed;
+    top:0;
+    z-index: 999;
+}
+
+.category-items h2{
+    margin:0;
+    font-size:14px;
+    font-weight:600;
+}
+.category-items .col{
+    float:left;
+    width:50%;
+    padding:0 15px;
+}
+.category-items .panel-body dl{
+    float:left;
+    width:100%;
+}
+.category-items .panel-body dl a:hover{
+    color: #337ab7;
+}
+.category-items .panel-body dt{
+    float:left;
+    text-align: left;
+    width:15%;
+}
+.category-items .panel-body dt a{
+    color:#333;
+}
+.category-items .panel-body dd{
+    float:left;
+    margin-left:5%;
+    width:80%;
+}
+.category-items .panel-body dd a{
+    margin:0 5px;
+    color:#666;
+}
+
 /*media fix screen*/
 @media (max-width: 1920px) {
     .m-allcate{
@@ -366,12 +451,22 @@
     .allcate-title{
         background: transparent;
     }
+    #menu{
+        margin-top:45px;
+        line-height: 40px;
+        height:40px;
+    }
     .m-allcate{
         display:block;
+        width:100%;
         margin-bottom:10px;
+        position: absolute;
+        top:-40px;
     }
     .m-allcate a{
         text-align: left;
     }
+    .category-items .col{
+        width:100%;
+    }
 }
-

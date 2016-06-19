@@ -18,7 +18,7 @@
         </div>
         <ul class="nav navbar-nav">
             <?php foreach ($categories as $index=>$category) { ?>
-            <?php if ($index < 8 && count($categories) > 8) { ?>
+            <?php if ($index < 8) { ?>
             <?php if ($category['children']) { ?>
             <li class="dropdown" >
                 <div class="cate-box">
@@ -73,7 +73,7 @@
                             <div class="brands-list">
                                 <?php foreach($category['brands'] as $brand){ ?>
                                     <a href="<?php echo $brand['href']; ?>">
-                                        <img src="<?php echo $brand['image']; ?>" alt="<?php echo $brand['name']; ?>">
+                                        <img src="<?php echo $brand['image']; ?>" width="85" alt="<?php echo $brand['name']; ?>">
                                     </a>
                                 <?php } ?>
                             </div>
@@ -103,3 +103,4 @@
     </div>
 </nav>
 <?php } ?>
+

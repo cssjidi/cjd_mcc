@@ -16,43 +16,82 @@
                 <div id="allSortTab">
                     <div class="clearfix" style="display: block;">
                         <?php foreach($categories as $index=>$cate){ ?>
-                        <a class="ui-category-item <?php if($index == 0){echo 'selected';} ?>" href="#" data-idx="<?php echo $index+1; ?>" data-idx="0"><?php echo $cate['name']; ?></a>
+                        <a class="ui-category-item <?php if($index == 0){echo 'selected';} ?>" href="#cate_<?php echo $index+1; ?>" data-idx="<?php echo $index+1; ?>" data-idx="0"><?php echo $cate['name']; ?></a>
                         <?php } ?>
                     </div>
                 </div>
             </div>
 
             <div class="category-items row">
-                <?php foreach($categories as $index=>$category){ ?>
-                <div class="col-xs-12 col-sm-6 col-lg-6" data-idx="<?php echo $index+1; ?>">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2 class="item-title">
-                                <b class="fa fa-th-large text-info"></b>
-                                <span><?php echo $category['name']; ?></span>
-                            </h2>
-                        </div>
-                        <div class="panel-body">
-                            <div class="items">
-                                <?php if($category['children']){ ?>
-                                <?php foreach($category['children'] as $level2){ ?>
-                                <dl class="clearfix">
-                                    <dt><a href="<?php echo $level2['href']; ?>target="_blank"><?php echo $level2['name']; ?></a></dt>
-                                    <?php if($level2['children']){ ?>
-                                    <dd>
-                                        <?php foreach($level2['children'] as $level3){ ?>
-                                        <a href="<?php echo $level3['href']; ?>" target="_blank"><?php echo $level3['name']; ?></a>
+
+                <div class="col">
+                    <?php foreach($categories as $index=>$category){ ?>
+                    <?php if($index < ceil(count($categories)/2)){ ?>
+                            <div class="item" data-idx="<?php echo $index+1; ?>" id="cate_<?php echo $index+1; ?>">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h2 class="item-title">
+                                            <b class="fa fa-th-large text-info"></b>
+                                            <span><?php echo $category['name']; ?></span>
+                                        </h2>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="items">
+                                            <?php if($category['children']){ ?>
+                                            <?php foreach($category['children'] as $level2){ ?>
+                                            <dl class="clearfix">
+                                                <dt><a href="<?php echo $level2['href']; ?>target="_blank"><?php echo $level2['name']; ?></a></dt>
+                                                <?php if($level2['children']){ ?>
+                                                <dd>
+                                                    <?php foreach($level2['children'] as $level3){ ?>
+                                                    <a href="<?php echo $level3['href']; ?>" target="_blank"><?php echo $level3['name']; ?></a>
+                                                    <?php } ?>
+                                                </dd>
+                                                <?php } ?>
+                                            </dl>
+                                            <?php } ?>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php } ?>
+                    <?php } ?>
+                </div>
+                <div class="col">
+                    <?php foreach($categories as $index=>$category){ ?>
+                    <?php if($index > ceil(count($categories)/2)-1){ ?>
+                    <div class="item" data-idx="<?php echo $index+1; ?>" id="cate_<?php echo $index+1; ?>">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h2 class="item-title">
+                                    <b class="fa fa-th-large text-info"></b>
+                                    <span><?php echo $category['name']; ?></span>
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="items">
+                                    <?php if($category['children']){ ?>
+                                    <?php foreach($category['children'] as $level2){ ?>
+                                    <dl class="clearfix">
+                                        <dt><a href="<?php echo $level2['href']; ?>target="_blank"><?php echo $level2['name']; ?></a></dt>
+                                        <?php if($level2['children']){ ?>
+                                        <dd>
+                                            <?php foreach($level2['children'] as $level3){ ?>
+                                            <a href="<?php echo $level3['href']; ?>" target="_blank"><?php echo $level3['name']; ?></a>
+                                            <?php } ?>
+                                        </dd>
                                         <?php } ?>
-                                    </dd>
+                                    </dl>
                                     <?php } ?>
-                                </dl>
-                                <?php } ?>
-                                <?php } ?>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php } ?>
                 </div>
-                <?php } ?>
             </div>
             <?php } ?>
 
@@ -67,12 +106,9 @@
 
 <script>
     (function ($) {
-        var lastScrollTop = 0,
-             scrollDir='',
-             topMargin=0,
-             contentParts=[],
-             itemActive='';
-
+        var myTop = $('.categories').offset().top - $('.categories').height();
+        var lastScrollTop = 0;
+        var scrollDir = '';
         $(window).scroll(function () {
             var st = $(this).scrollTop();
             if (st > lastScrollTop){
@@ -82,93 +118,44 @@
             }
             lastScrollTop = st;
         });
-        $.fn.cjdFixUp = function (options) {
-            if(options != null){
-                options.itemData
-            }
-            //this.options.scrollDir = scrollDir;
-            var _this = $(this);
-            $(document).on('scroll',function () {
-                var scrollTop = parseInt($(this).scrollTop());
-                if(scrollDir == 'down'){
-                    _this.addClass('fix-categories');
-                }
-                if(scrollDir == 'up'){
-                    console.log('up'+scrollTop);
-                    _this.removeClass('fix-categories');
-                }
+        function is_scroll() {
+            var arr = [];
+            $('.category-items>.col:first>.item').each(function () {
+                arr.push($(this).offset().top - $('#allSortTab').height() * 2 - 20);
             })
+            return arr;
         }
-        /*
-        var api;
-        api = cjdMenuScroll = {
-            options : {
-                lastScrollTop:0,
-                scrollDir:'sdf',
-                topMargin:0,
-                itemActive:'',
-            },
-            init:function () {
-                console.log(this.options.scrollDir,this.options.topMargin,this.options.itemActive);
+        $(document).on('scroll',function (e,target) {
+            var scrollTop = $(this).scrollTop();
+            /*$('.category-items>.col:first>.item').each(function () {
+                (function (obj) {
+                    var selector = '[data-idx=' + $(obj).data('idx') + ']';
+                    if (scrollTop > $(obj).offset().top - $('#allSortTab').height() * 2 - 20) {
+                        $(selector, '.categories').addClass('selected').siblings().removeClass('selected');
+                    }
+                }(this));
+            });*/
+            if(scrollDir == 'down'){
+                if(scrollTop > myTop){
+                    $('#allSortTab').addClass('fix-categories');
+                }
             }
-        };
-
-
-        $(document).on('scroll', function() {
-            //api.options.scrollDir
+            if(scrollDir == 'up'){
+                if(scrollTop < (myTop + $('#allSortTab').height()*2)){
+                    $('#allSortTab').removeClass('fix-categories');
+                }
+            }
         });
-        */
-        /*
-        var myTop = $('.categories').offset().top - $('.categories').height();
-        $('#allSortTab a').on('click',function (e) {
-            e.preventDefault();
+        $('#allSortTab a').on('click',function () {
+            //e.preventDefault();
+            var target = $(this).attr('href');
+            var offset = $('#allSortTab').height()*2-20;
+            var targetScrollTop = $(target).offset().top - offset;
             $('.categories').height($('#allSortTab').height());
-            var idx = $(this).data('idx');
-            var selector = '[data-idx='+idx+']';
-            var offset = $(selector,'.category-items').offset().top - $('#allSortTab').height() - 20;
-            $('body').animate({'scrollTop':offset},500);
+            $('body').animate({'scrollTop':targetScrollTop},200);
             $(this).addClass('selected').siblings().removeClass('selected');
-            setTimeout(function () {
-                $(document).trigger('mousewheel',function (e) {
+            return false;
 
-                });
-            },500);
         });
-        //var myTop = $('.categories').offset().top;
-
-        $(document).on('scroll',function (event) {
-            var scrollTop = $('body').scrollTop();
-            console.log(myTop,scrollTop,(myTop - $('#allSortTab').height()*2));
-            //console.log(1234);
-            var direction = event.originalEvent.wheelDelta;
-
-            //console.log(event, delta, deltaX, deltaY)
-            //var scrollTop1 = $(document).offset().top;
-            console.log(myTop,scrollTop,(myTop - $('#allSortTab').height()*2));
-            //console.log(direction);
-            switch(direction){
-                case 120:
-                    if(scrollTop < (myTop + $('#allSortTab').height()*2)){
-                        console.log(2);
-                        $('#allSortTab').removeClass('fix-categories');
-                    }
-                    break;
-                case -120:
-                    if(scrollTop > myTop){
-                        console.log(1);
-                        $('#allSortTab').addClass('fix-categories');
-                    }
-                    break;
-            }
-        })
-        */
     }(jQuery));
-    $('#allSortTab').cjdFixUp({
-        itemData:'idx'
-    });
-    /*cjdMenuScroll.options = {
-        topMargin:190,
-        itemActive:'wefwe',
-    }
-    cjdMenuScroll.init();*/
 </script>
