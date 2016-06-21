@@ -94,6 +94,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_weight_class'] = $this->language->get('text_weight_class');
 		$data['text_length_class'] = $this->language->get('text_length_class');
 		$data['text_zone'] = $this->language->get('text_zone');
+		$data['text_cjd_nav'] = $this->language->get('text_cjd_nav');
 		$data['text_recurring'] = $this->language->get('text_recurring');
 		$data['text_order_recurring'] = $this->language->get('text_order_recurring');
 		$data['text_others'] = $this->language->get('text_others');
@@ -195,6 +196,7 @@ class ControllerCommonMenu extends Controller {
 		$data['length_class'] = $this->url->link('localisation/length_class', 'token=' . $this->session->data['token'], true);
 		$data['url_alias'] = $this->url->link('catalog/url_alias', 'token=' . $this->session->data['token'], true);
 		$data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], true);
+		$data['cjd_nav'] = $this->url->link('module/cjd_nav', 'token=' . $this->session->data['token'], 'SSL');
 		$data['recurring'] = $this->url->link('catalog/recurring', 'token=' . $this->session->data['token'], true);
 		$data['order_recurring'] = $this->url->link('sale/recurring', 'token=' . $this->session->data['token'], true);
 		$data['weidian_category'] = $this->url->link('weidian/category', 'token=' . $this->session->data['token'], true);

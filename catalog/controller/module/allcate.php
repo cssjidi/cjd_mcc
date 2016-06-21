@@ -39,28 +39,37 @@ class ControllerModuleAllcate extends Controller {
 		// Menu
 		$data['categories'] = array();
 		$categories = $this->model_catalog_category->getCategories(0);
+
 		foreach ($categories as $category) {
 			//if ($category['top']) {
 				// Level 2
 				$children_data = array();
 				$sub_children_data = array();
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
+			    $name_array = '';
 				foreach ($children as $index => $child) {
 					$children_level3 = $this->model_catalog_category->getCategories($child['category_id']);
 					$filter_data = array(
 						'filter_category_id' => $child['category_id'],
 						'filter_sub_category' => true
 					);
+
+
+
 					$children_data[$index] = array(
 						'name' => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 						'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
 						'children' => array()
 					);
 
-					$sub_children_data[$index] = array(
-						'name' => $child['name'] ,
-						'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
-					);
+					$name_array .= $child['name'].' ';
+
+					if((int)strlen($name_array) < 37) {
+						$sub_children_data[$index] = array(
+							'name' => $child['name'],
+							'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
+						);
+					}
 					if ($children_level3) {
 						foreach ($children_level3 as $level3) {
 							$filter_data = array(

@@ -1,12 +1,7 @@
-
 <?php if ($categories && $is_allcate) { ?>
-
 <div class="m-allcate">
     <a href="<?php echo $allsort; ?>" class="btn btn-danger btn-block"><span class="pull-left"></span><?php echo $text_allcate; ?><i class="fa fa-angle-right pull-right"></i></a>
 </div>
-
-
-
 <nav id="allcate" class="navbar allcate <?php echo $allcate_theme; ?>  <?php echo $is_home ? 'home-hover':''; ?>">
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <div class="allcate-title" id="cate-menu">

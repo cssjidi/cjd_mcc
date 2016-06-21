@@ -116,7 +116,7 @@ div.required .control-label:before {
 }
 #top .btn-link strong {
 	font-size: 14px;
-	line-height: 14px;
+        line-height: 14px;
 }
 #top-links {
 	padding-top: 6px;
@@ -543,10 +543,10 @@ footer h5 {
 	float: none;
 }
 @media (min-width: 767px) {
-	.product-list .product-thumb .image {
-		float: left;
-		padding: 0 15px;
-	}
+.product-list .product-thumb .image {
+	float: left;
+	padding: 0 15px;
+}
 }
 .product-thumb h4 {
 	font-weight: bold;
@@ -559,20 +559,20 @@ footer h5 {
 	margin-left: 230px;
 }
 @media (max-width: 1200px) {
-	.product-grid .product-thumb .caption {
-		min-height: 210px;
-		padding: 0 10px;
-	}
+.product-grid .product-thumb .caption {
+	min-height: 210px;
+	padding: 0 10px;
+}
 }
 @media (max-width: 767px) {
-	.product-list .product-thumb .caption {
-		min-height: 0;
-		margin-left: 0;
-		padding: 0 10px;
-	}
-	.product-grid .product-thumb .caption {
-		min-height: 0;
-	}
+.product-list .product-thumb .caption {
+	min-height: 0;
+	margin-left: 0;
+	padding: 0 10px;
+}
+.product-grid .product-thumb .caption {
+	min-height: 0;
+}
 }
 .product-thumb .rating {
 	padding-bottom: 10px;
@@ -715,21 +715,21 @@ h2.price {
 
 /* fixed colum left + content + right*/
 @media (min-width: 768px) {
-	#column-left  .product-layout .col-md-3 {
-		width: 100%;
-	}
+    #column-left  .product-layout .col-md-3 {
+       width: 100%;
+    }
 
 	#column-left + #content .product-layout .col-md-3 {
-		width: 50%;
-	}
+       width: 50%;
+    }
 
 	#column-left + #content + #column-right .product-layout .col-md-3 {
-		width: 100%;
-	}
+       width: 100%;
+    }
 
-	#content + #column-right .product-layout .col-md-3 {
-		width: 100%;
-	}
+    #content + #column-right .product-layout .col-md-3 {
+       width: 100%;
+    }
 }
 
 /* fixed product layouts used in left and right columns */
@@ -749,6 +749,88 @@ div#tab-description img {
 
 /* Missing focus and border color to overwrite bootstrap */
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
-	background-image: none;
-	background-color: #df5c39;
+    background-image: none;
+    background-color: #df5c39;
 }
+
+
+/*all categories */
+.allcate{
+	position: absolute;
+	left:-2px;
+	top:-2px;
+	z-index: 9999;
+	border-top-right-radius:0;
+	border-bottom-right-radius: 0;
+	width:211px;
+}
+
+
+
+/*all sort*/
+.list .categories a:hover,.list .categories a.hover, .list .categories a.selected {
+	background: #337ab7;
+	color: #fff;
+	text-decoration: none;
+}
+.list .categories{
+	margin-bottom:20px;
+	position: relative;
+}
+.list .categories #allSortTab{
+	padding-bottom:10px;
+	background: #fff;
+	width:100%;
+}
+.list .categories a {
+	float: left;
+	display: inline-block;
+	padding: 7px 20px;
+	margin-top: 6px;
+	margin-right: 8px;
+	background: #ddd;
+	color: #000;
+	font-size: 14px;
+	white-space: nowrap;
+}
+.list .categories a:active{
+
+}
+.categories .fix-categories{
+	position: fixed;
+	top:0;
+	z-index: 999;
+}
+
+.category-items h2{
+	margin:0;
+	font-size:14px;
+	font-weight:600;
+}
+.category-items .panel-body dl{
+	float:left;
+	width:100%;
+}
+.category-items .panel-body dl a:hover{
+	color: #337ab7;
+}
+.category-items .panel-body dt{
+	float:left;
+	text-align: left;
+	width:15%;
+}
+.category-items .panel-body dt a{
+	color:#333;
+}
+.category-items .panel-body dd{
+	float:left;
+	margin-left:5%;
+	width:80%;
+}
+.category-items .panel-body dd a{
+	margin:0 5px;
+	color:#666;
+}
+
+
+

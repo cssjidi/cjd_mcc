@@ -1,16 +1,17 @@
 <?php
-class ControllerModuleNav extends Controller {
+class ControllerModuleCjdNav extends Controller {
 
     private $error = array();
 
     public function index() {
-        $this->load->language('module/nav');
+        $this->load->language('module/cjd_nav');
         $this->document->setTitle($this->language->get('heading_title'));
 
         $this->load->model('extension/module');
         $this->load->model('catalog/information');
         $this->load->model('catalog/category');
-        $this->load->model('catalog/url_alias');
+
+        $this->document->addStyle('view/stylesheet/cjd_nav.css');
 
         $data['heading_title'] = $this->language->get('heading_title');
         $data['text_edit'] = $this->language->get('text_edit');
@@ -42,19 +43,14 @@ class ControllerModuleNav extends Controller {
         $data['column_action'] = $this->language->get('column_action');
 
 
-        if(!isset($data['setting'])){
-            $data['setting'] = 0;
-        }
+        $this->load->model('setting/setting');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-            if (!isset($this->request->get['module_id'])) {
-                $this->model_extension_module->addModule('cjd_nav', $this->request->post);
-            } else {
-                $this->model_extension_module->editModule($this->request->get['module_id'], $this->request->post);
-            }
-            $this->cache->delete('cjd_nav');
+            $this->model_setting_setting->editSetting('cjd_nav', $this->request->post);
+
             $this->session->data['success'] = $this->language->get('text_success');
-            $this->response->redirect($this->url->link('module/cjd_nav', 'token=' . $this->session->data['token'], 'SSL'));
+
+            $this->response->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], true));
         }
 
         if (isset($this->error['warning'])) {
@@ -71,12 +67,7 @@ class ControllerModuleNav extends Controller {
             $data['success'] = '';
         }
 
-        if (!isset($this->request->get['module_id'])) {
-            $data['action'] = $this->url->link('module/nav', 'token=' . $this->session->data['token'], 'SSL');
-        } else {
-            $data['action'] = $this->url->link('module/nav', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL');
-            //$this->response->redirect($this->url->link('module/nav', 'token=' . $this->session->data['token'], 'SSL'));
-        }
+        $data['action'] = $this->url->link('module/cjd_nav', 'token=' . $this->session->data['token'], true);
 
         $data['breadcrumbs'] = array();
         $data['breadcrumbs'][] = array(
@@ -91,36 +82,18 @@ class ControllerModuleNav extends Controller {
             'text' => $this->language->get('heading_title'),
             'href' => $this->url->link('module/account', 'token=' . $this->session->data['token'], 'SSL')
         );
-        $nav_status='';
-        if(null != $this->model_extension_module->getModulesByCode('nav')){
-            $module_nav = $this->model_extension_module->getModulesByCode('nav');
-            $data['nav_name']  = $module_nav[0]['name'];
-            $tmp = json_decode($module_nav[0]['setting']);
-            $nav_status = $tmp->status;;
-            //$tmp1 = htmlspecialchars_decode($tmp['setting']);
-            $data['setting'] = htmlspecialchars_decode($tmp->setting);
-            //$data['action'] = $this->url->link('module/nav', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL');
-            $module_id = $module_nav[0]['module_id'];
-        }
-        //var_dump($data['setting']);
 
-        if (!isset($module_id)) {
-            $data['action'] = $this->url->link('module/nav', 'token=' . $this->session->data['token'], 'SSL');
-        } else {
-            $module_info = $this->model_extension_module->getModule($module_id);
-            $data['action'] = $this->url->link('module/nav', 'token=' . $this->session->data['token'] . '&module_id=' . $module_id, 'SSL');
-        }
-
-        if (isset($this->request->post['name'])) {
-            $data['nav_status'] = $this->request->post['name'];
+        if (isset($this->request->post['cjd_nav_status'])) {
+            $data['cjd_nav_status'] = $this->request->post['cjd_nav_status'];
         }else {
-            $data['nav_status'] = $nav_status;
+            $data['cjd_nav_status'] = $this->config->get('cjd_nav_status');;
         }
 
-        if (isset($this->request->post['cjd_nav_'])) {
-            $data['allcate_theme'] = $this->request->post['allcate_theme'];
-        } else {
-            $data['allcate_theme'] = $this->config->get('allcate_theme');
+
+        if (isset($this->request->post['cjd_nav_setting'])) {
+            $data['cjd_nav_setting'] = htmlspecialchars_decode($this->request->post['cjd_nav_setting']);
+        }else{
+            $data['cjd_nav_setting'] = NULL!==$this->config->get('cjd_nav_setting') ? htmlspecialchars_decode($this->config->get('cjd_nav_setting')) : '0';
         }
 
         $filter_data = array();
@@ -128,7 +101,6 @@ class ControllerModuleNav extends Controller {
         foreach ($informations as $information) {
             $link = 'information_id=' . $information['information_id'];
             $old_link = 'information/information&information_id=' . $information['information_id'];
-            $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['informations'][] = array(
                 'information_id' => $information['information_id'],
                 'title' => $information['title'],
@@ -146,8 +118,6 @@ class ControllerModuleNav extends Controller {
             }else{
                 $old_link = 'product/category&path=' .$cate['parent_id'].'_'. $cate['category_id'];
             }
-
-            $row = $this->model_catalog_url_alias->getUrlAliasByQuery($link);
             $data['categories'][] = array(
                 'category_id' => $cate['category_id'],
                 'name'        => $cate['category_name'],
@@ -164,17 +134,17 @@ class ControllerModuleNav extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('module/nav.tpl', $data));
+        $this->response->setOutput($this->load->view('module/cjd_nav.tpl', $data));
     }
 
     protected function validate() {
-        if (!$this->user->hasPermission('modify', 'module/nav')) {
+        if (!$this->user->hasPermission('modify', 'module/cjd_nav')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
-        if (!$this->request->get['route'] == 'module/nav'){
+        if (!$this->request->get['route'] == 'module/cjd_nav'){
             $this->error['warning'] = $this->language->get('error_permission');
         }
-        if (strlen(trim($this->request->post['setting'])) <= 2){
+        if (strlen(trim($this->request->post['cjd_nav_setting'])) <= 2){
             $this->error['warning'] = $this->language->get('error_setting');
         }
         return !$this->error;

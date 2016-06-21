@@ -3,6 +3,8 @@ class ControllerCommonHeader extends Controller {
 	public function index() {
 		$data['title'] = $this->document->getTitle();
 
+		//$data['cjd_nav'] = $this->load->controller('module/cjd_nav');
+
 		if ($this->request->server['HTTPS']) {
 			$data['base'] = HTTPS_SERVER;
 		} else {

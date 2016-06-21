@@ -1,5 +1,6 @@
 <ul id="menu">
   <li id="dashboard"><a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i> <span><?php echo $text_dashboard; ?></span></a></li>
+  <li id="cjd_nav"><a href="<?php echo $cjd_nav; ?>"><i class="fa fa-bars fa-fw"></i> <span><?php echo $text_cjd_nav; ?></span></a></li>
   <li id="catalog"><a class="parent"><i class="fa fa-tags fa-fw"></i> <span><?php echo $text_catalog; ?></span></a>
     <ul>
       <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>

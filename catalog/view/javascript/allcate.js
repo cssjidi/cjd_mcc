@@ -1,11 +1,11 @@
 $(function(){
-    $('#menu .nav li').on('mouseover',function () {
-        $(this).addClass('open').siblings().removeClass('open');
-    });
-
-    $('#menu .nav li').on('mouseout',function () {
-        $(this).removeClass('open');
-    });
+    $('#allcate .nav li')
+        .on('mouseenter',function () {
+            $(this).addClass('open').siblings().removeClass('open');
+        })
+        .on('mouseleave',function () {
+            $(this).removeClass('open');
+        });
 
 
     $('#allcate:not(".home-hover")')
@@ -16,6 +16,4 @@ $(function(){
         .on('mouseleave',function () {
             $(this).removeClass('hover').find('.allcate-title span').css('transform','rotate(0deg)');
         });
-})
-
-
+});
