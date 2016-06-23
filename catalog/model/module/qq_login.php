@@ -1,54 +1,266 @@
 <?php
-/* PHP SDK
- * @version 2.0.0
- * @author connect@qq.com
- * @copyright © 2013, Tencent Corporation. All rights reserved.
- */
-require_once("qqauth.php");
+class ModelModuleQQLogin extends Model{
 
-/*
- * @brief QC类，api外部对象，调用接口全部依赖于此对象
- * */
-class QC extends QQAuth{
-    private $kesArr, $APIMap;
+    public $appkey;
+    public $appcallback;
+    public $apperrreport;
+    public $APIMap;
+    private $kesArr;
+    public $callback_state;
+    const VERSION = "2.1";
+    const GET_AUTH_CODE_URL = "https://graph.qq.com/oauth2.0/authorize";
+    const GET_ACCESS_TOKEN_URL = "https://graph.qq.com/oauth2.0/token";
+    const GET_OPENID_URL = "https://graph.qq.com/oauth2.0/me";
+
+    public function qq_login(){
+
+        //-------生成唯一随机串防CSRF攻击
+        $state = md5(uniqid(rand(), true));
+        //echo $state;
+        $this->qq_static_var('state',$state);
+
+        //-------构造请求参数列表
+        $keysArr = array(
+            "response_type" => "code",
+            "client_id" => $this->config->get('qq_login_appid'),
+            "redirect_uri" => urlencode($this->config->get('qq_login_callback')),
+            "state" => $state,
+            "scope" => null,
+        );
+
+        $login_url = $this->combineURL(self::GET_AUTH_CODE_URL, $keysArr);
+        //echo  $this->request->get['state'];
+        //$this->callback_state = $this->request->get['state'];
+
+        // 直接跳走
+        header("Location:$login_url");
+        exit();
+    }
+
+    public function qq_callback(){
+        $state = $this->qq_static_var('state');
+        $code  = $this->request->get['code'];
+
+        //--------验证state防止CSRF攻击
+        if($this->request->get['state'] !== $state){
+            $this->showError("30001");
+        }
+        //-------请求参数列表
+        $keysArr = array(
+            "grant_type" => "authorization_code",
+            "client_id" => $this->config->get('qq_login_appid'),
+            "redirect_uri" => urlencode($this->config->get('qq_login_callback')),
+            "client_secret" => $this->config->get('qq_login_appkey'),
+            "code" =>$code,
+        );
+
+        //------构造请求access_token的url
+        $token_url = $this->combineURL(self::GET_ACCESS_TOKEN_URL, $keysArr);
+        $response = $this->get_contents($token_url);
+
+        if(strpos($response, "callback") !== false){
+            $lpos = strpos($response, "(");
+            $rpos = strrpos($response, ")");
+            $response  = substr($response, $lpos + 1, $rpos - $lpos -1);
+            $msg = json_decode($response);
+
+            if(isset($msg->error)){
+                $this->showError($msg->error, $msg->error_description);
+            }
+        }
+
+        $params = array();
+        //parse_str($response, $params);
+        return $params["access_token"];
+    }
+
+    public function get_openid($token){
+        if(!$token)
+            return false;
+
+        //-------请求参数列表
+        $keysArr = array(
+            "access_token" => $token
+        );
+
+        $graph_url = $this->combineURL(self::GET_OPENID_URL, $keysArr);
+        $response = $this->get_contents($graph_url);
+        //--------检测错误是否发生
+        if(strpos($response, "callback") !== false){
+            $lpos = strpos($response, "(");
+            $rpos = strrpos($response, ")");
+            $response = substr($response, $lpos + 1, $rpos - $lpos -1);
+        }
+
+        $user = json_decode($response);
+
+        if(isset($user->error)){
+            $this->showError($user->error, $user->error_description);
+        }
+        echo $response;
+        return $user->openid;
+    }
+
+    public function qq_static_var($key, $val=null){
+        static $i =0;
+
+        /*if($i === 0 && !$_SESSION) // 暂时用session.
+            $this->session->start();*/
+
+        // 只有一个参数时是读, 否则是写.
+        if($val !== null){
+            $this->session->data[$key] = $val;
+        }
+
+        //无论如何都会返回!
+        return $this->session->data[$key];
+    }
+
+    public function showError($code, $description = '$'){
+        $this->errorMsg = array(
+            '20001'=>'请将配置完全检查一遍',
+            '30001' => 'state防止CSRF攻击, 验证未通过',
+            '50001' => '请尝试开启curl支持，重启web服务器',
+        );
+
+        if(!$this->apperrreport){
+            die();//die quietly
+        }
+
+        echo "<meta charset=\"UTF-8\">";
+        if($description == "$"){
+            die('<h2>'.$this->errorMsg[$code].'</h2>');
+        }else{
+            echo "<h3>error:</h3>$code";
+            echo "<h3>msg  :</h3>$description";
+        }
+        exit();
+    }
+
+    public function combineURL($baseURL,$keysArr){
+        $combined = $baseURL.'?';
+        $valueArr = array();
+
+        foreach($keysArr as $key => $val){
+            if($val)
+                $valueArr[] = "$key=$val";
+        }
+
+        $keyStr = implode("&",$valueArr);
+        $combined .= ($keyStr);
+
+        return $combined;
+    }
+    public function get_contents($url){
+        if (!function_exists('curl_init')) {
+            $response = file_get_contents($url);
+        }else{
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            $response =  curl_exec($ch);
+            curl_close($ch);
+        }
+
+        //-------请求为空
+        if(empty($response)){
+            $this->showError("50001");
+        }
+
+        return $response;
+    }
 
     /**
-     * _construct
-     *
-     * 构造方法
-     * @access public
-     * @since 5
-     * @param string $access_token  access_token value
-     * @param string $openid        openid value
-     * @return Object QC
+     * get
+     * get方式请求资源
+     * @param string $url     基于的baseUrl
+     * @param array $keysArr  参数列表数组
+     * @return string         返回的资源内容
      */
-    public function __construct($access_token = "", $openid = ""){
-        parent::__construct();
+    public function get($url, $keysArr){
+        $combined = $this->combineURL($url, $keysArr);
+        return $this->get_contents($combined);
+    }
 
-        //如果access_token和openid为空，则从session里去取，适用于demo展示情形
+    /**
+     * post
+     * post方式请求资源
+     * @param string $url       基于的baseUrl
+     * @param array $keysArr    请求的参数列表
+     * @param int $flag         标志位
+     * @return string           返回的资源内容
+     */
+    public function post($url, $keysArr, $flag = 0){
+
+        $ch = curl_init();
+        if(! $flag) curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $keysArr);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        $ret = curl_exec($ch);
+
+        curl_close($ch);
+        return $ret;
+    }
+    public function get_user_info($access_token,$openid){
         if($access_token === "" || $openid === ""){
             $this->keysArr = array(
-                "oauth_consumer_key" => QQ_APPID,
+                "oauth_consumer_key" => $this->config->get('qq_login_appid'),
                 "access_token" => $this->session->data("access_token"),
                 "openid" => $this->session->data("openid")
             );
         }else{
-            $this->keysArr = array(
-                "oauth_consumer_key" => QQ_APPID,
+            $keysArr = array(
+                "oauth_consumer_key" => $this->config->get('qq_login_appid'),
                 "access_token" => $access_token,
                 "openid" => $openid
             );
         }
+        $response = $this->get('https://graph.qq.com/user/get_user_info', $keysArr);
+        return $response;
+    }
 
-        //初始化APIMap
-        /*
-         * 加#表示非必须，无则不传入url(url中不会出现该参数)， "key" => "val" 表示key如果没有定义则使用默认值val
-         * 规则 array( baseUrl, argListArr, method)
-         */
+    /*public function get_openid($access_token){
+        $graph_url = $this->urlUtils->combineURL(self::GET_OPENID_URL, $access_token);
+        $response = $this->urlUtils->get_contents($graph_url);
+
+        //--------检测错误是否发生
+        if(strpos($response, "callback") !== false){
+
+            $lpos = strpos($response, "(");
+            $rpos = strrpos($response, ")");
+            $response = substr($response, $lpos + 1, $rpos - $lpos -1);
+        }
+
+        $user = json_decode($response);
+        if(isset($user->error)){
+            $this->error->showError($user->error, $user->error_description);
+        }
+        echo $response;
+        return $user->openid;
+
+    }*/
+
+    /*public function get_user_info1($access_token,$openid){
+        if($access_token === "" || $openid === ""){
+            $this->keysArr = array(
+                "oauth_consumer_key" => $this->config->get('qq_login_appkey'),
+                "access_token" => $this->session->data("access_token"),
+                "openid" => $this->session->data("openid")
+            );
+            echo 2;
+        }else{
+            $this->keysArr = array(
+                "oauth_consumer_key" => $this->config->get('qq_login_appkey'),
+                "access_token" => $access_token,
+                "openid" => $openid
+            );
+            echo 3;
+        }
+
         $this->APIMap = array(
-
-
-            /*                       qzone                    */
             "add_blog" => array(
                 "https://graph.qq.com/blog/add_one_blog",
                 array("title", "format" => "json", "content" => null),
@@ -92,7 +304,7 @@ class QC extends QQAuth{
                 "https://graph.qq.com/user/check_page_fans",
                 array("page_id" => "314416946","format" => "json")
             ),
-            /*                    wblog                             */
+
 
             "add_t" => array(
                 "https://graph.qq.com/t/add_t",
@@ -139,17 +351,16 @@ class QC extends QQAuth{
                 array("format" => "json", "#name-1", "#fopenid-1"),
                 "POST"
             ),
-            /*                           pay                          */
+
 
             "get_tenpay_addr" => array(
                 "https://graph.qq.com/cft_info/get_tenpay_addr",
                 array("ver" => 1,"limit" => 5,"offset" => 0,"format" => "json")
             )
         );
-    }
-
+    }*/
     //调用相应api
-    private function _applyAPI($arr, $argsList, $baseUrl, $method){
+    /*private function _applyAPI($arr, $argsList, $baseUrl, $method){
         $pre = "#";
         $keysArr = $this->keysArr;
 
@@ -219,7 +430,7 @@ class QC extends QQAuth{
 
         return $response;
 
-    }
+    }*/
 
     /**
      * _call
@@ -229,7 +440,8 @@ class QC extends QQAuth{
      * @since 5.0
      * @return array          返加调用结果数组
      */
-    public function __call($name,$arg){
+    /*public function __call($name,$arg){
+        echo $name,$arg;
         //如果APIMap不存在相应的api
         if(empty($this->APIMap[$name])){
             $this->error->showError("api调用名称错误","不存在的API: <span style='color:red;'>$name</span>");
@@ -260,10 +472,10 @@ class QC extends QQAuth{
             $this->error->showError($response->ret, $response->msg);
         }
 
-    }
+    }*/
 
     //php 对象到数组转换
-    private function objToArr($obj){
+    /*private function objToArr($obj){
         if(!is_object($obj) && !is_array($obj)) {
             return $obj;
         }
@@ -272,7 +484,7 @@ class QC extends QQAuth{
             $arr[$k] = $this->objToArr($v);
         }
         return $arr;
-    }
+    }*/
 
 
     /**
@@ -282,12 +494,12 @@ class QC extends QQAuth{
      * @since 5.0
      * @return string 返加access_token
      */
-    public function get_access_token(){
+    /*public function get_access_token(){
         return $this->recorder->read("access_token");
-    }
+    }*/
 
     //简单实现json到php数组转换功能
-    private function simple_json_parser($json){
+   /* private function simple_json_parser($json){
         $json = str_replace("{","",str_replace("}","", $json));
         $jsonValue = explode(",", $json);
         $arr = array();
@@ -296,5 +508,6 @@ class QC extends QQAuth{
             $arr[str_replace('"',"", $jValue[0])] = (str_replace('"', "", $jValue[1]));
         }
         return $arr;
-    }
+    }*/
+
 }

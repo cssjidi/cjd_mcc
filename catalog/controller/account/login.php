@@ -52,7 +52,7 @@ class ControllerAccountLogin extends Controller {
 		if($this->config->get('qq_login_status')){
 			$other_login++;
 			$data['is_qq_login'] = $this->config->get('qq_login_status');
-			$data['goto_qq_login'] = $this->url->link('account/login/getCode');
+			$data['goto_qq_login'] = $this->url->link('module/qq_login');
 		}
 		if($other_login > 0){
 			$data['text_other_login'] = $this->language->get('text_other_login');
@@ -258,8 +258,7 @@ class ControllerAccountLogin extends Controller {
 	}
 
 	public function getCode(){
-		$qqauth = new QQAuth($this->config->get('qq_login_appid'),$this->config->get('qq_login_appkey'),$this->config->get('qq_login_callback'));
-		$qqauth->qq_login();
+		$this->load->controller('module/qq_login');
 	}
 
 }
