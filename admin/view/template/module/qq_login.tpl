@@ -50,6 +50,7 @@
             <label class="col-sm-2 control-label" for="input-name"><?php echo $text_callback; ?></label>
             <div class="col-sm-10">
               <input type="text" name="qq_login_callback" value="<?php echo $qq_login_callback; ?>" placeholder="<?php echo $qq_login_callback; ?>" id="input-name" class="form-control" />
+              <?php echo $text_qq_warning; ?>
               <?php if ($error_qq_callback) { ?>
               <div class="text-danger"><?php echo $error_qq_callback; ?></div>
               <?php } ?>

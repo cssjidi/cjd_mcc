@@ -12,7 +12,15 @@ class ControllerModuleQQLogin extends Controller {
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$this->model_setting_setting->editSetting('qq_login', $this->request->post);
 			$this->session->data['success'] = $this->language->get('text_success');
-
+			$this->load->model('catalog/url_alias');
+			$tmp = explode('/',$this->request->post['qq_login_callback']);
+			$callback = end($tmp);
+			$row = $this->model_catalog_url_alias->getUrlAliasByQuery('module/qq_callback');
+			if($row){
+				$this->model_catalog_url_alias->editUrlAlias($row['url_alias_id'],array('query'=>'module/qq_callback','keyword'=>$callback));
+			}else{
+				$this->model_catalog_url_alias->addUrlAlias(array('query'=>'module/qq_callback','keyword'=>$callback));
+			}
 			$this->response->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], true));
 		}
 
@@ -28,6 +36,7 @@ class ControllerModuleQQLogin extends Controller {
 		$data['text_appid'] = $this->language->get('text_appid');
 		$data['text_appkey'] = $this->language->get('text_appkey');
 		$data['text_callback'] = $this->language->get('text_callback');
+		$data['text_qq_warning'] = $this->language->get('text_qq_warning');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');

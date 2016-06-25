@@ -10,7 +10,6 @@ class ControllerModuleQQCallback extends Controller {
 		if(!isset($this->session->data['qq_access_token']) || !isset($this->session->data['qq_open_id'])){
 			//$qqauth = new QQAuth($this->config->get('qq_login_appid'), $this->config->get('qq_login_appkey'), $this->config->get('qq_login_callback'));
 			$access_token = $this->model_module_qq_login->qq_callback();
-			echo $access_token;
 			$open_id = $this->model_module_qq_login->get_openid($access_token);
 			$this->session->data['qq_access_token'] = $access_token;
 			$this->session->data['qq_open_id'] = $open_id;
