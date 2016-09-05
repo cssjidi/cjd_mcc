@@ -6,7 +6,7 @@
 class ModelModuleProductOptionImagePro extends Model {
   
   public function getThemeName() {
-    if ( VERSION >= '2.2.0.0' ) {
+    if ( VERSION >= '2.2.0.0' || VERSION == '1.4.0.0') {
       return substr($this->config->get('config_theme'), 0, 6) == 'theme_' ? substr($this->config->get('config_theme'), 6) : $this->config->get('config_theme') ;
     } else {  
       return $this->config->get('config_template');
@@ -35,7 +35,7 @@ class ModelModuleProductOptionImagePro extends Model {
   
   private function theme_config_get($setting_name) {
     // config_ in the beginning of $setting_name
-    if ( VERSION >= '2.2.0.0' ) {
+    if ( VERSION >= '2.2.0.0' || VERSION == '1.4.0.0') {
       return $this->config->get($this->config->get('config_theme') . substr($setting_name, 6) );
     } else { 
       return $this->config->get($setting_name);

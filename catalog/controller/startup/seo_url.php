@@ -9,7 +9,7 @@ class ControllerStartupSeoUrl extends Controller {
 		// Decode URL
 		if (isset($this->request->get['_route_'])) {
 			$parts = explode('/', $this->request->get['_route_']);
-
+			$_route = $this->request->get['_route_'];
 			// remove any empty arrays from trailing
 			if (utf8_strlen(end($parts)) == 0) {
 				array_pop($parts);
@@ -76,7 +76,12 @@ class ControllerStartupSeoUrl extends Controller {
 					if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id' && $url[0] != 'blog_category_id' && $url[0] != 'blog_id' && $url[0] != 'press_category_id' && $url[0] != 'press_id' && $url[0] != 'faq_category_id') {
 						$this->request->get['route'] = $query->row['query'];
 					}
-				} else {
+				} else if(substr_count(trim($_route),'app') > 0){
+
+					$this->request->get['route'] = 'app/api';
+
+				}else{
+
 					$this->request->get['route'] = 'error/not_found';
 
 					break;

@@ -11,7 +11,7 @@ class ControllerToolExcelExportImport extends Controller {
 			
 			if ((isset( $this->request->files['upload'] )) && (is_uploaded_file($this->request->files['upload']['tmp_name']))) {
 				
-				$file = $this->request->files['upload']['tmp_name'];
+				$file = $this->request->files['upload']['name'];
 				if ($this->model_tool_excelexportimport->upload($file)===TRUE) {
 					
 					$this->session->data['success'] = $this->language->get('text_success');

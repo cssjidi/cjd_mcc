@@ -29,7 +29,7 @@ class ControllerPressPress extends Controller {
 		$this->load->model('catalog/product');
 
 		$press_info = $this->model_press_press->getPress($press_id);
-
+		echo $press_id;
 		if ($press_info) {
 			$url = '';
 

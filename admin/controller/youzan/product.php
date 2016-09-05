@@ -1672,7 +1672,27 @@ class ControllerYouzanProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-	
+
+	public function pull($tag_id){
+		$appid = $this->config->get('config_youzan_appid');
+
+		$appsecret = $this->config->get('config_youzan_appsecret');
+
+		$this->load->library('youzan/kdtapiprotocol');
+
+		$this->load->library('youzan/simplehttpclient');
+
+		$this->load->library('youzan/kdtapiclient');
+
+		date_default_timezone_set('PRC');
+
+		$client = new KdtApiClient($appid, $appsecret);
+
+		$method = 'kdt.items.onsale.get';
+		$params = array(
+			'num_iid'				=> $tag_id,
+		);
+	}
 }
 
 

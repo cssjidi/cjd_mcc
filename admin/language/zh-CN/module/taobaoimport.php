@@ -49,3 +49,14 @@ $_['error_upload_max_filesize'] 	= '文件大小大于了PHP设定【upload_max_
 $_['error_pid_no_data']         	= '不存在介于开始商品ID和结束商品ID号之间的商品。';
 $_['error_page_no_data']        	= '没有更多符合条件商品。';
 $_['error_param_not_number']        = '参数必须是数字。';
+$_['error_file_size']        	    = '文件大小必须小于1M。';
+$_['error_file_type']               = '不支持该文件类型。';
+$_['error_type']                    = '文件读取错误。';
+
+$_['t_title']                       = '标题';
+$_['t_model']                       = '型号';
+$_['t_seo']                         = 'Meta Tag 标题';
+$_['t_picture']                     = '图像';
+$_['t_attributes']                  = '属性';
+$_['t_options']                     = '选项';
+$_['t_opera']                       = '操作';

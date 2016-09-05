@@ -22,6 +22,7 @@ class ControllerCatalogProduct extends Controller {
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->addProduct($this->request->post);
 
+			
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
@@ -62,7 +63,7 @@ class ControllerCatalogProduct extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
+			//$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
 		$this->getForm();
@@ -75,9 +76,13 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->load->model('catalog/product');
 
+		$this->load->model('tool/image');
+
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
-
+			/*echo '<pre>';
+			print_r($this->request->post);
+			echo '</pre>';*/
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$url = '';
@@ -603,6 +608,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['entry_subtract'] = $this->language->get('entry_subtract');
 		$data['entry_weight_class'] = $this->language->get('entry_weight_class');
 		$data['entry_weight'] = $this->language->get('entry_weight');
+		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_dimension'] = $this->language->get('entry_dimension');
 		$data['entry_length_class'] = $this->language->get('entry_length_class');
 		$data['entry_length'] = $this->language->get('entry_length');
@@ -1118,7 +1124,7 @@ class ControllerCatalogProduct extends Controller {
 
 		// Options
 		$this->load->model('catalog/option');
-
+		$this->load->model('tool/image');
 		if (isset($this->request->post['product_option'])) {
 			$product_options = $this->request->post['product_option'];
 		} elseif (isset($this->request->get['product_id'])) {
@@ -1144,7 +1150,9 @@ class ControllerCatalogProduct extends Controller {
 						'points'                  => $product_option_value['points'],
 						'points_prefix'           => $product_option_value['points_prefix'],
 						'weight'                  => $product_option_value['weight'],
-						'weight_prefix'           => $product_option_value['weight_prefix']
+						'weight_prefix'           => $product_option_value['weight_prefix'],
+						'option_image_thumb'	  => $this->model_tool_image->resize((empty($product_option_value['option_image'])? 'no_image.png':$product_option_value['option_image']),100,100),
+						'option_image'			  => $product_option_value['option_image']
 					);
 				}
 			}
@@ -1233,6 +1241,8 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$data['thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 		}
+
+
 
 		$data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 
@@ -1447,16 +1457,33 @@ class ControllerCatalogProduct extends Controller {
 						foreach ($product_option['product_option_value'] as $product_option_value) {
 							$option_value_info = $this->model_catalog_option->getOptionValue($product_option_value['option_value_id']);
 
+							/*if (isset($this->request->post['option_image']) && is_file(DIR_IMAGE . $this->request->post['option_image'])) {
+								$data['option_image'] = $this->model_tool_image->resize($this->request->post['option_image'], 100, 100);
+							} elseif (!empty($product_info) && is_file(DIR_IMAGE . $product_info['option_image'])) {
+								$data['option_image'] = $this->model_tool_image->resize($product_info['option_image'], 100, 100);
+							} else {
+								$data['option_image'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+							}*/
+
 							if ($option_value_info) {
 								$product_option_value_data[] = array(
 									'product_option_value_id' => $product_option_value['product_option_value_id'],
 									'option_value_id'         => $product_option_value['option_value_id'],
 									'name'                    => $option_value_info['name'],
 									'price'                   => (float)$product_option_value['price'] ? $this->currency->format($product_option_value['price'], $this->config->get('config_currency')) : false,
-									'price_prefix'            => $product_option_value['price_prefix']
+									'price_prefix'            => $product_option_value['price_prefix'],
+									'option_image'			  => $this->model_tool_image->resize((empty($product_option_value['option_image'])? 'no_image.png':$product_option_value['option_image']),100,100)
 								);
 							}
 						}
+
+//						if (isset($this->request->post['option_image']) && is_file(DIR_IMAGE . $this->request->post['option_image'])) {
+//							$data['thumb'] = $this->model_tool_image->resize($this->request->post['option_image'], 100, 100);
+//						} elseif (!empty($product_info) && is_file(DIR_IMAGE . $product_info['option_image'])) {
+//							$data['thumb'] = $this->model_tool_image->resize($product_info['option_image'], 100, 100);
+//						} else {
+//							$data['thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+//						}
 
 						$option_data[] = array(
 							'product_option_id'    => $product_option['product_option_id'],

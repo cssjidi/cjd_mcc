@@ -1,0 +1,17 @@
+#menu .dropdown:hover .dropdown-menu{
+    display: block;
+}
+#menu .dropdown:hover .dropdown-menu .dropdown .dropdown-menu{
+    display: none;
+}
+.dropdown .dropdown-menu .dropdown .dropdown-menu{
+    display: none;
+}
+#menu .dropdown.open .dropdown-menu .dropdown.open .dropdown-menu{
+    display: block;
+    top:0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    left:160px;
+    padding-top:0;
+}

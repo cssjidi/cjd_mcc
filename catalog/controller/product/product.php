@@ -157,7 +157,7 @@ class ControllerProductProduct extends Controller {
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
+		
 		if ($product_info) {
 			$url = '';
 
@@ -293,8 +293,7 @@ class ControllerProductProduct extends Controller {
 				$data['thumb'] = '';
 			}
 
-			$data['images'] = array();
-
+			$data['images'] = 1234;
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
 
 			foreach ($results as $result) {

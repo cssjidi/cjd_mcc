@@ -513,4 +513,11 @@ class ModelCatalogProduct extends Model {
 		$query = $this->db->query($sql);
 		return $query->rows;
 	}
+
+	public function getProductCategory($product_id){
+		$sql = 'SELECT * FROM ' . DB_PREFIX . 'product_to_category ptc WHERE ptc.product_id='.$product_id;
+		$query = $this->db->query($sql);
+		return $query->rows;
+	}
+
 }

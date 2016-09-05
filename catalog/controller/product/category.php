@@ -9,6 +9,9 @@ class ControllerProductCategory extends Controller {
 
 		$this->load->model('tool/image');
 
+		//增加样式
+		$this->document->addStyle('catalog/view/theme/default/stylesheet/category.css');
+
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
 		} else {
@@ -158,7 +161,14 @@ class ControllerProductCategory extends Controller {
 					'filter_sub_category' => true
 				);
 
+				if($result['image']) {
+					$image = $this->model_tool_image->resize($result['image'], 200, 200);
+				} else {
+					$image = $this->model_tool_image->resize('no_image.png', 200, 200);
+				}
+
 				$data['categories'][] = array(
+					'image' =>$image,
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
 				);
@@ -234,63 +244,93 @@ class ControllerProductCategory extends Controller {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
 
+			//修改排序数组
 			$data['sorts'] = array();
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_default'),
-				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
+			$data['sorts']['default'] = array(
+				0=>array(
+					'text'=>$this->language->get('text_default'),
+					'value'=>'default',
+				),
+				1=>array(
+					'text'  => $this->language->get('text_default'),
+					'value' => 'p.sort_order-ASC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
+				)
 			);
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_asc'),
-				'value' => 'pd.name-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=ASC' . $url)
+			$data['sorts']['name'] = array(
+				0=>array(
+					'text'=>$this->language->get('text_name'),
+					'value'=>'name',
+				),
+				1=>array(
+					'text'  => $this->language->get('text_name_asc'),
+					'value' => 'pd.name-ASC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=ASC' . $url)
+				),
+				2=>array(
+					'text'  => $this->language->get('text_name_desc'),
+					'value' => 'pd.name-DESC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=DESC' . $url)
+				)
 			);
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_name_desc'),
-				'value' => 'pd.name-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=DESC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_asc'),
-				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
-			);
-
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_price_desc'),
-				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=DESC' . $url)
+			$data['sorts']['price'] = array(
+				0=>array(
+					'text'=>$this->language->get('text_price'),
+					'value'=>'price',
+				),
+				1=>array(
+					'text'  => $this->language->get('text_price_asc'),
+					'value' => 'p.price-ASC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
+				),
+				2=>array(
+					'text'  => $this->language->get('text_price_desc'),
+					'value' => 'p.price-DESC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.price&order=DESC' . $url)
+				)
 			);
 
 			if ($this->config->get('config_review_status')) {
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_desc'),
-					'value' => 'rating-DESC',
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=DESC' . $url)
-				);
-
-				$data['sorts'][] = array(
-					'text'  => $this->language->get('text_rating_asc'),
-					'value' => 'rating-ASC',
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=ASC' . $url)
+				$data['sorts']['rating'] = array(
+					0=>array(
+						'text'=>$this->language->get('text_rating'),
+						'value'=>'rating',
+					),
+					1=>array(
+						'text'  => $this->language->get('text_rating_asc'),
+						'value' => 'rating-ASC',
+						'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=ASC' . $url)
+					),
+					2=>array(
+						'text'  => $this->language->get('text_rating_desc'),
+						'value' => 'rating-DESC',
+						'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=rating&order=DESC' . $url)
+					)
 				);
 			}
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_model_asc'),
-				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=ASC' . $url)
+			$data['sorts']['model'] = array(
+				0=>array(
+					'text'=>$this->language->get('text_model'),
+					'value'=>'model',
+				),
+				1=>array(
+					'text'  => $this->language->get('text_model_asc'),
+					'value' => 'p.model-ASC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=ASC' . $url)
+				),
+				2=>array(
+					'text'  => $this->language->get('text_model_desc'),
+					'value' => 'p.model-DESC',
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+				)
 			);
 
-			$data['sorts'][] = array(
-				'text'  => $this->language->get('text_model_desc'),
-				'value' => 'p.model-DESC',
-				'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
-			);
+			//end修改排序数组
+
 
 			$url = '';
 
@@ -350,15 +390,15 @@ class ControllerProductCategory extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'canonical');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'canonical');
 			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'prev');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'prev');
 			} else {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
 			}
 
 			if ($limit && ceil($product_total / $limit) > $page) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page + 1), true), 'next');
+				$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page + 1), true), 'next');
 			}
 
 			$data['sort'] = $sort;
@@ -371,6 +411,7 @@ class ControllerProductCategory extends Controller {
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
+			$data['content_middle'] = $this->load->controller('common/content_middle');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 

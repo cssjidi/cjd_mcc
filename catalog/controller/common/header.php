@@ -1,6 +1,7 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+
 		if($this->config->get('allcate_status')){
 			$data['allcate'] = $this->load->controller('module/allcate');
 		}

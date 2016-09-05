@@ -556,6 +556,7 @@
                               <td class="text-right"><?php echo $entry_price; ?></td>
                               <td class="text-right"><?php echo $entry_option_points; ?></td>
                               <td class="text-right"><?php echo $entry_weight; ?></td>
+                              <td class="text-right"><?php echo $entry_image; ?></td>
                               <td></td>
                             </tr>
                           </thead>
@@ -623,6 +624,9 @@
                                   <?php } ?>
                                 </select>
                                 <input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][weight]" value="<?php echo $product_option_value['weight']; ?>" placeholder="<?php echo $entry_weight; ?>" class="form-control" /></td>
+                              <td class="text-left">
+                                <a href="" id="thumb-option-image<?php echo $option_value_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_option_value['option_image_thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input id="input-option-image<?php echo $option_value_row; ?>" type="hidden" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][option_image]" value="<?php echo $product_option_value['option_image']; ?>"  />
+                              </td>
                               <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row<?php echo $option_value_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                             </tr>
                             <?php $option_value_row++; ?>
@@ -1204,6 +1208,7 @@ $('input[name=\'option\']').autocomplete({
 			html += '        <td class="text-right"><?php echo $entry_price; ?></td>';
 			html += '        <td class="text-right"><?php echo $entry_option_points; ?></td>';
 			html += '        <td class="text-right"><?php echo $entry_weight; ?></td>';
+            html += '        <td class="text-right"><?php echo $entry_image; ?></td>';
 			html += '        <td></td>';
 			html += '      </tr>';
 			html += '  	 </thead>';
@@ -1212,7 +1217,7 @@ $('input[name=\'option\']').autocomplete({
 			html += '    </tbody>';
 			html += '    <tfoot>';
 			html += '      <tr>';
-			html += '        <td colspan="6"></td>';
+			html += '        <td colspan="7"></td>';
 			html += '        <td class="text-left"><button type="button" onclick="addOptionValue(' + option_row + ');" data-toggle="tooltip" title="<?php echo $button_option_value_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>';
 			html += '      </tr>';
 			html += '    </tfoot>';
@@ -1285,6 +1290,10 @@ function addOptionValue(option_row) {
 	html += '    <option value="-">-</option>';
 	html += '  </select>';
 	html += '  <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][weight]" value="" placeholder="<?php echo $entry_weight; ?>" class="form-control" /></td>';
+  html += '  <td class="text-left"><a href="" id="thumb-option-image' + option_value_row + '" data-toggle="image" class="img-thumbnail">';
+  html += '    <img src="<?php echo $thumb ?>" alt="" title="" data-placeholder="" /></a>';
+  html += '    <input type="hidden" id="input-option-image' + option_value_row + '" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_image]" value="" />';
+  html += '  </td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(this).tooltip(\'destroy\');$(\'#option-value-row' + option_value_row + '\').remove();" data-toggle="tooltip" rel="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
 
