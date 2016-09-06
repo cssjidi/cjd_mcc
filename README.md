@@ -1,2 +1,0 @@
-# mycncart extension by cjd
-

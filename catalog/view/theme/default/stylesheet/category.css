@@ -1,6 +1,0 @@
-.sort-box a{position: relative; padding:3px 10px 3px 8px; display: inline-block; text-align: center; margin: 0 -2px;}
-.sort-box a:hover,.sort-box a:focus{background:#ff6600; color:#fff; text-decoration: none;}
-.sort-box i{font-size:10px;}
-.sort-box a:first-child{position: relative; padding:3px 5px 3px 8px;}
-.sort-box a.actived{background:#ff6600; color:#fff;}
-.sort-box span.actived{color:#fff;}
