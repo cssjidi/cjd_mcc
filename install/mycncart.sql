@@ -1,4 +1,15 @@
-﻿SET SQL_MODE = "";
+SET SQL_MODE = "";
+
+--
+-- Database: `mycncart`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_address`
+--
+
 DROP TABLE IF EXISTS `mcc_address`;
 CREATE TABLE `mcc_address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -14,8 +25,13 @@ CREATE TABLE `mcc_address` (
   `shipping_telephone` varchar(32) NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_affiliate`
+--
 
 DROP TABLE IF EXISTS `mcc_affiliate`;
 CREATE TABLE `mcc_affiliate` (
@@ -49,8 +65,13 @@ CREATE TABLE `mcc_affiliate` (
   `approved` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_affiliate_activity`
+--
 
 DROP TABLE IF EXISTS `mcc_affiliate_activity`;
 CREATE TABLE `mcc_affiliate_activity` (
@@ -61,8 +82,13 @@ CREATE TABLE `mcc_affiliate_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_activity_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_affiliate_login`
+--
 
 DROP TABLE IF EXISTS `mcc_affiliate_login`;
 CREATE TABLE `mcc_affiliate_login` (
@@ -75,8 +101,13 @@ CREATE TABLE `mcc_affiliate_login` (
   PRIMARY KEY (`affiliate_login_id`),
   KEY `email` (`email`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_affiliate_transaction`
+--
 
 DROP TABLE IF EXISTS `mcc_affiliate_transaction`;
 CREATE TABLE `mcc_affiliate_transaction` (
@@ -87,8 +118,13 @@ CREATE TABLE `mcc_affiliate_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_api`
+--
 
 DROP TABLE IF EXISTS `mcc_api`;
 CREATE TABLE `mcc_api` (
@@ -99,8 +135,14 @@ CREATE TABLE `mcc_api` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`api_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_api_ip`
+--
 
 DROP TABLE IF EXISTS `mcc_api_ip`;
 CREATE TABLE `mcc_api_ip` (
@@ -108,8 +150,13 @@ CREATE TABLE `mcc_api_ip` (
   `api_id` int(11) NOT NULL,
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`api_ip_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_api_session`
+--
 
 DROP TABLE IF EXISTS `mcc_api_session`;
 CREATE TABLE `mcc_api_session` (
@@ -122,8 +169,13 @@ CREATE TABLE `mcc_api_session` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`api_session_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_attribute`
+--
 
 DROP TABLE IF EXISTS `mcc_attribute`;
 CREATE TABLE `mcc_attribute` (
@@ -133,6 +185,9 @@ CREATE TABLE `mcc_attribute` (
   PRIMARY KEY (`attribute_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
+--
+-- Dumping data for table `mcc_attribute`
+--
 
 INSERT INTO `mcc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 (1, 6, 1),
@@ -147,6 +202,11 @@ INSERT INTO `mcc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`)
 (10, 3, 7),
 (11, 3, 8);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_attribute_description`
+--
 
 DROP TABLE IF EXISTS `mcc_attribute_description`;
 CREATE TABLE `mcc_attribute_description` (
@@ -154,8 +214,11 @@ CREATE TABLE `mcc_attribute_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_attribute_description`
+--
 
 INSERT INTO `mcc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 (4, 3, '测试 1'),
@@ -192,6 +255,12 @@ INSERT INTO `mcc_attribute_description` (`attribute_id`, `language_id`, `name`) 
 (1, 3, '描述'),
 (2, 3, '核数');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_attribute_group`
+--
+
 DROP TABLE IF EXISTS `mcc_attribute_group`;
 CREATE TABLE `mcc_attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -199,6 +268,9 @@ CREATE TABLE `mcc_attribute_group` (
   PRIMARY KEY (`attribute_group_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
+--
+-- Dumping data for table `mcc_attribute_group`
+--
 
 INSERT INTO `mcc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 (3, 2),
@@ -206,6 +278,11 @@ INSERT INTO `mcc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 (5, 3),
 (6, 4);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_attribute_group_description`
+--
 
 DROP TABLE IF EXISTS `mcc_attribute_group_description`;
 CREATE TABLE `mcc_attribute_group_description` (
@@ -213,8 +290,11 @@ CREATE TABLE `mcc_attribute_group_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_attribute_group_description`
+--
 
 INSERT INTO `mcc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 (3, 3, '内存'),
@@ -230,6 +310,11 @@ INSERT INTO `mcc_attribute_group_description` (`attribute_group_id`, `language_i
 (6, 1, '处理器'),
 (5, 1, '主板');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_banner`
+--
 
 DROP TABLE IF EXISTS `mcc_banner`;
 CREATE TABLE `mcc_banner` (
@@ -239,100 +324,86 @@ CREATE TABLE `mcc_banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
+--
+-- Dumping data for table `mcc_banner`
+--
 
 INSERT INTO `mcc_banner` (`banner_id`, `name`, `status`) VALUES
-(6, '惠普商品', 1),
+(6, '侧边广告图片', 1),
 (7, '首页幻灯片', 1),
-(8, '品牌/制造商', 1);
+(8, '品牌展示', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_banner_image`
+--
 
 DROP TABLE IF EXISTS `mcc_banner_image`;
 CREATE TABLE `mcc_banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(64) NOT NULL,
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=162 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=260 ;
 
+--
+-- Dumping data for table `mcc_banner_image`
+--
 
-INSERT INTO `mcc_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, `sort_order`) VALUES
-(128, 6, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/hp_banner.jpg', 0),
-(158, 8, '', 'catalog/demo/brand_5.png', 0),
-(157, 8, '', 'catalog/demo/brand_2.png', 0),
-(156, 8, '', 'catalog/demo/brand_3.png', 0),
-(155, 8, '', 'catalog/demo/brand_5.png', 0),
-(154, 8, '', 'catalog/demo/brand_4.png', 0),
-(125, 7, 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/banners/home1.jpg', 0),
-(153, 8, '', 'catalog/demo/brand_3.png', 3),
-(152, 8, '', 'catalog/demo/brand_2.png', 2),
-(151, 8, '', 'catalog/demo/brand_1.png', 1),
-(126, 7, '', 'catalog/demo/banners/home3.jpg', 0),
-(127, 7, '', 'catalog/demo/banners/home2.jpg', 0),
-(159, 8, '', 'catalog/demo/brand_4.png', 0),
-(160, 8, '', 'catalog/demo/brand_1.png', 0),
-(161, 8, '', 'catalog/demo/brand_3.png', 0);
+INSERT INTO `mcc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
+(179, 6, 3, 'HP Banner', 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/compaq_presario.jpg', 0),
+(259, 7, 3, '客廳 2', 'index.php?route=product/product&amp;path=34_43&amp;product_id=34', 'catalog/demo/slider/slide2.jpg', 2),
+(258, 7, 3, '客廳 1', 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/slider/slide1.jpg', 1),
+(178, 6, 2, 'HP Banner', 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/compaq_presario.jpg', 0),
+(252, 8, 3, 'Starbucks', '', '', 0),
+(253, 8, 3, 'Nintendo', '', '', 0),
+(251, 8, 3, 'Disney', '', '', 0),
+(248, 8, 3, 'Canon', '', '', 0),
+(249, 8, 3, 'Harley Davidson', '', '', 0),
+(250, 8, 3, 'Dell', '', '', 0),
+(247, 8, 3, 'Burger King', '', '', 0),
+(257, 7, 2, 'Living Room 2', 'index.php?route=product/product&amp;path=34_43&amp;product_id=34', 'catalog/demo/slider/slide2.jpg', 2),
+(177, 6, 1, 'HP Banner', 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/banners/banner_left.jpg', 0),
+(246, 8, 3, 'NFL', '', '', 0),
+(245, 8, 3, 'RedBull', '', '', 0),
+(243, 8, 3, 'Coca Cola', '', '', 0),
+(244, 8, 3, 'Sony', '', '', 0),
+(242, 8, 2, 'Nintendo', '', '', 0),
+(241, 8, 2, 'Starbucks', '', '', 0),
+(240, 8, 2, 'Disney', '', '', 0),
+(256, 7, 2, 'Living Room 1', 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/slider/slide1.jpg', 1),
+(237, 8, 2, 'Canon', '', '', 0),
+(238, 8, 2, 'Harley Davidson', '', '', 0),
+(239, 8, 2, 'Dell', '', '', 0),
+(255, 7, 1, '客厅 2', 'index.php?route=product/product&amp;path=34_43&amp;product_id=34', 'catalog/demo/slider/slide2.jpg', 2),
+(234, 8, 2, 'Sony', '', '', 0),
+(235, 8, 2, 'Coca Cola', '', '', 0),
+(236, 8, 2, 'Burger King', '', '', 0),
+(232, 8, 2, 'NFL', '', '', 0),
+(233, 8, 2, 'RedBull', '', '', 0),
+(231, 8, 1, 'Nintendo', '', 'catalog/demo/manufacturer/brand_1.png', 0),
+(229, 8, 1, 'Disney', '', 'catalog/demo/manufacturer/brand_2.png', 0),
+(230, 8, 1, 'Starbucks', '', 'catalog/demo/manufacturer/brand_4.png', 0),
+(227, 8, 1, 'Harley Davidson', '', 'catalog/demo/manufacturer/brand_4.png', 0),
+(228, 8, 1, 'Dell', '', 'catalog/demo/manufacturer/brand_1.png', 0),
+(254, 7, 1, '客厅 1', 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/slider/slide1.jpg', 1),
+(226, 8, 1, 'Canon', '', 'catalog/demo/manufacturer/brand_3.png', 0),
+(225, 8, 1, 'Burger King', '', 'catalog/demo/manufacturer/brand_2.png', 0),
+(224, 8, 1, 'Coca Cola', '', 'catalog/demo/manufacturer/brand_1.png', 0),
+(223, 8, 1, 'Sony', '', 'catalog/demo/manufacturer/brand_4.png', 0),
+(222, 8, 1, 'RedBull', '', 'catalog/demo/manufacturer/brand_2.png', 0),
+(221, 8, 1, 'NFL', '', 'catalog/demo/manufacturer/brand_1.png', 0);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `mcc_banner_image_description`;
-CREATE TABLE `mcc_banner_image_description` (
-  `banner_image_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `banner_id` int(11) NOT NULL,
-  `title` varchar(64) NOT NULL,
-  PRIMARY KEY (`banner_image_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
-
-INSERT INTO `mcc_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(126, 3, 7, 'MacBookAir'),
-(128, 3, 6, '惠普广告'),
-(160, 3, 8, 'Starbucks'),
-(126, 2, 7, 'MacBookAir'),
-(160, 2, 8, 'Starbucks'),
-(160, 1, 8, 'Starbucks'),
-(159, 3, 8, 'Harley Davidson'),
-(159, 2, 8, 'Harley Davidson'),
-(126, 1, 7, 'MacBookAir'),
-(128, 2, 6, '惠普广告'),
-(125, 3, 7, 'MacBookPro'),
-(159, 1, 8, 'Harley Davidson'),
-(158, 3, 8, 'Dell'),
-(158, 2, 8, 'Dell'),
-(158, 1, 8, 'Dell'),
-(157, 3, 8, 'Burger King'),
-(125, 2, 7, 'MacBookPro'),
-(128, 1, 6, '惠普广告'),
-(157, 2, 8, 'Burger King'),
-(157, 1, 8, 'Burger King'),
-(156, 3, 8, 'Canon'),
-(125, 1, 7, 'MacBookPro'),
-(156, 2, 8, 'Canon'),
-(156, 1, 8, 'Canon'),
-(155, 3, 8, 'Coca Cola'),
-(155, 2, 8, 'Coca Cola'),
-(155, 1, 8, 'Coca Cola'),
-(154, 3, 8, 'Sony'),
-(127, 1, 7, 'MacBook'),
-(127, 2, 7, 'MacBook'),
-(127, 3, 7, 'MacBook'),
-(154, 2, 8, 'Sony'),
-(154, 1, 8, 'Sony'),
-(153, 3, 8, 'RedBull'),
-(153, 2, 8, 'RedBull'),
-(153, 1, 8, 'RedBull'),
-(152, 3, 8, 'NFL'),
-(152, 2, 8, 'NFL'),
-(152, 1, 8, 'NFL'),
-(151, 3, 8, 'Disney'),
-(151, 2, 8, 'Disney'),
-(151, 1, 8, 'Disney'),
-(161, 1, 8, 'Nintendo'),
-(161, 2, 8, 'Nintendo'),
-(161, 3, 8, 'Nintendo');
-
-
+--
+-- Table structure for table `mcc_blog`
+--
 
 DROP TABLE IF EXISTS `mcc_blog`;
 CREATE TABLE `mcc_blog` (
@@ -350,26 +421,34 @@ CREATE TABLE `mcc_blog` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`blog_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
+--
+-- Dumping data for table `mcc_blog`
+--
 
 INSERT INTO `mcc_blog` (`blog_id`, `blog_category_id`, `created`, `status`, `user_id`, `hits`, `image`, `video_code`, `featured`, `keyword`, `sort_order`, `date_added`, `date_modified`) VALUES
-(1, 0, '2016-01-15', 1, 1, 22, 'catalog/demo/blog/blog-1.jpg', '0', 0, '', 1, '2016-01-13 21:25:09', '2016-03-13 14:59:00'),
-(2, 0, '2016-01-13', 1, 1, 59, 'catalog/demo/blog/blog-2.jpg', '', 0, '', 2, '2016-01-14 09:36:37', '2016-03-13 16:26:25'),
-(3, 0, '2016-01-17', 1, 1, 13, 'catalog/demo/blog/blog-3.jpg', '', 0, '', 1, '2016-01-19 14:00:48', '2016-03-13 16:29:40'),
-(4, 0, '2016-01-18', 1, 1, 6, 'catalog/demo/blog/blog-4.png', '', 0, '', 1, '2016-01-19 14:01:28', '2016-03-13 16:30:30'),
-(5, 0, '2016-01-14', 1, 1, 0, 'catalog/demo/blog/blog-5.jpg', '', 0, '', 1, '2016-01-19 14:02:13', '2016-03-13 16:29:59'),
-(6, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-6.jpg', '', 0, '', 1, '2016-03-13 15:31:33', '2016-03-13 16:29:10'),
-(7, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-7.jpg', '', 0, '', 1, '2016-03-13 15:34:49', '2016-03-13 16:28:08'),
-(8, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-8.jpg', '', 0, '', 1, '2016-03-13 15:42:11', '2016-03-13 16:28:23'),
-(9, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-9.jpeg', '', 0, '', 1, '2016-03-13 15:45:35', '2016-03-13 16:30:13'),
-(10, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-10.jpg', '', 0, '', 1, '2016-03-13 15:47:42', '2016-03-13 16:27:53'),
-(11, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-11.jpg', '', 0, '', 1, '2016-03-13 15:50:51', '2016-03-13 16:28:55'),
-(12, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-12.jpg', '', 0, '', 1, '2016-03-13 15:56:30', '2016-03-13 16:27:38'),
-(13, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-13.jpg', '', 0, '', 1, '2016-03-13 16:02:28', '2016-03-13 16:29:23'),
-(14, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-14.jpg', '', 0, '', 1, '2016-03-13 16:06:05', '2016-03-13 16:28:42'),
-(15, 0, '2016-03-13', 1, 1, 0, 'catalog/demo/blog/blog-15.jpg', '', 0, '', 1, '2016-03-13 16:08:21', '2016-03-13 16:27:26');
+(1, 0, '2016-01-15', 1, 2, 32, 'catalog/demo/blog/blog-1.jpg', '0', 0, '', 1, '2016-01-13 21:25:09', '2016-03-13 14:59:00'),
+(2, 0, '2016-01-13', 1, 2, 68, 'catalog/demo/blog/blog-2.jpg', '', 0, '', 2, '2016-01-14 09:36:37', '2016-08-22 12:07:16'),
+(3, 0, '2016-01-17', 1, 2, 16, 'catalog/demo/blog/blog-3.jpg', '', 0, '', 1, '2016-01-19 14:00:48', '2016-03-13 16:29:40'),
+(4, 0, '2016-01-18', 1, 2, 14, 'catalog/demo/blog/blog-4.jpg', '', 0, '', 1, '2016-01-19 14:01:28', '2016-08-10 15:43:19'),
+(5, 0, '2016-01-14', 1, 2, 5, 'catalog/demo/blog/blog-5.jpg', '', 0, '', 1, '2016-01-19 14:02:13', '2016-03-13 16:29:59'),
+(6, 0, '2016-03-13', 1, 2, 4, 'catalog/demo/blog/blog-6.jpg', '', 0, '', 1, '2016-03-13 15:31:33', '2016-03-13 16:29:10'),
+(7, 0, '2016-03-13', 1, 2, 3, 'catalog/demo/blog/blog-7.jpg', '', 0, '', 1, '2016-03-13 15:34:49', '2016-03-13 16:28:08'),
+(8, 0, '2016-03-13', 1, 2, 4, 'catalog/demo/blog/blog-8.jpg', '', 0, '', 1, '2016-03-13 15:42:11', '2016-03-13 16:28:23'),
+(9, 0, '2016-03-13', 1, 2, 4, 'catalog/demo/blog/blog-9.jpg', '', 0, '', 1, '2016-03-13 15:45:35', '2016-03-13 16:30:13'),
+(10, 0, '2016-03-13', 1, 2, 10, 'catalog/demo/blog/blog-10.jpg', '', 0, '', 1, '2016-03-13 15:47:42', '2016-03-13 16:27:53'),
+(11, 0, '2016-03-13', 1, 2, 4, 'catalog/demo/blog/blog-11.jpg', '', 0, '', 1, '2016-03-13 15:50:51', '2016-03-13 16:28:55'),
+(12, 0, '2016-03-13', 1, 2, 8, 'catalog/demo/blog/blog-12.jpg', '', 0, '', 1, '2016-03-13 15:56:30', '2016-03-13 16:27:38'),
+(13, 0, '2016-03-13', 1, 2, 7, 'catalog/demo/blog/blog-13.jpg', '', 0, '', 1, '2016-03-13 16:02:28', '2016-03-13 16:29:23'),
+(14, 0, '2016-03-13', 1, 2, 9, 'catalog/demo/blog/blog-14.jpg', '', 0, '', 1, '2016-03-13 16:06:05', '2016-03-13 16:28:42'),
+(15, 0, '2016-03-13', 1, 2, 15, 'catalog/demo/blog/blog-15.jpg', '', 0, '', 1, '2016-03-13 16:08:21', '2016-08-22 12:17:15');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_category`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_category`;
 CREATE TABLE `mcc_blog_category` (
@@ -404,8 +483,11 @@ CREATE TABLE `mcc_blog_category` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`blog_category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
+--
+-- Dumping data for table `mcc_blog_category`
+--
 
 INSERT INTO `mcc_blog_category` (`blog_category_id`, `image`, `parent_id`, `is_group`, `width`, `submenu_width`, `colum_width`, `submenu_colum_width`, `item`, `colums`, `type`, `is_content`, `show_title`, `level_depth`, `published`, `store_id`, `position`, `show_sub`, `url`, `target`, `privacy`, `position_type`, `menu_class`, `left`, `right`, `keyword`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (1, '', 0, 2, NULL, NULL, NULL, NULL, NULL, '1', '', 2, 1, 0, 1, 0, 0, 0, NULL, NULL, 0, 'top', NULL, 0, 0, '', 0, 1, '2016-01-13 21:18:53', '2016-01-13 21:18:53'),
@@ -415,6 +497,11 @@ INSERT INTO `mcc_blog_category` (`blog_category_id`, `image`, `parent_id`, `is_g
 (5, '', 1, 2, NULL, NULL, NULL, NULL, NULL, '1', '', 2, 1, 0, 1, 0, 0, 0, NULL, NULL, 0, 'top', NULL, 0, 0, '', 0, 1, '2016-01-21 11:32:22', '2016-01-21 11:32:22'),
 (6, '', 0, 2, NULL, NULL, NULL, NULL, NULL, '1', '', 2, 1, 0, 1, 0, 0, 0, NULL, NULL, 0, 'top', NULL, 0, 0, '', 0, 1, '2016-01-21 11:33:00', '2016-01-21 11:33:00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_category_description`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_category_description`;
 CREATE TABLE `mcc_blog_category_description` (
@@ -427,8 +514,11 @@ CREATE TABLE `mcc_blog_category_description` (
   `meta_description` text NOT NULL,
   PRIMARY KEY (`blog_category_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_category_description`
+--
 
 INSERT INTO `mcc_blog_category_description` (`blog_category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_keyword`, `meta_description`) VALUES
 (1, 1, '博客分类一', '&lt;p&gt;博客分类一&lt;br&gt;&lt;/p&gt;', '博客分类一', '博客分类一', '博客分类一'),
@@ -450,6 +540,11 @@ INSERT INTO `mcc_blog_category_description` (`blog_category_id`, `language_id`, 
 (6, 2, '博客分类三', '&lt;p&gt;博客分类三&lt;br&gt;&lt;/p&gt;', '博客分类三', '博客分类三', '博客分类三'),
 (6, 3, '博客分类三', '&lt;p&gt;博客分类三&lt;br&gt;&lt;/p&gt;', '博客分类三', '博客分类三', '博客分类三');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_category_path`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_category_path`;
 CREATE TABLE `mcc_blog_category_path` (
@@ -458,6 +553,10 @@ CREATE TABLE `mcc_blog_category_path` (
   `level` int(11) NOT NULL,
   PRIMARY KEY (`blog_category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `mcc_blog_category_path`
+--
 
 INSERT INTO `mcc_blog_category_path` (`blog_category_id`, `path_id`, `level`) VALUES
 (1, 1, 0),
@@ -471,6 +570,11 @@ INSERT INTO `mcc_blog_category_path` (`blog_category_id`, `path_id`, `level`) VA
 (5, 5, 1),
 (6, 6, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_category_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_category_to_layout`;
 CREATE TABLE `mcc_blog_category_to_layout` (
@@ -480,6 +584,9 @@ CREATE TABLE `mcc_blog_category_to_layout` (
   PRIMARY KEY (`blog_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_category_to_layout`
+--
 
 INSERT INTO `mcc_blog_category_to_layout` (`blog_category_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
@@ -489,6 +596,11 @@ INSERT INTO `mcc_blog_category_to_layout` (`blog_category_id`, `store_id`, `layo
 (5, 0, 0),
 (6, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_category_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_category_to_store`;
 CREATE TABLE `mcc_blog_category_to_store` (
@@ -497,6 +609,9 @@ CREATE TABLE `mcc_blog_category_to_store` (
   PRIMARY KEY (`blog_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_category_to_store`
+--
 
 INSERT INTO `mcc_blog_category_to_store` (`blog_category_id`, `store_id`) VALUES
 (1, 0),
@@ -506,6 +621,11 @@ INSERT INTO `mcc_blog_category_to_store` (`blog_category_id`, `store_id`) VALUES
 (5, 0),
 (6, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_comment`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_comment`;
 CREATE TABLE `mcc_blog_comment` (
@@ -520,8 +640,11 @@ CREATE TABLE `mcc_blog_comment` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`blog_comment_id`),
   KEY `FK_blog_comment` (`blog_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
+--
+-- Dumping data for table `mcc_blog_comment`
+--
 
 INSERT INTO `mcc_blog_comment` (`blog_comment_id`, `blog_id`, `customer_id`, `author`, `text`, `status`, `email`, `date_added`, `date_modified`) VALUES
 (4, 2, 0, 'yyy', 'hhhh', 1, '', '2016-01-27 09:02:37', '0000-00-00 00:00:00'),
@@ -542,8 +665,26 @@ INSERT INTO `mcc_blog_comment` (`blog_comment_id`, `blog_id`, `customer_id`, `au
 (18, 1, 0, 'testone', 'tesing now', 1, '', '2016-02-09 20:17:53', '0000-00-00 00:00:00'),
 (19, 2, 0, 'tesdfdfd', 'dsfsdfsfsd', 1, '', '2016-02-13 14:17:50', '0000-00-00 00:00:00'),
 (20, 1, 0, 'testtwo', 'testing ok ', 1, '', '2016-02-13 14:51:27', '0000-00-00 00:00:00'),
-(21, 1, 0, 'testing yang', 'testing now', 1, '', '2016-03-13 16:32:38', '0000-00-00 00:00:00');
+(21, 1, 0, 'testing yang', 'testing now', 1, '', '2016-03-13 16:32:38', '0000-00-00 00:00:00'),
+(22, 1, 2, '测试一', 'Testing by Yang', 0, '', '2016-08-10 19:19:30', '0000-00-00 00:00:00'),
+(23, 1, 2, '测试一', 'Testing by Yang', 0, '', '2016-08-10 19:19:46', '0000-00-00 00:00:00'),
+(24, 1, 2, '测试一', 'Testing by Yang 2016', 0, '', '2016-08-10 19:25:17', '0000-00-00 00:00:00'),
+(25, 1, 2, '测试一', 'Testing by Yang 2016', 0, '', '2016-08-10 19:27:11', '0000-00-00 00:00:00'),
+(26, 1, 2, '测试一', 'Testing by Yang 2016', 0, '', '2016-08-10 19:35:37', '0000-00-00 00:00:00'),
+(27, 1, 2, '测试一', 'Testing by Yang 2016', 1, '', '2016-08-10 19:37:15', '2016-08-10 19:38:47'),
+(28, 1, 2, '测试一', 'ceshiing', 1, '', '2016-08-10 19:39:38', '0000-00-00 00:00:00'),
+(29, 4, 2, '测试一', '测试登陆才可以评论', 1, '', '2016-08-10 19:40:43', '0000-00-00 00:00:00'),
+(30, 15, 1, '杨兆锋', '测试中评论', 1, '', '2016-08-22 14:45:07', '0000-00-00 00:00:00'),
+(31, 15, 1, 'testone', '再次测试', 1, '', '2016-08-22 14:46:49', '2016-08-22 14:47:03'),
+(32, 10, 6, '11111', 'mmmmm', 1, '', '2016-08-26 23:21:50', '0000-00-00 00:00:00'),
+(33, 15, 1, '杨兆锋', '测试邮件发送内容', 1, '', '2016-09-02 14:58:31', '0000-00-00 00:00:00'),
+(34, 15, 1, '杨兆锋', '再次测试邮件发送标题', 1, '', '2016-09-02 15:02:18', '0000-00-00 00:00:00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_description`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_description`;
 CREATE TABLE `mcc_blog_description` (
@@ -556,14 +697,17 @@ CREATE TABLE `mcc_blog_description` (
   `meta_keyword` varchar(255) NOT NULL,
   `meta_description` varchar(255) NOT NULL,
   `tag` text NOT NULL
-) ENGINE=MyISAM DEFAULT COLLATE=utf8_general_ci CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_description`
+--
 
 INSERT INTO `mcc_blog_description` (`blog_id`, `language_id`, `title`, `brief`, `description`, `meta_title`, `meta_keyword`, `meta_description`, `tag`) VALUES
 (1, 2, '神在每一时刻、与每一个人说话', '我跟每个人说话，一向就是如此。问题不是在我跟谁说，而是谁在听？就拿基督为例，为什么有一些人，仿佛比别的人更能听到神的讯息？那因为有些人愿意真正倾听。他们愿意听，纵使当讯息看起来似乎是可怕，或疯狂，或根本就错误时，他们仍愿对这样的通讯保持开放的心态。 除非你不再告诉我你的真理，否则我无法告诉你我的真理。所有的人都是特别的，而所有的片刻也都珍贵如黄金。并没有哪一个人或哪一个时刻比其他的更特别。', '&lt;p&gt;我跟每个人说话，一向就是如此。问题不是在我跟谁说，而是谁在听？就拿基督为例，为什么有一些人，仿佛比别的人更能听到神的讯息？那因为有些人愿意真正倾听。他们愿意听，纵使当讯息看起来似乎是可怕，或疯狂，或根本就错误时，他们仍愿对这样的通讯保持开放的心态。 除非你不再告诉我你的真理，否则我无法告诉你我的真理。所有的人都是特别的，而所有的片刻也都珍贵如黄金。并没有哪一个人或哪一个时刻比其他的更特别。&lt;br&gt;&lt;br&gt;让我们以沟通这个字来取代说话这个字。沟通是个好得多、充实得多、正确得多的字眼。我邀请你来参加与神的一种新型的沟通。一个双向沟通。事实上，是你邀请了我。我最常用的沟通方式是透过感受（又译为“感觉”）。感受是灵魂的语言。我也以思维来沟通。我最强而有力的讯息是体验，但这个你们也忽略了。你们尤其是忽略了这个。而最后，如果感受、思维及体验全都失效时，我才用语言。它们最容易招致错误的诠释，最容易被误解。然而，最大的讽刺是，你们全都将神的话语视为如此重要，反而轻视体验。倾听你的感受。倾听你最高的思维。倾听你的体验。一旦有任何与你的老师们告诉你的，或与你在书里读到的话不同时，就忘掉那些话。话语是最不可靠的真理供应商。&lt;/p&gt;', 'MyCnCart - 神在每一时刻、与每一个人说话', 'MyCnCart - 神在每一时刻、与每一个人说话', 'MyCnCart - 神在每一时刻、与每一个人说话', '1,2,3'),
 (1, 1, '神在每一时刻、与每一个人说话', '我跟每个人说话，一向就是如此。问题不是在我跟谁说，而是谁在听？就拿基督为例，为什么有一些人，仿佛比别的人更能听到神的讯息？那因为有些人愿意真正倾听。他们愿意听，纵使当讯息看起来似乎是可怕，或疯狂，或根本就错误时，他们仍愿对这样的通讯保持开放的心态。 除非你不再告诉我你的真理，否则我无法告诉你我的真理。所有的人都是特别的，而所有的片刻也都珍贵如黄金。并没有哪一个人或哪一个时刻比其他的更特别。', '&lt;p&gt;我跟每个人说话，一向就是如此。问题不是在我跟谁说，而是谁在听？就拿基督为例，为什么有一些人，仿佛比别的人更能听到神的讯息？那因为有些人愿意真正倾听。他们愿意听，纵使当讯息看起来似乎是可怕，或疯狂，或根本就错误时，他们仍愿对这样的通讯保持开放的心态。 除非你不再告诉我你的真理，否则我无法告诉你我的真理。所有的人都是特别的，而所有的片刻也都珍贵如黄金。并没有哪一个人或哪一个时刻比其他的更特别。&lt;br&gt;&lt;br&gt;让我们以沟通这个字来取代说话这个字。沟通是个好得多、充实得多、正确得多的字眼。我邀请你来参加与神的一种新型的沟通。一个双向沟通。事实上，是你邀请了我。我最常用的沟通方式是透过感受（又译为“感觉”）。感受是灵魂的语言。我也以思维来沟通。我最强而有力的讯息是体验，但这个你们也忽略了。你们尤其是忽略了这个。而最后，如果感受、思维及体验全都失效时，我才用语言。它们最容易招致错误的诠释，最容易被误解。然而，最大的讽刺是，你们全都将神的话语视为如此重要，反而轻视体验。倾听你的感受。倾听你最高的思维。倾听你的体验。一旦有任何与你的老师们告诉你的，或与你在书里读到的话不同时，就忘掉那些话。话语是最不可靠的真理供应商。&lt;/p&gt;', 'MyCnCart - 神在每一时刻、与每一个人说话', 'MyCnCart - 神在每一时刻、与每一个人说话', 'MyCnCart - 神在每一时刻、与每一个人说话', '1,2,3'),
-(2, 2, '你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。', '&lt;p&gt;神以神的肖像创造了你们。透过神给你们的力量，你们又创造了其余的。神创造了如你们所知的生命过程和生命本身。但是神也给了你们自由选择权，你们可\r\n以随心所欲的去过生活。以这种说法来看，你对自己的意愿也即是神对你的意愿。你就以你自己的方式过你的人生，我在这件事上并没有什么偏好。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;神\r\n的计划，是让你们去创造任何东西――每样东西――不论你们想要的是什么东西。在这种自由里，存在着神之为神的体验――而就是为了这个体验，我才创造你们，\r\n以及生命本身。（神赋予了人选择的自由、创造的自由，人的自由选择、创造，就是一种上帝的状态。）我什么都不轻视。神在悲伤和欢笑里，在苦与甜里。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '2,3,4'),
 (2, 3, '你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。', '&lt;p&gt;神以神的肖像创造了你们。透过神给你们的力量，你们又创造了其余的。神创造了如你们所知的生命过程和生命本身。但是神也给了你们自由选择权，你们可\r\n以随心所欲的去过生活。以这种说法来看，你对自己的意愿也即是神对你的意愿。你就以你自己的方式过你的人生，我在这件事上并没有什么偏好。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;神\r\n的计划，是让你们去创造任何东西――每样东西――不论你们想要的是什么东西。在这种自由里，存在着神之为神的体验――而就是为了这个体验，我才创造你们，\r\n以及生命本身。（神赋予了人选择的自由、创造的自由，人的自由选择、创造，就是一种上帝的状态。）我什么都不轻视。神在悲伤和欢笑里，在苦与甜里。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '2,3,4'),
+(2, 2, '你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。', '&lt;p&gt;神以神的肖像创造了你们。透过神给你们的力量，你们又创造了其余的。神创造了如你们所知的生命过程和生命本身。但是神也给了你们自由选择权，你们可\r\n以随心所欲的去过生活。以这种说法来看，你对自己的意愿也即是神对你的意愿。你就以你自己的方式过你的人生，我在这件事上并没有什么偏好。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;神\r\n的计划，是让你们去创造任何东西――每样东西――不论你们想要的是什么东西。在这种自由里，存在着神之为神的体验――而就是为了这个体验，我才创造你们，\r\n以及生命本身。（神赋予了人选择的自由、创造的自由，人的自由选择、创造，就是一种上帝的状态。）我什么都不轻视。神在悲伤和欢笑里，在苦与甜里。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;在神的眼里，每件事都“可以接受”。它们是生命，而生命就是礼物；无法形容的宝藏；神圣中的神圣。每件事背后都有一个神圣的目的――因而在每个东西里都有一个神圣的存在。我即生命，因为我是生命所是。其每个面向都有一个神圣的目的。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', 'MyCnCart - 你对自己的意愿也即是神对你的意愿，每件事都是神圣的存在', '2,3,4'),
 (3, 2, '生命并非一个发现的过程，而是一个创造的过程', '你们会在这儿，为的是忆起，并且重新创造你是谁。', '&lt;p&gt;生命只有一个目的，那就是让你和所有活着的东西体验最完满的荣耀。这个目的的神奇是在于它是永无结束的。一个结束是一个局限，而神的目的没有这样的\r\n界限。一个最深的秘密就是：生命并非一个发现的过程，而是一个创造的过程。你并不是在发现你自己，而是在重新创造你自己。所以，不（仅）要去弄清你是谁，\r\n而（更）要去确定你想成为谁。&lt;/p&gt;&lt;p&gt;你们会在这儿，为的是忆起，并且重新创造你是谁。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', '3,4,5'),
 (3, 3, '生命并非一个发现的过程，而是一个创造的过程', '你们会在这儿，为的是忆起，并且重新创造你是谁。', '&lt;p&gt;生命只有一个目的，那就是让你和所有活着的东西体验最完满的荣耀。这个目的的神奇是在于它是永无结束的。一个结束是一个局限，而神的目的没有这样的\r\n界限。一个最深的秘密就是：生命并非一个发现的过程，而是一个创造的过程。你并不是在发现你自己，而是在重新创造你自己。所以，不（仅）要去弄清你是谁，\r\n而（更）要去确定你想成为谁。&lt;/p&gt;&lt;p&gt;你们会在这儿，为的是忆起，并且重新创造你是谁。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', 'MyCnCart - 生命并非一个发现的过程，而是一个创造的过程', '3,4,5'),
 (4, 3, '神创造了相对性，你藉由你不是的东西来界定你自己是什么', '就最终的逻辑而言，就是除非你面对了你不是的东西，否则你无法经验自己以为你是的东西。这乃是相对论及所有具体生命的目的。你得藉由你不是的东西来界定你自己是什么。', '&lt;p&gt;我是一切东西（All Things）――可见与不可见的。一切万有（All That Is）无法认识他自己――因为一切万有是所有的一切，而没有任何其他的东西。因此，一切万有……是不在的。（于是，为了认识自己，）神创造了相对性――是神给他自己的最大礼物。因此，关系就是神给你们的最大礼物，这主题后面会再详加讨论。我创造你们――我的心灵儿女――的目的，是为了要体认我自己为神。除了经由你们，我没有其他办法做到这一点。所以可以说（并且也已说过许多次）我要你们做到的是：你们该体认到自己为我。这看似如此令人惊异的简单，然而却变得非常复杂――因为你们只有一个方法得以体认你们自己为我――那就是，首先，你们要先体认自己不是我。就最终的逻辑而言，就是除非你面对了你不是的东西，否则你无法经验自己以为你是的东西。这乃是相对论及所有具体生命的目的。你得藉由你不是的东西来界定你自己是什么。&lt;/p&gt;', 'MyCnCart  - 神创造了相对性，你藉由你不是的东西来界定你自己是什么', 'MyCnCart  - 神创造了相对性，你藉由你不是的东西来界定你自己是什么', 'MyCnCart  - 神创造了相对性，你藉由你不是的东西来界定你自己是什么', '4,5,6'),
@@ -607,6 +751,11 @@ INSERT INTO `mcc_blog_description` (`blog_id`, `language_id`, `title`, `brief`, 
 (15, 2, '你是神的身体', '现在我要解释给你听那终极的神秘：你们和我的精确而真实的关系。你们是我的身体。正如你的身体相对于你的心智和灵魂的关系，你们相对于我的心智和灵魂的关系也是一样的。所以：我所经验的每样事，是我透过你们来经验的。正如你的身心和灵是一体的，我的也是一样。', '&lt;p&gt;现在我要解释给你听那终极的神秘：你们和我的精确而真实的关系。你们是我的身体。正如你的身体相对于你的心智和灵魂的关系，你们相对于我的心智和灵魂的关系也是一样的。所以：我所经验的每样事，是我透过你们来经验的。正如你的身心和灵是一体的，我的也是一样。&lt;br&gt;&lt;/p&gt;', 'MyCnCart  - 你是神的身体', 'MyCnCart  - 你是神的身体', 'MyCnCart  - 你是神的身体', ''),
 (15, 1, '你是神的身体', '现在我要解释给你听那终极的神秘：你们和我的精确而真实的关系。你们是我的身体。正如你的身体相对于你的心智和灵魂的关系，你们相对于我的心智和灵魂的关系也是一样的。所以：我所经验的每样事，是我透过你们来经验的。正如你的身心和灵是一体的，我的也是一样。', '&lt;p&gt;现在我要解释给你听那终极的神秘：你们和我的精确而真实的关系。你们是我的身体。正如你的身体相对于你的心智和灵魂的关系，你们相对于我的心智和灵魂的关系也是一样的。所以：我所经验的每样事，是我透过你们来经验的。正如你的身心和灵是一体的，我的也是一样。&lt;br&gt;&lt;/p&gt;', 'MyCnCart  - 你是神的身体', 'MyCnCart  - 你是神的身体', 'MyCnCart  - 你是神的身体', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_product`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_product`;
 CREATE TABLE `mcc_blog_product` (
@@ -615,14 +764,25 @@ CREATE TABLE `mcc_blog_product` (
   UNIQUE KEY `blog_id` (`blog_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_product`
+--
 
 INSERT INTO `mcc_blog_product` (`blog_id`, `related_id`) VALUES
 (1, 28),
 (1, 41),
 (2, 48),
 (3, 41),
-(3, 47);
+(3, 47),
+(15, 29),
+(15, 30),
+(15, 31);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_related`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_related`;
 CREATE TABLE `mcc_blog_related` (
@@ -631,6 +791,9 @@ CREATE TABLE `mcc_blog_related` (
   PRIMARY KEY (`blog_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_related`
+--
 
 INSERT INTO `mcc_blog_related` (`blog_id`, `related_id`) VALUES
 (1, 2),
@@ -640,6 +803,11 @@ INSERT INTO `mcc_blog_related` (`blog_id`, `related_id`) VALUES
 (3, 3),
 (3, 5);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_to_blog_category`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_to_blog_category`;
 CREATE TABLE `mcc_blog_to_blog_category` (
@@ -649,6 +817,9 @@ CREATE TABLE `mcc_blog_to_blog_category` (
   KEY `blog_category_id` (`blog_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_to_blog_category`
+--
 
 INSERT INTO `mcc_blog_to_blog_category` (`blog_id`, `blog_category_id`) VALUES
 (1, 1),
@@ -674,6 +845,11 @@ INSERT INTO `mcc_blog_to_blog_category` (`blog_id`, `blog_category_id`) VALUES
 (14, 1),
 (15, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_to_layout`;
 CREATE TABLE `mcc_blog_to_layout` (
@@ -683,6 +859,9 @@ CREATE TABLE `mcc_blog_to_layout` (
   PRIMARY KEY (`blog_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_to_layout`
+--
 
 INSERT INTO `mcc_blog_to_layout` (`blog_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
@@ -701,6 +880,11 @@ INSERT INTO `mcc_blog_to_layout` (`blog_id`, `store_id`, `layout_id`) VALUES
 (14, 0, 0),
 (15, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_blog_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_blog_to_store`;
 CREATE TABLE `mcc_blog_to_store` (
@@ -709,6 +893,9 @@ CREATE TABLE `mcc_blog_to_store` (
   PRIMARY KEY (`blog_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_blog_to_store`
+--
 
 INSERT INTO `mcc_blog_to_store` (`blog_id`, `store_id`) VALUES
 (1, 0),
@@ -727,10 +914,16 @@ INSERT INTO `mcc_blog_to_store` (`blog_id`, `store_id`) VALUES
 (14, 0),
 (15, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_cart`
+--
 
 DROP TABLE IF EXISTS `mcc_cart`;
 CREATE TABLE `mcc_cart` (
   `cart_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `api_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `session_id` varchar(32) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -739,9 +932,22 @@ CREATE TABLE `mcc_cart` (
   `quantity` int(5) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`cart_id`),
-  KEY `cart_id` (`customer_id`,`session_id`,`product_id`,`recurring_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `mcc_cart`
+--
+
+INSERT INTO `mcc_cart` (`cart_id`, `api_id`, `customer_id`, `session_id`, `product_id`, `recurring_id`, `option`, `quantity`, `date_added`) VALUES
+(1, 0, 0, '1df7a68b69a171b1bd6d79ae3a', 40, 0, '[]', 2, '2016-09-02 21:34:11'),
+(2, 0, 0, '1df7a68b69a171b1bd6d79ae3a', 43, 0, '[]', 1, '2016-09-02 21:34:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_category`
+--
 
 DROP TABLE IF EXISTS `mcc_category`;
 CREATE TABLE `mcc_category` (
@@ -754,53 +960,54 @@ CREATE TABLE `mcc_category` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
-  `sent` tinyint(1) NOT NULL,
-  `weidian_category_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
+--
+-- Dumping data for table `mcc_category`
+--
 
-INSERT INTO `mcc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`, `sent`, `weidian_category_id`) VALUES
-(33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2015-04-11 15:01:10', 0, 0),
-(51, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:38', '2015-06-12 20:10:28', 0, 0),
-(50, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:23', '2015-06-12 20:10:26', 0, 0),
-(49, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:04', '2015-06-12 20:10:24', 0, 0),
-(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2015-06-12 20:10:48', 0, 0),
-(42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2015-06-12 20:10:50', 0, 0),
-(43, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:49', '2015-06-12 20:10:12', 0, 0),
-(44, '', 34, 0, 0, 0, 1, '2010-09-21 15:39:21', '2015-06-12 20:10:15', 0, 0),
-(47, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:16', '2015-06-12 20:10:19', 0, 0),
-(48, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:33', '2015-06-12 20:10:21', 0, 0),
-(34, 'catalog/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2015-04-11 15:26:15', 0, 0),
-(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2015-06-12 20:11:19', 0, 0),
-(46, 'catalog/demo/apple.jpg', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2015-06-12 20:11:21', 0, 0),
-(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2015-04-11 15:12:18', 0, 0),
-(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2015-04-11 15:12:47', 0, 0),
-(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2015-06-12 20:11:02', 0, 0),
-(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2015-06-12 20:11:09', 0, 0),
-(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2015-06-12 20:10:57', 0, 0),
-(31, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:24', '2015-04-11 15:02:18', 0, 0),
-(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2015-04-11 15:02:40', 0, 0),
-(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2015-04-11 15:03:32', 0, 0),
-(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2015-04-11 15:04:10', 0, 0),
-(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2015-06-12 20:10:42', 0, 0),
-(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2015-06-12 20:10:40', 0, 0),
-(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2015-06-12 20:10:43', 0, 0),
-(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2015-06-12 20:10:45', 0, 0),
-(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2015-06-12 20:11:11', 0, 0),
-(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2015-06-12 20:11:23', 0, 0),
-(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2015-06-12 20:11:10', 0, 0),
-(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2015-06-12 20:10:56', 0, 0),
-(18, 'catalog/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2015-06-12 20:11:17', 0, 0),
-(20, 'catalog/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2015-06-12 20:11:13', 0, 0),
-(52, '', 34, 0, 0, 0, 1, '2010-11-07 11:16:09', '2015-06-12 20:10:30', 0, 0),
-(53, '', 34, 0, 0, 0, 1, '2010-11-07 11:28:53', '2015-06-12 20:10:34', 0, 0),
-(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2015-06-12 20:10:35', 0, 0),
-(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2015-06-12 20:10:37', 0, 0),
-(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2015-06-12 20:10:38', 0, 0),
-(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2015-06-12 20:10:32', 0, 0);
+INSERT INTO `mcc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
+(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2016-08-04 12:33:28'),
+(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2016-08-04 12:30:08'),
+(20, 'catalog/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2016-08-04 12:28:28'),
+(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2016-08-04 12:54:23'),
+(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2016-08-04 12:35:01'),
+(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2016-08-04 12:31:46'),
+(29, '', 32, 0, 0, 1, 1, '2009-02-02 13:11:37', '2016-08-04 12:47:16'),
+(30, '', 32, 0, 0, 1, 1, '2009-02-02 13:11:59', '2016-08-04 12:44:42'),
+(31, '', 32, 0, 0, 1, 1, '2009-02-03 14:17:24', '2016-08-04 12:43:10'),
+(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2016-08-04 12:36:03'),
+(34, 'catalog/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2016-08-13 14:13:13'),
+(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2016-08-04 12:49:23'),
+(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2016-08-04 12:50:26'),
+(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2011-04-22 01:55:08'),
+(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2010-09-18 14:03:51'),
+(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2011-04-22 01:55:20'),
+(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2010-09-18 14:05:36'),
+(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2011-04-22 01:55:30'),
+(42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2010-11-07 20:31:04'),
+(43, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:49', '2011-04-22 01:55:40'),
+(44, '', 34, 0, 0, 0, 1, '2010-09-21 15:39:21', '2010-11-07 20:30:55'),
+(47, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:16', '2010-11-07 11:13:16'),
+(48, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:33', '2010-11-07 11:13:33'),
+(49, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:04', '2010-11-07 11:14:04'),
+(50, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:23', '2011-04-22 01:16:01'),
+(51, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:38', '2011-04-22 01:16:13'),
+(52, '', 34, 0, 0, 0, 1, '2010-11-07 11:16:09', '2011-04-22 01:54:57'),
+(53, '', 34, 0, 0, 0, 1, '2010-11-07 11:28:53', '2011-04-22 01:14:36'),
+(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2011-04-22 01:16:50'),
+(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
+(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
+(57, '', 28, 0, 0, 3, 1, '2011-04-26 08:53:16', '2016-08-04 12:52:21'),
+(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_category_description`
+--
 
 DROP TABLE IF EXISTS `mcc_category_description`;
 CREATE TABLE `mcc_category_description` (
@@ -813,134 +1020,131 @@ CREATE TABLE `mcc_category_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`category_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_category_description`
+--
 
 INSERT INTO `mcc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(57, 1, '平板', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '平板', '', ''),
-(57, 2, 'Tablets', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Tablets', '', ''),
-(57, 3, '平板', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '平板', '', ''),
-(17, 1, '软件', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '软件', '', ''),
-(17, 2, 'Software', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Software', '', ''),
-(17, 3, '软件', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '软件', '', ''),
-(24, 1, '手机 &amp; PDAs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '手机 &amp; PDAs', '', ''),
-(24, 2, 'Phones &amp; PDAs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Phones &amp; PDAs', '', ''),
-(24, 3, '手机 &amp; PDAs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '手机 &amp; PDAs', '', ''),
-(33, 1, '相机', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '相机', '', ''),
-(33, 2, 'Cameras', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Cameras', '', ''),
-(33, 3, '相机', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '相机', '', ''),
-(34, 1, 'MP3 播放器', '&lt;span id=&quot;result_box&quot; class=&quot;&quot; lang=&quot;zh-CN&quot;&gt;&lt;span&gt;本店&lt;/span&gt;&lt;span&gt;MP3播放器为世界著名品牌。&lt;/span&gt;&lt;span class=&quot;&quot;&gt;&lt;/span&gt;&lt;/span&gt;', 'MP3 播放器', '', ''),
-(55, 2, 'test 23', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 23', '', ''),
-(55, 3, '测试 23', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 23', '', ''),
-(55, 1, '测试 23', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 23', '', ''),
-(52, 3, '测试 20', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 20', '', ''),
-(53, 1, '测试 21', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 21', '', ''),
-(53, 2, 'test 21', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 21', '', ''),
-(53, 3, '测试 21', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 21', '', ''),
-(54, 1, '测试 22', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 22', '', ''),
-(54, 2, 'test 22', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 22', '', ''),
-(54, 3, '测试 22', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 22', '', ''),
-(48, 2, 'test 16', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 16', '', ''),
-(48, 3, '测试 16', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 16', '', ''),
-(49, 1, '测试 17', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 17', '', ''),
-(49, 2, 'test 17', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 17', '', ''),
-(49, 3, '测试 17', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 17', '', ''),
-(50, 1, '测试 18', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 18', '', ''),
-(50, 2, 'test 18', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 18', '', ''),
-(50, 3, '测试 18', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 18', '', ''),
-(51, 1, '测试 19', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 19', '', ''),
-(51, 2, 'test 19', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 19', '', ''),
-(51, 3, '测试 19', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 19', '', ''),
-(52, 1, '测试 20', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 20', '', ''),
-(52, 2, 'test 20', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 20', '', ''),
-(38, 2, 'test 4', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 4', '', ''),
-(38, 1, '测试 4', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 4', '', ''),
-(46, 1, '苹果Macs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '苹果Macs', '', ''),
-(45, 3, '微软', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '微软', '', ''),
-(45, 2, 'Windows', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Windows', '', ''),
-(45, 1, '微软', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '微软', '', ''),
-(34, 3, 'MP3 播放器', '&lt;span id=&quot;result_box&quot; class=&quot;&quot; lang=&quot;zh-CN&quot;&gt;&lt;span&gt;本店&lt;/span&gt;&lt;span&gt;MP3播放器为世界著名品牌。&lt;/span&gt;&lt;span class=&quot;&quot;&gt;&lt;/span&gt;&lt;/span&gt;', 'MP3 播放器', '', ''),
-(34, 2, 'MP3 Players', 'Shop Laptop feature only the best laptop deals on the market. By \ncomparing laptop deals from the likes of PC World, Comet, Dixons, The \nLink and Carphone Warehouse, Shop Laptop has the most comprehensive \nselection of laptops on the internet. At Shop Laptop, we pride ourselves\n on offering customers the very best laptop deals. From refurbished \nlaptops to netbooks, Shop Laptop ensures that every laptop - in every \ncolour, style, size and technical spec - is featured on the site at the \nlowest possible price.', 'MP3 Players', '', ''),
-(29, 3, '鼠标', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '鼠标', '', ''),
-(30, 1, '打印机', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '打印机', '', ''),
-(30, 2, 'Printers', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Printers', '', ''),
-(30, 3, '打印机', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '打印机', '', ''),
-(31, 1, '扫描仪', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '扫描仪', '', ''),
-(31, 2, 'Scanners', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Scanners', '', ''),
-(31, 3, '扫描仪', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '扫描仪', '', ''),
-(32, 1, '网络摄像', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '网络摄像', '', ''),
-(32, 2, 'Web Cameras', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Web Cameras', '', ''),
-(32, 3, '网络摄像', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '网络摄像', '', ''),
-(35, 1, '测试 1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 1', '', ''),
-(35, 2, 'test 1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 1', '', ''),
-(35, 3, '测试 1', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 1', '', ''),
-(36, 1, '测试 2', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 2', '', ''),
-(36, 2, 'test 2', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 2', '', ''),
-(36, 3, '测试 2', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 2', '', ''),
-(37, 1, '测试 5', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 5', '', ''),
-(37, 2, 'test 5', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 5', '', ''),
-(37, 3, '测试 5', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 5', '', ''),
-(29, 2, 'Mice and Trackballs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Mice and Trackballs', '', ''),
-(29, 1, '鼠标', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '鼠标', '', ''),
-(28, 3, '显示器', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '显示器', '', ''),
-(28, 2, 'Monitors', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Monitors', '', ''),
-(28, 1, '显示器', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '显示器', '', ''),
-(27, 3, '苹果Mac', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '苹果Mac', '', ''),
-(27, 2, 'Mac', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Mac', '', ''),
-(27, 1, '苹果Mac', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '苹果Mac', '', ''),
-(26, 3, '普通PC', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '普通PC', '', ''),
-(26, 2, 'PC', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'PC', '', ''),
-(26, 1, '普通PC', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '普通PC', '', ''),
-(46, 3, '苹果Macs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '苹果Macs', '', ''),
-(46, 2, 'Macs', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Macs', '', ''),
-(38, 3, '测试 4', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 4', '', ''),
-(39, 1, '测试 6', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 6', '', ''),
-(39, 2, 'test 6', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 6', '', ''),
-(39, 3, '测试 6', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 6', '', ''),
-(40, 1, '测试 7', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 7', '', ''),
-(40, 2, 'test 7', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 7', '', ''),
-(40, 3, '测试 7', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 7', '', ''),
-(41, 1, '测试 8', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 8', '', ''),
-(41, 2, 'test 8', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 8', '', ''),
-(41, 3, '测试 8', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 8', '', ''),
-(42, 1, '测试 9', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 9', '', ''),
-(42, 2, 'test 9', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 9', '', ''),
-(42, 3, '测试 9', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 9', '', ''),
-(43, 1, '测试 11', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 11', '', ''),
-(43, 2, 'test 11', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 11', '', ''),
-(43, 3, '测试 11', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 11', '', ''),
-(44, 1, '测试 12', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 12', '', ''),
-(44, 2, 'test 12', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 12', '', ''),
-(44, 3, '测试 12', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 12', '', ''),
-(47, 1, '测试 15', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 15', '', ''),
-(47, 2, 'test 15', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 15', '', ''),
-(47, 3, '测试 15', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 15', '', ''),
-(48, 1, '测试 16', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 16', '', ''),
-(25, 3, '外部设备', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '外部设备', '', ''),
-(25, 2, 'Components', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Components', '', ''),
-(25, 1, '外部设备', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '外部设备', '', ''),
-(18, 3, '笔记本', '分类描述案例文本', '笔记本', '', ''),
-(18, 2, 'Laptops &amp; Notebooks', 'Shop Laptop feature only the best laptop deals on the market. By \ncomparing laptop deals from the likes of PC World, Comet, Dixons, The \nLink and Carphone Warehouse, Shop Laptop has the most comprehensive \nselection of laptops on the internet. At Shop Laptop, we pride ourselves\n on offering customers the very best laptop deals. From refurbished \nlaptops to netbooks, Shop Laptop ensures that every laptop - in every \ncolour, style, size and technical spec - is featured on the site at the \nlowest possible price.', 'Laptops &amp; Notebooks', '', ''),
-(18, 1, '笔记本', '分类描述案例文本', '笔记本', '', ''),
-(20, 3, '桌面设备', '&lt;p&gt;\n	分类描述案例文本&lt;/p&gt;\n', '桌面设备', '分类描述案例文本', ''),
-(20, 2, 'Desktops', '&lt;p&gt;\n	Example of category description text&lt;/p&gt;\n', 'Desktops', 'Example of category description text', ''),
-(20, 1, '桌面设备', '&lt;p&gt;\n	分类描述案例文本&lt;/p&gt;\n', '桌面设备', '分类描述案例文本', ''),
-(56, 1, '测试 24', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 24', '', ''),
-(56, 2, 'test 24', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 24', '', ''),
-(56, 3, '测试 24', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 24', '', ''),
-(58, 1, '测试 25', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 25', '', ''),
-(58, 2, 'test 25', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'test 25', '', ''),
-(58, 3, '测试 25', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '测试 25', '', '');
+(32, 3, '卧室', '', '卧室', '', ''),
+(30, 2, 'Dressing Table', '', 'Dressing Table', '', ''),
+(29, 3, '床', '', '床', '', ''),
+(27, 3, '餐具', '&lt;p&gt;分類描述信息&lt;br&gt;&lt;/p&gt;', '餐具', '', ''),
+(17, 3, '燈具', '', '燈具', '', ''),
+(25, 2, 'Solid Wood', '', 'Solid Wood', '', ''),
+(20, 1, '厨房用品', '&lt;p&gt;分类说明信息&lt;/p&gt;\r\n', '厨房用品', '', ''),
+(20, 2, 'Kitchen', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Kitchen', '', ''),
+(36, 3, '椅子', '', '椅子', '', ''),
+(37, 1, 'test 5', '', 'test 5', '', ''),
+(38, 1, 'test 4', '', 'test 4', '', ''),
+(39, 1, 'test 6', '', 'test 6', '', ''),
+(40, 1, 'test 7', '', 'test 7', '', ''),
+(41, 1, 'test 8', '', 'test 8', '', ''),
+(42, 1, 'test 9', '', 'test 9', '', ''),
+(43, 1, 'test 11', '', 'test 11', '', ''),
+(44, 1, 'test 12', '', 'test 12', '', ''),
+(47, 1, 'test 15', '', 'test 15', '', ''),
+(48, 1, 'test 16', '', 'test 16', '', ''),
+(49, 1, 'test 17', '', 'test 17', '', ''),
+(50, 1, 'test 18', '', 'test 18', '', ''),
+(51, 1, 'test 19', '', 'test 19', '', ''),
+(52, 1, 'test 20', '', 'test 20', '', ''),
+(53, 1, 'test 21', '', 'test 21', '', ''),
+(54, 1, 'test 22', '', 'test 22', '', ''),
+(55, 1, 'test 23', '', 'test 23', '', ''),
+(56, 1, 'test 24', '', 'test 24', '', ''),
+(57, 2, 'Coffee Table', '', 'Coffee Table', '', ''),
+(58, 1, 'test 25', '', 'test 25', '', ''),
+(28, 2, 'Living Room', '', 'Living Room', '', ''),
+(32, 2, 'Bed Room', '', 'Bed Room', '', ''),
+(31, 2, 'Reading Table', '', 'Reading Table', '', ''),
+(29, 2, 'Beds', '', 'Beds', '', ''),
+(17, 2, 'Lighting', '', 'Lighting', '', ''),
+(20, 3, '厨房用品', '&lt;p&gt;\r\n	分類說明信息&lt;/p&gt;\r\n', '厨房用品', '', ''),
+(35, 2, 'Sofa Set', '', 'Sofa Set', '', ''),
+(36, 2, 'Chair', '', 'Chair', '', ''),
+(37, 2, 'test 5', '', 'test 5', '', ''),
+(38, 2, 'test 4', '', 'test 4', '', ''),
+(39, 2, 'test 6', '', 'test 6', '', ''),
+(40, 2, 'test 7', '', 'test 7', '', ''),
+(41, 2, 'test 8', '', 'test 8', '', ''),
+(42, 2, 'test 9', '', 'test 9', '', ''),
+(43, 2, 'test 11', '', 'test 11', '', ''),
+(44, 2, 'test 12', '', 'test 12', '', ''),
+(47, 2, 'test 15', '', 'test 15', '', ''),
+(48, 2, 'test 16', '', 'test 16', '', ''),
+(49, 2, 'test 17', '', 'test 17', '', ''),
+(50, 2, 'test 18', '', 'test 18', '', ''),
+(51, 2, 'test 19', '', 'test 19', '', ''),
+(52, 2, 'test 20', '', 'test 20', '', ''),
+(53, 2, 'test 21', '', 'test 21', '', ''),
+(54, 2, 'test 22', '', 'test 22', '', ''),
+(55, 2, 'test 23', '', 'test 23', '', ''),
+(56, 2, 'test 24', '', 'test 24', '', ''),
+(58, 2, 'test 25', '', 'test 25', '', ''),
+(28, 1, '客厅', '', '客厅', '', ''),
+(32, 1, '臥室', '', '臥室', '', ''),
+(31, 1, '书桌', '', '书桌', '', ''),
+(30, 1, '梳妆台', '', '梳妆台', '', ''),
+(29, 1, '床', '', '床', '', ''),
+(26, 1, '菜板', '', '菜板', '', ''),
+(17, 1, '灯具', '', '灯具', '', ''),
+(25, 1, '实木家具', '', '实木家具', '', ''),
+(35, 1, '沙发', '', '沙发', '', ''),
+(36, 1, '椅子', '', '椅子', '', ''),
+(37, 3, 'test 5', '', 'test 5', '', ''),
+(38, 3, 'test 4', '', 'test 4', '', ''),
+(39, 3, 'test 6', '', 'test 6', '', ''),
+(40, 3, 'test 7', '', 'test 7', '', ''),
+(41, 3, 'test 8', '', 'test 8', '', ''),
+(42, 3, 'test 9', '', 'test 9', '', ''),
+(43, 3, 'test 11', '', 'test 11', '', ''),
+(34, 3, '裝飾品', '&lt;p&gt;\r\n	装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容\r\n\r\n&lt;/p&gt;', 'MP3 Players', '', ''),
+(34, 2, 'Home Decor', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Home Decor', '', ''),
+(34, 1, '装饰品', '&lt;p&gt;\r\n	装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容 装饰品分类描述内容\r\n\r\n&lt;/p&gt;', '装饰品', '', ''),
+(44, 3, 'test 12', '', 'test 12', '', ''),
+(47, 3, 'test 15', '', 'test 15', '', ''),
+(48, 3, 'test 16', '', 'test 16', '', ''),
+(49, 3, 'test 17', '', 'test 17', '', ''),
+(50, 3, 'test 18', '', 'test 18', '', ''),
+(51, 3, 'test 19', '', 'test 19', '', ''),
+(52, 3, 'test 20', '', 'test 20', '', ''),
+(53, 3, 'test 21', '', 'test 21', '', ''),
+(54, 3, 'test 22', '', 'test 22', '', ''),
+(55, 3, 'test 23', '', 'test 23', '', ''),
+(56, 3, 'test 24', '', 'test 24', '', ''),
+(57, 1, '咖啡桌', '', '咖啡桌', '', ''),
+(58, 3, 'test 25', '', 'test 25', '', ''),
+(27, 2, 'Dining Set', '', 'Dining Set', '', ''),
+(27, 1, '餐具', '&lt;p&gt;分类描述信息&lt;br&gt;&lt;/p&gt;', '餐具', '', ''),
+(26, 2, 'Chop board', '', 'Chop board', '', ''),
+(26, 3, '菜板', '', '菜板', '', ''),
+(25, 3, '實木家具', '', '實木家具', '', ''),
+(28, 3, '客廳', '', '客廳', '', ''),
+(31, 3, '書桌', '', '書桌', '', ''),
+(30, 3, '梳妝台', '', '梳妝台', '', ''),
+(35, 3, '沙發', '', '沙發', '', ''),
+(57, 3, '咖啡桌', '', '咖啡桌', '', '');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_category_filter`
+--
 
 DROP TABLE IF EXISTS `mcc_category_filter`;
 CREATE TABLE `mcc_category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_category_path`
+--
 
 DROP TABLE IF EXISTS `mcc_category_path`;
 CREATE TABLE `mcc_category_path` (
@@ -948,51 +1152,48 @@ CREATE TABLE `mcc_category_path` (
   `path_id` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`path_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_category_path`
+--
 
 INSERT INTO `mcc_category_path` (`category_id`, `path_id`, `level`) VALUES
-(30, 25, 0),
-(29, 25, 0),
-(29, 29, 1),
-(26, 26, 1),
-(26, 20, 0),
-(20, 20, 0),
-(46, 46, 1),
-(46, 18, 0),
-(51, 51, 1),
-(36, 28, 1),
-(36, 36, 2),
-(35, 35, 2),
-(36, 25, 0),
+(25, 25, 0),
 (28, 25, 0),
 (28, 28, 1),
-(35, 25, 0),
 (35, 28, 1),
+(35, 25, 0),
+(35, 35, 2),
+(36, 28, 1),
+(36, 25, 0),
+(36, 36, 2),
+(29, 25, 0),
+(29, 29, 2),
+(30, 25, 0),
+(30, 30, 2),
 (31, 25, 0),
-(57, 57, 0),
-(25, 25, 0),
-(24, 24, 0),
-(17, 17, 0),
-(18, 18, 0),
-(31, 31, 1),
-(32, 32, 1),
-(27, 20, 0),
-(56, 34, 0),
-(56, 56, 1),
-(27, 27, 1),
-(45, 18, 0),
+(31, 31, 2),
 (32, 25, 0),
-(50, 34, 0),
-(50, 50, 1),
-(49, 34, 0),
-(49, 49, 1),
+(32, 32, 1),
+(20, 20, 0),
+(27, 20, 0),
+(27, 27, 1),
+(26, 20, 0),
+(26, 26, 1),
+(17, 17, 0),
+(34, 34, 0),
+(37, 34, 0),
+(37, 37, 1),
+(38, 34, 0),
+(38, 38, 1),
+(39, 34, 0),
+(39, 39, 1),
+(40, 34, 0),
+(40, 40, 1),
 (41, 34, 0),
 (41, 41, 1),
 (42, 34, 0),
-(33, 33, 0),
-(34, 34, 0),
-(51, 34, 0),
 (42, 42, 1),
 (43, 34, 0),
 (43, 43, 1),
@@ -1002,28 +1203,37 @@ INSERT INTO `mcc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (47, 47, 1),
 (48, 34, 0),
 (48, 48, 1),
-(37, 34, 0),
-(37, 37, 1),
-(38, 34, 0),
-(38, 38, 1),
-(39, 34, 0),
-(39, 39, 1),
-(40, 34, 0),
-(40, 40, 1),
+(49, 34, 0),
+(49, 49, 1),
+(50, 34, 0),
+(50, 50, 1),
+(51, 34, 0),
+(51, 51, 1),
 (52, 34, 0),
-(58, 52, 1),
-(58, 58, 2),
-(45, 45, 1),
 (52, 52, 1),
 (58, 34, 0),
-(54, 34, 0),
-(54, 54, 1),
+(58, 52, 1),
+(58, 58, 2),
 (53, 34, 0),
 (53, 53, 1),
+(54, 34, 0),
+(54, 54, 1),
 (55, 34, 0),
 (55, 55, 1),
-(30, 30, 1);
+(56, 34, 0),
+(56, 56, 1),
+(57, 57, 2),
+(31, 32, 1),
+(30, 32, 1),
+(29, 32, 1),
+(57, 25, 0),
+(57, 28, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_category_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_category_to_layout`;
 CREATE TABLE `mcc_category_to_layout` (
@@ -1031,22 +1241,48 @@ CREATE TABLE `mcc_category_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_category_to_layout`
+--
+
+INSERT INTO `mcc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
+(20, 0, 0),
+(27, 0, 0),
+(26, 0, 0),
+(25, 0, 0),
+(28, 0, 0),
+(32, 0, 0),
+(31, 0, 0),
+(30, 0, 0),
+(29, 0, 0),
+(35, 0, 0),
+(36, 0, 0),
+(57, 0, 0),
+(17, 0, 0),
+(34, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_category_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_category_to_store`;
 CREATE TABLE `mcc_category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_category_to_store`
+--
 
 INSERT INTO `mcc_category_to_store` (`category_id`, `store_id`) VALUES
 (17, 0),
-(18, 0),
 (20, 0),
-(24, 0),
 (25, 0),
 (26, 0),
 (27, 0),
@@ -1055,7 +1291,6 @@ INSERT INTO `mcc_category_to_store` (`category_id`, `store_id`) VALUES
 (30, 0),
 (31, 0),
 (32, 0),
-(33, 0),
 (34, 0),
 (35, 0),
 (36, 0),
@@ -1067,8 +1302,6 @@ INSERT INTO `mcc_category_to_store` (`category_id`, `store_id`) VALUES
 (42, 0),
 (43, 0),
 (44, 0),
-(45, 0),
-(46, 0),
 (47, 0),
 (48, 0),
 (49, 0),
@@ -1082,6 +1315,35 @@ INSERT INTO `mcc_category_to_store` (`category_id`, `store_id`) VALUES
 (57, 0),
 (58, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_city`
+--
+
+DROP TABLE IF EXISTS `mcc_city`;
+CREATE TABLE `mcc_city` (
+  `city_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`city_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `mcc_city`
+--
+
+INSERT INTO `mcc_city` (`city_id`, `country_id`, `zone_id`, `name`, `status`) VALUES
+(1, 44, 707, '济南市', 1),
+(2, 44, 707, '淄博市', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_country`
+--
 
 DROP TABLE IF EXISTS `mcc_country`;
 CREATE TABLE `mcc_country` (
@@ -1095,6 +1357,9 @@ CREATE TABLE `mcc_country` (
   PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=258 ;
 
+--
+-- Dumping data for table `mcc_country`
+--
 
 INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 (1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -1117,7 +1382,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (18, 'Bangladesh', 'BD', 'BGD', '', 0, 1),
 (19, 'Barbados', 'BB', 'BRB', '', 0, 1),
 (20, 'Belarus', 'BY', 'BLR', '', 0, 1),
-(21, 'Belgium', 'BE', 'BEL', '{fullname}\r\n{company}\r\n{address_1}\r\n{postcode} {city}\r\n{country}', 0, 1),
+(21, 'Belgium', 'BE', 'BEL', '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 0, 1),
 (22, 'Belize', 'BZ', 'BLZ', '', 0, 1),
 (23, 'Benin', 'BJ', 'BEN', '', 0, 1),
 (24, 'Bermuda', 'BM', 'BMU', '', 0, 1),
@@ -1140,7 +1405,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (41, 'Central African Republic', 'CF', 'CAF', '', 0, 1),
 (42, 'Chad', 'TD', 'TCD', '', 0, 1),
 (43, 'Chile', 'CL', 'CHL', '', 0, 1),
-(44, 'China(中国)', 'CN', 'CHN', '', 0, 1),
+(44, '中国', 'CN', 'CHN', '', 0, 1),
 (45, 'Christmas Island', 'CX', 'CXR', '', 0, 1),
 (46, 'Cocos (Keeling) Islands', 'CC', 'CCK', '', 0, 1),
 (47, 'Colombia', 'CO', 'COL', '', 0, 1),
@@ -1169,14 +1434,14 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (70, 'Faroe Islands', 'FO', 'FRO', '', 0, 1),
 (71, 'Fiji', 'FJ', 'FJI', '', 0, 1),
 (72, 'Finland', 'FI', 'FIN', '', 0, 1),
-(74, 'France, Metropolitan', 'FR', 'FRA', '{fullname}\r\n{company}\r\n{address}\r\n{postcode} {city}\r\n{country}', 1, 1),
+(74, 'France, Metropolitan', 'FR', 'FRA', '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 1, 1),
 (75, 'French Guiana', 'GF', 'GUF', '', 0, 1),
 (76, 'French Polynesia', 'PF', 'PYF', '', 0, 1),
 (77, 'French Southern Territories', 'TF', 'ATF', '', 0, 1),
 (78, 'Gabon', 'GA', 'GAB', '', 0, 1),
 (79, 'Gambia', 'GM', 'GMB', '', 0, 1),
 (80, 'Georgia', 'GE', 'GEO', '', 0, 1),
-(81, 'Germany', 'DE', 'DEU', '{company}\r\n{fullname}\r\n{address_1}\r\n{postcode} {city}\r\n{country}', 1, 1),
+(81, 'Germany', 'DE', 'DEU', '{company}\r\n{firstname} {lastname}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 1, 1),
 (82, 'Ghana', 'GH', 'GHA', '', 0, 1),
 (83, 'Gibraltar', 'GI', 'GIB', '', 0, 1),
 (84, 'Greece', 'GR', 'GRC', '', 0, 1),
@@ -1208,7 +1473,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (110, 'Kenya', 'KE', 'KEN', '', 0, 1),
 (111, 'Kiribati', 'KI', 'KIR', '', 0, 1),
 (112, 'North Korea', 'KP', 'PRK', '', 0, 1),
-(113, 'Korea, Republic of', 'KR', 'KOR', '', 0, 1),
+(113, 'South Korea', 'KR', 'KOR', '', 0, 1),
 (114, 'Kuwait', 'KW', 'KWT', '', 0, 1),
 (115, 'Kyrgyzstan', 'KG', 'KGZ', '', 0, 1),
 (116, 'Lao People''s Democratic Republic', 'LA', 'LAO', '', 0, 1),
@@ -1284,7 +1549,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (186, 'Seychelles', 'SC', 'SYC', '', 0, 1),
 (187, 'Sierra Leone', 'SL', 'SLE', '', 0, 1),
 (188, 'Singapore', 'SG', 'SGP', '', 0, 1),
-(189, 'Slovak Republic', 'SK', 'SVK', '{fullname}\r\n{company}\r\n{address}\r\n{city} {postcode}\r\n{zone}\r\n{country}', 0, 1),
+(189, 'Slovak Republic', 'SK', 'SVK', '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city} {postcode}\r\n{zone}\r\n{country}', 0, 1),
 (190, 'Slovenia', 'SI', 'SVN', '', 0, 1),
 (191, 'Solomon Islands', 'SB', 'SLB', '', 0, 1),
 (192, 'Somalia', 'SO', 'SOM', '', 0, 1),
@@ -1298,7 +1563,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (200, 'Suriname', 'SR', 'SUR', '', 0, 1),
 (201, 'Svalbard and Jan Mayen Islands', 'SJ', 'SJM', '', 0, 1),
 (202, 'Swaziland', 'SZ', 'SWZ', '', 0, 1),
-(203, 'Sweden', 'SE', 'SWE', '{company}\r\n{fullname}\r\n{address}\r\n{postcode} {city}\r\n{country}', 1, 1),
+(203, 'Sweden', 'SE', 'SWE', '{company}\r\n{firstname} {lastname}\r\n{address_1}\r\n{address_2}\r\n{postcode} {city}\r\n{country}', 1, 1),
 (204, 'Switzerland', 'CH', 'CHE', '', 0, 1),
 (205, 'Syrian Arab Republic', 'SY', 'SYR', '', 0, 1),
 (206, 'Taiwan', 'TW', 'TWN', '', 0, 1),
@@ -1318,7 +1583,7 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (220, 'Ukraine', 'UA', 'UKR', '', 0, 1),
 (221, 'United Arab Emirates', 'AE', 'ARE', '', 0, 1),
 (222, 'United Kingdom', 'GB', 'GBR', '', 1, 1),
-(223, 'United States', 'US', 'USA', '{fullname}\r\n{company}\r\n{address}\r\n{city}, {zone} {postcode}\r\n{country}', 0, 1),
+(223, 'United States', 'US', 'USA', '{firstname} {lastname}\r\n{company}\r\n{address_1}\r\n{address_2}\r\n{city}, {zone} {postcode}\r\n{country}', 0, 1),
 (224, 'United States Minor Outlying Islands', 'UM', 'UMI', '', 0, 1),
 (225, 'Uruguay', 'UY', 'URY', '', 0, 1),
 (226, 'Uzbekistan', 'UZ', 'UZB', '', 0, 1),
@@ -1351,12 +1616,17 @@ INSERT INTO `mcc_country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `ad
 (256, 'Guernsey', 'GG', 'GGY', '', 0, 1),
 (257, 'Jersey', 'JE', 'JEY', '', 0, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_coupon`
+--
 
 DROP TABLE IF EXISTS `mcc_coupon`;
 CREATE TABLE `mcc_coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
-  `code` varchar(10) NOT NULL,
+  `code` varchar(20) NOT NULL,
   `type` char(1) NOT NULL,
   `discount` decimal(15,4) NOT NULL,
   `logged` tinyint(1) NOT NULL,
@@ -1371,20 +1641,33 @@ CREATE TABLE `mcc_coupon` (
   PRIMARY KEY (`coupon_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
+--
+-- Dumping data for table `mcc_coupon`
+--
 
 INSERT INTO `mcc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 (4, '10% 折扣', '2222', 'P', '10.0000', 0, 0, '0.0000', '2015-04-01', '2020-01-01', 10, '10', 0, '2009-01-27 13:55:03'),
 (5, '免费配送', '3333', 'P', '0.0000', 0, 1, '100.0000', '2015-01-01', '2015-02-01', 10, '10', 0, '2009-03-14 21:13:53'),
 (6, '10元折扣券', '1111', 'F', '10.0000', 0, 0, '10.0000', '2015-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_coupon_category`
+--
 
 DROP TABLE IF EXISTS `mcc_coupon_category`;
 CREATE TABLE `mcc_coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_id`,`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_coupon_history`
+--
 
 DROP TABLE IF EXISTS `mcc_coupon_history`;
 CREATE TABLE `mcc_coupon_history` (
@@ -1395,8 +1678,13 @@ CREATE TABLE `mcc_coupon_history` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`coupon_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_coupon_product`
+--
 
 DROP TABLE IF EXISTS `mcc_coupon_product`;
 CREATE TABLE `mcc_coupon_product` (
@@ -1404,8 +1692,13 @@ CREATE TABLE `mcc_coupon_product` (
   `coupon_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_currency`
+--
 
 DROP TABLE IF EXISTS `mcc_currency`;
 CREATE TABLE `mcc_currency` (
@@ -1421,18 +1714,27 @@ CREATE TABLE `mcc_currency` (
   PRIMARY KEY (`currency_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
+--
+-- Dumping data for table `mcc_currency`
+--
 
 INSERT INTO `mcc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(6, '港币', 'HKD', '$', '', '2', 1.19570005, 1, '2016-03-13 14:04:39'),
-(5, 'US Dollar', 'USD', '$', '', '2', 0.15410000, 1, '2016-03-13 14:04:39'),
-(4, '人民币', 'CNY', '￥', '', '2', 1.00000000, 1, '2016-03-13 14:05:38');
+(6, '港币', 'HKD', '$', '', '2', 1.16110003, 1, '2016-08-31 11:07:00'),
+(5, 'US Dollar', 'USD', '$', '', '2', 0.14970000, 1, '2016-08-31 11:07:00'),
+(4, '人民币', 'CNY', '￥', '', '2', 1.00000000, 1, '2016-09-01 03:23:33');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer`
+--
 
 DROP TABLE IF EXISTS `mcc_customer`;
 CREATE TABLE `mcc_customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_group_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
+  `language_id` int(11) NOT NULL,
   `fullname` varchar(32) NOT NULL,
   `email` varchar(96) NOT NULL,
   `telephone` varchar(32) NOT NULL,
@@ -1448,14 +1750,22 @@ CREATE TABLE `mcc_customer` (
   `status` tinyint(1) NOT NULL,
   `approved` tinyint(1) NOT NULL,
   `safe` tinyint(1) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `token` text NOT NULL,
   `code` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   `weixin_login_openid` varchar(64) NOT NULL,
   `weixin_login_unionid` varchar(64) NOT NULL,
+  `weibo_login_access_token` varchar(128) NOT NULL,
+  `weibo_login_uid` varchar(50) NOT NULL,
+  `qq_openid` varchar(64) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_activity`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_activity`;
 CREATE TABLE `mcc_customer_activity` (
@@ -1466,9 +1776,13 @@ CREATE TABLE `mcc_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_activity_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_customer_group`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_group`;
 CREATE TABLE `mcc_customer_group` (
@@ -1478,12 +1792,20 @@ CREATE TABLE `mcc_customer_group` (
   PRIMARY KEY (`customer_group_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+--
+-- Dumping data for table `mcc_customer_group`
+--
 
 INSERT INTO `mcc_customer_group` (`customer_group_id`, `approval`, `sort_order`) VALUES
 (1, 0, 1),
 (2, 0, 3),
 (3, 0, 2);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_group_description`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_group_description`;
 CREATE TABLE `mcc_customer_group_description` (
@@ -1492,8 +1814,11 @@ CREATE TABLE `mcc_customer_group_description` (
   `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`customer_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_customer_group_description`
+--
 
 INSERT INTO `mcc_customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 (1, 1, '普通', '测试'),
@@ -1502,10 +1827,15 @@ INSERT INTO `mcc_customer_group_description` (`customer_group_id`, `language_id`
 (2, 3, 'VIP', ''),
 (2, 2, 'VIP', ''),
 (2, 1, 'VIP', ''),
-(3, 3, 'WholeSale', ''),
+(3, 1, '批发商', ''),
 (3, 2, 'WholeSale', ''),
-(3, 1, 'WholeSale', '');
+(3, 3, '批發商', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_history`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_history`;
 CREATE TABLE `mcc_customer_history` (
@@ -1514,7 +1844,13 @@ CREATE TABLE `mcc_customer_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_ip`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_ip`;
 CREATE TABLE `mcc_customer_ip` (
@@ -1524,7 +1860,21 @@ CREATE TABLE `mcc_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+
+--
+-- Dumping data for table `mcc_customer_ip`
+--
+
+INSERT INTO `mcc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
+(4, 2, '119.182.217.116', '2016-08-10 17:42:28'),
+(17, 4, '119.182.219.245', '2016-08-25 17:29:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_login`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_login`;
 CREATE TABLE `mcc_customer_login` (
@@ -1537,8 +1887,34 @@ CREATE TABLE `mcc_customer_login` (
   PRIMARY KEY (`customer_login_id`),
   KEY `email` (`email`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
+--
+-- Dumping data for table `mcc_customer_login`
+--
+
+INSERT INTO `mcc_customer_login` (`customer_login_id`, `email`, `ip`, `total`, `date_added`, `date_modified`) VALUES
+(1, 'opencart@qq.com', '119.182.219.125', 1, '2016-08-08 13:43:18', '2016-08-08 13:43:18'),
+(2, 'opencart@qq.com', '119.182.216.239', 1, '2016-08-22 04:44:35', '2016-08-22 04:44:35'),
+(3, '296432269@qq.com', '116.22.232.86', 5, '2016-08-25 17:55:31', '2016-08-25 18:41:38'),
+(4, '', '116.22.232.86', 2, '2016-08-25 18:39:00', '2016-08-25 18:42:52'),
+(6, '', '222.180.73.28', 1, '2016-08-26 14:41:05', '2016-08-26 14:41:05'),
+(7, '', '218.66.96.80', 1, '2016-08-26 16:52:18', '2016-08-26 16:52:18'),
+(8, '', '220.171.45.246', 1, '2016-08-27 11:14:18', '2016-08-27 11:14:18'),
+(9, 'ma.', '220.171.45.246', 1, '2016-08-27 11:14:23', '2016-08-27 11:14:23'),
+(10, '1747503337@qq.com', '220.171.45.246', 1, '2016-08-27 11:14:34', '2016-08-27 11:14:34'),
+(12, '', '223.104.1.233', 1, '2016-08-31 14:44:52', '2016-08-31 14:44:52'),
+(13, 'demo', '125.34.208.244', 1, '2016-08-31 17:14:59', '2016-08-31 17:14:59'),
+(14, '', '111.121.47.136', 1, '2016-08-31 17:50:32', '2016-08-31 17:50:32'),
+(16, 'demo', '123.123.239.173', 1, '2016-09-01 10:07:49', '2016-09-01 10:07:49'),
+(17, 'yangtest', '119.182.217.156', 1, '2016-09-01 15:39:26', '2016-09-01 15:39:26'),
+(19, '843579596@qq.com', '14.213.159.139', 1, '2016-09-02 14:01:08', '2016-09-02 14:01:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_online`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_online`;
 CREATE TABLE `mcc_customer_online` (
@@ -1548,8 +1924,13 @@ CREATE TABLE `mcc_customer_online` (
   `referer` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_reward`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_reward`;
 CREATE TABLE `mcc_customer_reward` (
@@ -1560,8 +1941,35 @@ CREATE TABLE `mcc_customer_reward` (
   `points` int(8) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_search`
+--
+
+DROP TABLE IF EXISTS `mcc_customer_search`;
+CREATE TABLE `mcc_customer_search` (
+  `customer_search_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `keyword` varchar(255) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `sub_category` tinyint(1) NOT NULL,
+  `description` tinyint(1) NOT NULL,
+  `products` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_search_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_transaction`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_transaction`;
 CREATE TABLE `mcc_customer_transaction` (
@@ -1572,7 +1980,13 @@ CREATE TABLE `mcc_customer_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_customer_wishlist`
+--
 
 DROP TABLE IF EXISTS `mcc_customer_wishlist`;
 CREATE TABLE `mcc_customer_wishlist` (
@@ -1580,8 +1994,20 @@ CREATE TABLE `mcc_customer_wishlist` (
   `product_id` int(11) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_id`,`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_customer_wishlist`
+--
+
+INSERT INTO `mcc_customer_wishlist` (`customer_id`, `product_id`, `date_added`) VALUES
+(6, 47, '2016-08-26 23:15:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_custom_field`
+--
 
 DROP TABLE IF EXISTS `mcc_custom_field`;
 CREATE TABLE `mcc_custom_field` (
@@ -1593,8 +2019,13 @@ CREATE TABLE `mcc_custom_field` (
   `status` tinyint(1) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_custom_field_customer_group`
+--
 
 DROP TABLE IF EXISTS `mcc_custom_field_customer_group`;
 CREATE TABLE `mcc_custom_field_customer_group` (
@@ -1602,8 +2033,13 @@ CREATE TABLE `mcc_custom_field_customer_group` (
   `customer_group_id` int(11) NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_custom_field_description`
+--
 
 DROP TABLE IF EXISTS `mcc_custom_field_description`;
 CREATE TABLE `mcc_custom_field_description` (
@@ -1611,8 +2047,13 @@ CREATE TABLE `mcc_custom_field_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_custom_field_value`
+--
 
 DROP TABLE IF EXISTS `mcc_custom_field_value`;
 CREATE TABLE `mcc_custom_field_value` (
@@ -1620,8 +2061,13 @@ CREATE TABLE `mcc_custom_field_value` (
   `custom_field_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_custom_field_value_description`
+--
 
 DROP TABLE IF EXISTS `mcc_custom_field_value_description`;
 CREATE TABLE `mcc_custom_field_value_description` (
@@ -1630,8 +2076,38 @@ CREATE TABLE `mcc_custom_field_value_description` (
   `custom_field_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_district`
+--
+
+DROP TABLE IF EXISTS `mcc_district`;
+CREATE TABLE `mcc_district` (
+  `district_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `city_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`district_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `mcc_district`
+--
+
+INSERT INTO `mcc_district` (`district_id`, `country_id`, `zone_id`, `city_id`, `name`, `status`) VALUES
+(1, 44, 707, 2, '临淄区', 1),
+(2, 44, 707, 2, '高新区', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_download`
+--
 
 DROP TABLE IF EXISTS `mcc_download`;
 CREATE TABLE `mcc_download` (
@@ -1640,8 +2116,13 @@ CREATE TABLE `mcc_download` (
   `mask` varchar(128) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_download_description`
+--
 
 DROP TABLE IF EXISTS `mcc_download_description`;
 CREATE TABLE `mcc_download_description` (
@@ -1649,8 +2130,13 @@ CREATE TABLE `mcc_download_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`download_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_event`
+--
 
 DROP TABLE IF EXISTS `mcc_event`;
 CREATE TABLE `mcc_event` (
@@ -1658,11 +2144,23 @@ CREATE TABLE `mcc_event` (
   `code` varchar(32) NOT NULL,
   `trigger` text NOT NULL,
   `action` text NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL,
   PRIMARY KEY (`event_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
-INSERT INTO `mcc_event` (`event_id`, `code`, `trigger`, `action`) VALUES
-(1, 'voucher', 'post.order.history.add', 'total/voucher/send');
+--
+-- Dumping data for table `mcc_event`
+--
+
+INSERT INTO `mcc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `date_added`) VALUES
+(1, 'voucher', 'catalog/model/checkout/order/addOrderHistory/after', 'extension/total/voucher/send', 0, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_extension`
+--
 
 DROP TABLE IF EXISTS `mcc_extension`;
 CREATE TABLE `mcc_extension` (
@@ -1670,8 +2168,11 @@ CREATE TABLE `mcc_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=479 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
+--
+-- Dumping data for table `mcc_extension`
+--
 
 INSERT INTO `mcc_extension` (`extension_id`, `type`, `code`) VALUES
 (1, 'payment', 'cod'),
@@ -1683,7 +2184,7 @@ INSERT INTO `mcc_extension` (`extension_id`, `type`, `code`) VALUES
 (7, 'module', 'carousel'),
 (8, 'total', 'credit'),
 (9, 'shipping', 'flat'),
-(457, 'total', 'handling'),
+(10, 'total', 'handling'),
 (11, 'total', 'low_order_fee'),
 (12, 'total', 'coupon'),
 (13, 'module', 'category'),
@@ -1693,23 +2194,30 @@ INSERT INTO `mcc_extension` (`extension_id`, `type`, `code`) VALUES
 (17, 'payment', 'free_checkout'),
 (18, 'module', 'featured'),
 (19, 'module', 'slideshow'),
-(453, 'captcha', 'basic_captcha'),
-(456, 'payment', 'precharge'),
-(468, 'module', 'press_category'),
-(463, 'module', 'blog_category'),
-(464, 'module', 'blog_latest'),
-(465, 'module', 'blog_comment'),
-(466, 'module', 'blog_search'),
-(467, 'payment', 'paydollar'),
-(469, 'module', 'press_latest'),
-(470, 'module', 'faq_category'),
-(471, 'payment', 'wxpay'),
 (20, 'theme', 'theme_default'),
-(473, 'sms', 'chengyu'),
-(477, 'feed', 'google_sitemap'),
-(478, 'payment', 'bank_transfer');
+(21, 'dashboard', 'activity'),
+(22, 'dashboard', 'sale'),
+(23, 'dashboard', 'recent'),
+(24, 'dashboard', 'order'),
+(25, 'dashboard', 'online'),
+(26, 'dashboard', 'map'),
+(27, 'dashboard', 'customer'),
+(28, 'dashboard', 'chart'),
+(29, 'captcha', 'basic_captcha'),
+(35, 'module', 'blog_category'),
+(36, 'module', 'blog_search'),
+(37, 'module', 'blog_latest'),
+(38, 'module', 'blog_comment'),
+(39, 'module', 'press_latest'),
+(40, 'module', 'press_category'),
+(41, 'module', 'faq_category'),
+(43, 'shipping', 'free');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_faq`
+--
 
 DROP TABLE IF EXISTS `mcc_faq`;
 CREATE TABLE `mcc_faq` (
@@ -1722,6 +2230,9 @@ CREATE TABLE `mcc_faq` (
   PRIMARY KEY (`faq_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
+--
+-- Dumping data for table `mcc_faq`
+--
 
 INSERT INTO `mcc_faq` (`faq_id`, `image`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (25, NULL, 1, 1, '2016-02-19 14:09:56', '2016-03-13 16:40:19'),
@@ -1735,6 +2246,11 @@ INSERT INTO `mcc_faq` (`faq_id`, `image`, `sort_order`, `status`, `date_added`, 
 (33, NULL, 1, 1, '2016-02-25 10:24:41', '0000-00-00 00:00:00'),
 (34, NULL, 1, 1, '2016-02-25 10:24:57', '0000-00-00 00:00:00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_category`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_category`;
 CREATE TABLE `mcc_faq_category` (
@@ -1748,13 +2264,21 @@ CREATE TABLE `mcc_faq_category` (
   KEY `parent_id` (`parent_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
+--
+-- Dumping data for table `mcc_faq_category`
+--
 
 INSERT INTO `mcc_faq_category` (`faq_category_id`, `parent_id`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (13, 0, 1, 1, '2016-02-19 14:01:16', '2016-02-19 14:01:16'),
 (14, 0, 2, 1, '2016-02-19 14:01:59', '2016-02-19 14:01:59'),
 (15, 13, 1, 1, '2016-02-19 14:02:44', '2016-02-19 14:02:44'),
-(16, 13, 2, 1, '2016-02-19 14:03:23', '2016-02-19 16:52:09');
+(16, 13, 2, 1, '2016-02-19 14:03:23', '2016-08-22 15:03:20');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_category_description`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_category_description`;
 CREATE TABLE `mcc_faq_category_description` (
@@ -1769,6 +2293,9 @@ CREATE TABLE `mcc_faq_category_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_category_description`
+--
 
 INSERT INTO `mcc_faq_category_description` (`faq_category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (13, 1, '常见问题分类一', '&lt;p&gt;常见问题分类一&lt;br&gt;&lt;/p&gt;', '常见问题分类一', '常见问题分类一', '常见问题分类一'),
@@ -1780,10 +2307,15 @@ INSERT INTO `mcc_faq_category_description` (`faq_category_id`, `language_id`, `n
 (15, 1, '苹果问题', '&lt;p&gt;苹果问题&lt;br&gt;&lt;/p&gt;', '苹果问题', '苹果问题', '苹果问题'),
 (15, 2, '苹果问题', '&lt;p&gt;苹果问题&lt;br&gt;&lt;/p&gt;', '苹果问题', '苹果问题', '苹果问题'),
 (15, 3, '苹果问题', '&lt;p&gt;苹果问题&lt;br&gt;&lt;/p&gt;', '苹果问题', '苹果问题', '苹果问题'),
-(16, 2, '桔子问题', '&lt;p&gt;桔子问题&lt;br&gt;&lt;/p&gt;', '桔子问题', '桔子问题', '桔子问题'),
 (16, 3, '桔子问题', '&lt;p&gt;桔子问题&lt;br&gt;&lt;/p&gt;', '桔子问题', '桔子问题', '桔子问题'),
-(16, 1, '桔子问题', '&lt;p&gt;桔子问题&lt;br&gt;&lt;/p&gt;', '桔子问题', '桔子问题', '桔子问题');
+(16, 1, '桔子问题', '&lt;p&gt;桔子问题&lt;br&gt;&lt;/p&gt;', '桔子问题', '桔子问题', '桔子问题'),
+(16, 2, '桔子问题', '&lt;p&gt;桔子问题&lt;br&gt;&lt;/p&gt;', '桔子问题', '桔子问题', '桔子问题');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_category_path`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_category_path`;
 CREATE TABLE `mcc_faq_category_path` (
@@ -1793,6 +2325,9 @@ CREATE TABLE `mcc_faq_category_path` (
   PRIMARY KEY (`faq_category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_category_path`
+--
 
 INSERT INTO `mcc_faq_category_path` (`faq_category_id`, `path_id`, `level`) VALUES
 (13, 13, 0),
@@ -1802,6 +2337,11 @@ INSERT INTO `mcc_faq_category_path` (`faq_category_id`, `path_id`, `level`) VALU
 (16, 13, 0),
 (16, 16, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_category_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_category_to_layout`;
 CREATE TABLE `mcc_faq_category_to_layout` (
@@ -1811,6 +2351,9 @@ CREATE TABLE `mcc_faq_category_to_layout` (
   PRIMARY KEY (`faq_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_category_to_layout`
+--
 
 INSERT INTO `mcc_faq_category_to_layout` (`faq_category_id`, `store_id`, `layout_id`) VALUES
 (13, 0, 0),
@@ -1818,6 +2361,11 @@ INSERT INTO `mcc_faq_category_to_layout` (`faq_category_id`, `store_id`, `layout
 (15, 0, 0),
 (16, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_category_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_category_to_store`;
 CREATE TABLE `mcc_faq_category_to_store` (
@@ -1826,6 +2374,9 @@ CREATE TABLE `mcc_faq_category_to_store` (
   PRIMARY KEY (`faq_category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_category_to_store`
+--
 
 INSERT INTO `mcc_faq_category_to_store` (`faq_category_id`, `store_id`) VALUES
 (13, 0),
@@ -1833,6 +2384,11 @@ INSERT INTO `mcc_faq_category_to_store` (`faq_category_id`, `store_id`) VALUES
 (15, 0),
 (16, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_description`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_description`;
 CREATE TABLE `mcc_faq_description` (
@@ -1842,8 +2398,11 @@ CREATE TABLE `mcc_faq_description` (
   `answer` text NOT NULL,
   PRIMARY KEY (`faq_id`,`language_id`),
   KEY `name` (`title`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8  COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_description`
+--
 
 INSERT INTO `mcc_faq_description` (`faq_id`, `language_id`, `title`, `answer`) VALUES
 (26, 3, '问题2', '&lt;p&gt;问题2&lt;br&gt;&lt;/p&gt;'),
@@ -1877,6 +2436,11 @@ INSERT INTO `mcc_faq_description` (`faq_id`, `language_id`, `title`, `answer`) V
 (25, 2, 'MyCnCart系统可以商用吗？', '&lt;p&gt;是的，完全可以！!！&lt;br&gt;&lt;br&gt;mycncart系统遵循GPL3协议，您可以用它来用作商业网站，并且免费使用。&lt;br&gt;&lt;br&gt;你所需要遵循的就是：如果您做了二次开发并且将其销售，则您必须保持所做的二次开发也是开源的，不能做任何加密。&lt;br&gt;&lt;br&gt;mycncart系统本身可以被免费使用，但不能包装起来后被销售。&lt;br&gt;&lt;br&gt;您可以将【技术支持 MyCnCart】移除， 但希望您能够做一捐款， 如此MyCnCart的开发者才能够投入更多的时间精力为大家提供更好的版本服务。&lt;br&gt;&lt;br&gt;请使用支付宝捐款至支付宝账户：tonyspace2010@gmail.com&amp;nbsp; 姓名： 杨兆锋&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;'),
 (25, 3, 'MyCnCart系统可以商用吗？', '&lt;p&gt;是的，完全可以！!！&lt;br&gt;&lt;br&gt;mycncart系统遵循GPL3协议，您可以用它来用作商业网站，并且免费使用。&lt;br&gt;&lt;br&gt;你所需要遵循的就是：如果您做了二次开发并且将其销售，则您必须保持所做的二次开发也是开源的，不能做任何加密。&lt;br&gt;&lt;br&gt;mycncart系统本身可以被免费使用，但不能包装起来后被销售。&lt;br&gt;&lt;br&gt;您可以将【技术支持 MyCnCart】移除， 但希望您能够做一捐款， 如此MyCnCart的开发者才能够投入更多的时间精力为大家提供更好的版本服务。&lt;br&gt;&lt;br&gt;请使用支付宝捐款至支付宝账户：tonyspace2010@gmail.com&amp;nbsp; 姓名： 杨兆锋&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_product`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_product`;
 CREATE TABLE `mcc_faq_product` (
@@ -1885,6 +2449,9 @@ CREATE TABLE `mcc_faq_product` (
   UNIQUE KEY `faq_id` (`faq_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_product`
+--
 
 INSERT INTO `mcc_faq_product` (`faq_id`, `related_id`) VALUES
 (25, 28),
@@ -1896,6 +2463,11 @@ INSERT INTO `mcc_faq_product` (`faq_id`, `related_id`) VALUES
 (27, 28),
 (27, 48);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_to_faq_category`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_to_faq_category`;
 CREATE TABLE `mcc_faq_to_faq_category` (
@@ -1905,6 +2477,9 @@ CREATE TABLE `mcc_faq_to_faq_category` (
   KEY `faq_category_id` (`faq_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_to_faq_category`
+--
 
 INSERT INTO `mcc_faq_to_faq_category` (`faq_id`, `faq_category_id`) VALUES
 (25, 13),
@@ -1920,6 +2495,11 @@ INSERT INTO `mcc_faq_to_faq_category` (`faq_id`, `faq_category_id`) VALUES
 (33, 16),
 (34, 16);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_to_layout`;
 CREATE TABLE `mcc_faq_to_layout` (
@@ -1929,6 +2509,9 @@ CREATE TABLE `mcc_faq_to_layout` (
   PRIMARY KEY (`faq_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_to_layout`
+--
 
 INSERT INTO `mcc_faq_to_layout` (`faq_id`, `store_id`, `layout_id`) VALUES
 (25, 0, 0),
@@ -1942,6 +2525,11 @@ INSERT INTO `mcc_faq_to_layout` (`faq_id`, `store_id`, `layout_id`) VALUES
 (33, 0, 0),
 (34, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_faq_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_faq_to_store`;
 CREATE TABLE `mcc_faq_to_store` (
@@ -1950,6 +2538,9 @@ CREATE TABLE `mcc_faq_to_store` (
   PRIMARY KEY (`faq_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_faq_to_store`
+--
 
 INSERT INTO `mcc_faq_to_store` (`faq_id`, `store_id`) VALUES
 (25, 0),
@@ -1963,6 +2554,11 @@ INSERT INTO `mcc_faq_to_store` (`faq_id`, `store_id`) VALUES
 (33, 0),
 (34, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_filter`
+--
 
 DROP TABLE IF EXISTS `mcc_filter`;
 CREATE TABLE `mcc_filter` (
@@ -1970,8 +2566,13 @@ CREATE TABLE `mcc_filter` (
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_filter_description`
+--
 
 DROP TABLE IF EXISTS `mcc_filter_description`;
 CREATE TABLE `mcc_filter_description` (
@@ -1980,16 +2581,26 @@ CREATE TABLE `mcc_filter_description` (
   `filter_group_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_filter_group`
+--
 
 DROP TABLE IF EXISTS `mcc_filter_group`;
 CREATE TABLE `mcc_filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_filter_group_description`
+--
 
 DROP TABLE IF EXISTS `mcc_filter_group_description`;
 CREATE TABLE `mcc_filter_group_description` (
@@ -1997,8 +2608,13 @@ CREATE TABLE `mcc_filter_group_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_geo_zone`
+--
 
 DROP TABLE IF EXISTS `mcc_geo_zone`;
 CREATE TABLE `mcc_geo_zone` (
@@ -2010,12 +2626,20 @@ CREATE TABLE `mcc_geo_zone` (
   PRIMARY KEY (`geo_zone_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+--
+-- Dumping data for table `mcc_geo_zone`
+--
 
 INSERT INTO `mcc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 (3, '中国普通地区', '中国普通地区', '2015-04-01 22:23:18', '2009-01-06 23:26:25'),
 (4, '中国偏远地区配送', '中国偏远地区配送', '2015-04-01 22:11:53', '2009-06-23 01:14:53'),
 (5, '中国特别地区', '中国特别地区', '0000-00-00 00:00:00', '2015-04-01 22:24:09');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_information`
+--
 
 DROP TABLE IF EXISTS `mcc_information`;
 CREATE TABLE `mcc_information` (
@@ -2026,6 +2650,9 @@ CREATE TABLE `mcc_information` (
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
+--
+-- Dumping data for table `mcc_information`
+--
 
 INSERT INTO `mcc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
 (3, 1, 3, 1),
@@ -2033,6 +2660,11 @@ INSERT INTO `mcc_information` (`information_id`, `bottom`, `sort_order`, `status
 (5, 1, 4, 1),
 (6, 1, 2, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_information_description`
+--
 
 DROP TABLE IF EXISTS `mcc_information_description`;
 CREATE TABLE `mcc_information_description` (
@@ -2044,9 +2676,11 @@ CREATE TABLE `mcc_information_description` (
   `meta_description` varchar(255) NOT NULL,
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`information_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
+--
+-- Dumping data for table `mcc_information_description`
+--
 
 INSERT INTO `mcc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', ''),
@@ -2062,28 +2696,36 @@ INSERT INTO `mcc_information_description` (`information_id`, `language_id`, `tit
 (3, 3, '隱私政策', '&lt;p&gt;\r\n	隱私政策&lt;/p&gt;\r\n', '隱私政策', '', ''),
 (4, 3, '关于我们', '&lt;p&gt;\r\n	关于我们&lt;/p&gt;\r\n', '关于我们', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_information_to_layout`
+--
+
 DROP TABLE IF EXISTS `mcc_information_to_layout`;
 CREATE TABLE `mcc_information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-INSERT INTO `mcc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
-(4, 0, 0),
-(5, 0, 0),
-(3, 0, 0),
-(6, 0, 0);
+--
+-- Table structure for table `mcc_information_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_information_to_store`;
 CREATE TABLE `mcc_information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_information_to_store`
+--
 
 INSERT INTO `mcc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
@@ -2091,6 +2733,11 @@ INSERT INTO `mcc_information_to_store` (`information_id`, `store_id`) VALUES
 (5, 0),
 (6, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_language`
+--
 
 DROP TABLE IF EXISTS `mcc_language`;
 CREATE TABLE `mcc_language` (
@@ -2104,47 +2751,59 @@ CREATE TABLE `mcc_language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
+--
+-- Dumping data for table `mcc_language`
+--
 
 INSERT INTO `mcc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `sort_order`, `status`) VALUES
-(1, '简体中文', 'zh-CN', 'zh_CN', 'cn.png', 'zh-CN', 1, 1),
-(2, 'English', 'en-gb', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 2, 1),
-(3, '繁体中文', 'zh-HK', 'zh_HK.UTF-8,zh_HK,zh-hk,hongkong', 'hk.png', 'zh-HK', 3, 1);
+(2, 'English', 'en-gb', 'en-US,en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 2, 1),
+(1, '简体中文', 'zh-cn', 'zh-CN,zh-CN.UTF-8,zh-cn', '', '', 1, 1),
+(3, '繁体中文', 'zh-hk', 'zh-HK,zh-HK.UTF-8,zh-hk', '', '', 3, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_layout`;
 CREATE TABLE `mcc_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
+--
+-- Dumping data for table `mcc_layout`
+--
 
 INSERT INTO `mcc_layout` (`layout_id`, `name`) VALUES
 (1, '首页'),
-(2, '商品'),
-(3, '分类'),
-(4, '默认'),
-(5, '品牌/制造商'),
-(6, '会员'),
-(7, '结账'),
-(8, '联系'),
+(2, '商品详情'),
+(3, '分类布局'),
+(4, '默认布局'),
+(5, '品牌 / 制造商'),
+(6, '会员账户'),
+(7, '结帐'),
+(8, '联系我们'),
 (9, '网站地图'),
-(10, '加盟'),
+(10, '加盟推广'),
 (11, '信息文章'),
-(12, '比较'),
-(13, '检索'),
-(14, '百度地图'),
-(15, '注册'),
-(16, '博客总列表'),
-(17, '博客分类'),
-(18, '博客详情'),
-(20, '新闻详情'),
-(21, '新闻列表'),
-(22, '新闻分类'),
-(23, '常见问题与解答(FAQs)');
+(12, '商品比较'),
+(13, '检索布局'),
+(14, '博客列表'),
+(15, '博客詳情'),
+(16, '新闻列表'),
+(17, '新闻详情'),
+(18, '常见问题与解答(FAQs)布局');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_layout_module`
+--
 
 DROP TABLE IF EXISTS `mcc_layout_module`;
 CREATE TABLE `mcc_layout_module` (
@@ -2154,70 +2813,77 @@ CREATE TABLE `mcc_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=145 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=120 ;
 
+--
+-- Dumping data for table `mcc_layout_module`
+--
 
 INSERT INTO `mcc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
-(86, 10, 'affiliate', 'column_right', 1),
-(74, 6, 'account', 'column_right', 1),
-(82, 1, 'featured.28', 'content_top', 2),
-(81, 1, 'slideshow.27', 'content_top', 1),
-(80, 1, 'carousel.29', 'content_top', 3),
-(89, 3, 'category', 'column_left', 1),
-(88, 3, 'banner.30', 'column_left', 2),
-(84, 5, 'account', 'column_left', 2),
-(124, 16, 'blog_comment.33', 'column_right', 1),
-(117, 17, 'blog_comment.33', 'column_right', 1),
-(116, 17, 'blog_category', 'column_left', 1),
-(138, 18, 'blog_category', 'column_left', 2),
-(123, 16, 'blog_latest.32', 'column_left', 2),
-(115, 17, 'blog_latest.32', 'column_left', 2),
-(122, 16, 'blog_category', 'column_left', 1),
-(118, 17, 'blog_search', 'column_left', 0),
-(137, 18, 'blog_search', 'column_left', 1),
-(125, 16, 'blog_search', 'column_left', 0),
-(134, 21, 'press_category', 'column_left', 1),
-(140, 22, 'press_category', 'column_left', 1),
-(135, 21, 'press_latest', 'column_left', 2),
-(136, 23, 'faq_category', 'column_left', 1),
-(139, 18, 'blog_latest.32', 'column_left', 3),
-(144, 20, 'press_category', 'column_left', 1);
+(83, 5, 'account', 'column_left', 2),
+(75, 10, 'account', 'column_right', 1),
+(119, 6, 'account', 'column_right', 3),
+(81, 1, 'featured.28', 'content_top', 2),
+(80, 1, 'slideshow.27', 'content_top', 1),
+(77, 3, 'banner.30', 'column_left', 2),
+(76, 3, 'category', 'column_left', 1),
+(82, 1, 'carousel.29', 'content_top', 3),
+(84, 14, 'blog_search', 'column_left', 0),
+(85, 14, 'blog_category', 'column_left', 1),
+(86, 15, 'blog_search', 'column_left', 0),
+(87, 15, 'blog_category', 'column_left', 1),
+(88, 16, 'press_category', 'column_left', 0),
+(89, 16, 'press_latest', 'column_left', 1),
+(90, 17, 'press_category', 'column_left', 0),
+(91, 17, 'press_latest', 'column_left', 1),
+(93, 18, 'faq_category', 'column_left', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_layout_route`
+--
 
 DROP TABLE IF EXISTS `mcc_layout_route`;
 CREATE TABLE `mcc_layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
-  `route` varchar(255) NOT NULL,
+  `route` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
+--
+-- Dumping data for table `mcc_layout_route`
+--
 
 INSERT INTO `mcc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
-(54, 6, 0, 'account/%'),
-(71, 10, 0, 'affiliate/%'),
-(73, 3, 0, 'product/category'),
+(86, 6, 0, 'account/%'),
+(55, 10, 0, 'affiliate/%'),
+(56, 3, 0, 'product/category'),
 (61, 1, 0, 'common/home'),
-(65, 2, 0, 'product/product'),
+(64, 2, 0, 'product/product'),
 (62, 11, 0, 'information/information'),
 (57, 7, 0, 'checkout/%'),
 (59, 8, 0, 'information/contact'),
-(67, 9, 0, 'information/sitemap'),
-(68, 4, 0, ''),
-(64, 5, 0, 'product/manufacturer'),
+(66, 9, 0, 'information/sitemap'),
+(67, 4, 0, ''),
+(63, 5, 0, 'product/manufacturer'),
 (58, 12, 0, 'product/compare'),
-(66, 13, 0, 'product/search'),
-(70, 14, 0, 'information/baidu_map'),
-(72, 15, 0, 'account/login'),
-(88, 16, 0, 'blog/all'),
-(86, 17, 0, 'blog/category'),
-(101, 18, 0, 'blog/blog'),
-(107, 20, 0, 'press/press'),
-(97, 21, 0, 'press/all'),
-(103, 22, 0, 'press/category'),
-(99, 23, 0, 'faq/%');
+(65, 13, 0, 'product/search'),
+(68, 14, 0, 'blog/all'),
+(69, 14, 0, 'blog/category'),
+(70, 15, 0, 'blog/blog'),
+(74, 16, 0, 'press/category'),
+(73, 16, 0, 'press/all'),
+(75, 17, 0, 'press/press'),
+(77, 18, 0, 'faq/%');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_length_class`
+--
 
 DROP TABLE IF EXISTS `mcc_length_class`;
 CREATE TABLE `mcc_length_class` (
@@ -2226,12 +2892,20 @@ CREATE TABLE `mcc_length_class` (
   PRIMARY KEY (`length_class_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+--
+-- Dumping data for table `mcc_length_class`
+--
 
 INSERT INTO `mcc_length_class` (`length_class_id`, `value`) VALUES
 (1, '1.00000000'),
 (2, '10.00000000'),
 (3, '0.39370000');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_length_class_description`
+--
 
 DROP TABLE IF EXISTS `mcc_length_class_description`;
 CREATE TABLE `mcc_length_class_description` (
@@ -2240,8 +2914,11 @@ CREATE TABLE `mcc_length_class_description` (
   `title` varchar(32) NOT NULL,
   `unit` varchar(4) NOT NULL,
   PRIMARY KEY (`length_class_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_length_class_description`
+--
 
 INSERT INTO `mcc_length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 (3, 3, '英寸', 'in'),
@@ -2254,6 +2931,11 @@ INSERT INTO `mcc_length_class_description` (`length_class_id`, `language_id`, `t
 (1, 3, '厘米', 'cm'),
 (2, 3, '毫米', 'mm');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_location`
+--
 
 DROP TABLE IF EXISTS `mcc_location`;
 CREATE TABLE `mcc_location` (
@@ -2268,8 +2950,13 @@ CREATE TABLE `mcc_location` (
   `comment` text NOT NULL,
   PRIMARY KEY (`location_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_manufacturer`
+--
 
 DROP TABLE IF EXISTS `mcc_manufacturer`;
 CREATE TABLE `mcc_manufacturer` (
@@ -2280,6 +2967,9 @@ CREATE TABLE `mcc_manufacturer` (
   PRIMARY KEY (`manufacturer_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
+--
+-- Dumping data for table `mcc_manufacturer`
+--
 
 INSERT INTO `mcc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
 (5, 'HTC', 'catalog/demo/htc_logo.jpg', 0),
@@ -2289,14 +2979,22 @@ INSERT INTO `mcc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`
 (9, 'Canon', 'catalog/demo/canon_logo.jpg', 0),
 (10, 'Sony', 'catalog/demo/sony_logo.jpg', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_manufacturer_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_manufacturer_to_store`;
 CREATE TABLE `mcc_manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`manufacturer_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_manufacturer_to_store`
+--
 
 INSERT INTO `mcc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 (5, 0),
@@ -2306,6 +3004,11 @@ INSERT INTO `mcc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 (9, 0),
 (10, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_marketing`
+--
 
 DROP TABLE IF EXISTS `mcc_marketing`;
 CREATE TABLE `mcc_marketing` (
@@ -2316,8 +3019,60 @@ CREATE TABLE `mcc_marketing` (
   `clicks` int(5) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`marketing_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_menu`
+--
+
+DROP TABLE IF EXISTS `mcc_menu`;
+CREATE TABLE `mcc_menu` (
+  `menu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `type` varchar(6) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`menu_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_menu_description`
+--
+
+DROP TABLE IF EXISTS `mcc_menu_description`;
+CREATE TABLE `mcc_menu_description` (
+  `menu_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`menu_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_menu_module`
+--
+
+DROP TABLE IF EXISTS `mcc_menu_module`;
+CREATE TABLE `mcc_menu_module` (
+  `menu_module_id` int(11) NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`menu_module_id`),
+  KEY `menu_id` (`menu_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_modification`
+--
 
 DROP TABLE IF EXISTS `mcc_modification`;
 CREATE TABLE `mcc_modification` (
@@ -2331,8 +3086,13 @@ CREATE TABLE `mcc_modification` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`modification_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_module`
+--
 
 DROP TABLE IF EXISTS `mcc_module`;
 CREATE TABLE `mcc_module` (
@@ -2341,19 +3101,26 @@ CREATE TABLE `mcc_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
+--
+-- Dumping data for table `mcc_module`
+--
 
 INSERT INTO `mcc_module` (`module_id`, `name`, `code`, `setting`) VALUES
-(30, '分类', 'banner', '{"name":"分类","banner_id":"6","width":"182","height":"182","status":"1"}'),
-(29, '首页', 'carousel', '{"name":"首页","banner_id":"8","width":"130","height":"100","status":"1"}'),
-(28, '首页', 'featured', '{"name":"首页","product":["43","40","42","30"],"limit":"4","width":"200","height":"200","status":"1"}'),
-(27, '首页', 'slideshow', '{"name":"首页","banner_id":"7","width":"1140","height":"380","status":"1"}'),
-(31, '广告 1', 'banner', '{"name":"广告 1","banner_id":"6","width":"182","height":"182","status":"1"}'),
-(32, '最新博客', 'blog_latest', '{"name":"\\u6700\\u65b0\\u535a\\u5ba2","limit":"5","width":"200","height":"100","status":"1"}'),
-(33, '博客最新评论', 'blog_comment', '{"name":"\\u535a\\u5ba2\\u6700\\u65b0\\u8bc4\\u8bba","limit":"3","width":"50","height":"50","status":"1"}');
+(30, 'Category', 'banner', '{"name":"Category","banner_id":"6","width":"182","height":"182","status":"1"}'),
+(29, 'Home Page', 'carousel', '{"name":"Home Page","banner_id":"8","width":"130","height":"100","status":"1"}'),
+(28, 'Home Page', 'featured', '{"name":"Home Page","product":["43","40","42","30"],"limit":"4","width":"200","height":"200","status":"1"}'),
+(27, 'Home Page', 'slideshow', '{"name":"Home Page","banner_id":"7","width":"1140","height":"580","status":"1"}'),
+(31, 'Banner 1', 'banner', '{"name":"Banner 1","banner_id":"6","width":"182","height":"182","status":"1"}'),
+(32, '博客列表', 'blog_latest', '{"name":"\\u535a\\u5ba2\\u5217\\u8868","limit":"5","width":"200","height":"200","status":"1"}'),
+(33, '博客列表', 'blog_comment', '{"name":"\\u535a\\u5ba2\\u5217\\u8868","limit":"5","width":"200","height":"200","status":"1"}');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_option`
+--
 
 DROP TABLE IF EXISTS `mcc_option`;
 CREATE TABLE `mcc_option` (
@@ -2363,8 +3130,13 @@ CREATE TABLE `mcc_option` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
+--
+-- Dumping data for table `mcc_option`
+--
 
 INSERT INTO `mcc_option` (`option_id`, `type`, `sort_order`) VALUES
+(1, 'radio', 1),
+(2, 'checkbox', 2),
 (4, 'text', 3),
 (5, 'select', 4),
 (6, 'textarea', 5),
@@ -2372,11 +3144,14 @@ INSERT INTO `mcc_option` (`option_id`, `type`, `sort_order`) VALUES
 (8, 'date', 7),
 (9, 'time', 8),
 (10, 'datetime', 9),
-(2, 'checkbox', 2),
-(1, 'radio', 1),
 (11, 'select', 10),
 (12, 'date', 11);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_option_description`
+--
 
 DROP TABLE IF EXISTS `mcc_option_description`;
 CREATE TABLE `mcc_option_description` (
@@ -2384,11 +3159,14 @@ CREATE TABLE `mcc_option_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_option_description`
+--
 
 INSERT INTO `mcc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(5, 1, '下拉列表'),
+(5, 3, '下拉列表'),
 (6, 1, '文本区块'),
 (6, 2, 'Textarea'),
 (6, 3, '文本区块'),
@@ -2420,7 +3198,13 @@ INSERT INTO `mcc_option_description` (`option_id`, `language_id`, `name`) VALUES
 (1, 1, '单选按钮组'),
 (12, 2, 'Delivery Date'),
 (12, 3, '配送日期'),
-(5, 3, '下拉列表');
+(5, 1, '下拉列表');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_option_value`
+--
 
 DROP TABLE IF EXISTS `mcc_option_value`;
 CREATE TABLE `mcc_option_value` (
@@ -2431,23 +3215,31 @@ CREATE TABLE `mcc_option_value` (
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
+--
+-- Dumping data for table `mcc_option_value`
+--
 
 INSERT INTO `mcc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
+(43, 1, '', 3),
+(32, 1, '', 1),
+(45, 2, '', 4),
+(44, 2, '', 3),
 (42, 5, '', 4),
 (41, 5, '', 3),
 (40, 5, '', 2),
 (39, 5, '', 1),
+(31, 1, '', 2),
+(23, 2, '', 1),
+(24, 2, '', 2),
 (46, 11, '', 1),
 (47, 11, '', 2),
-(48, 11, '', 3),
-(45, 2, '', 4),
-(44, 2, '', 3),
-(24, 2, '', 2),
-(23, 2, '', 1),
-(43, 1, '', 3),
-(32, 1, '', 1),
-(31, 1, '', 2);
+(48, 11, '', 3);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_option_value_description`
+--
 
 DROP TABLE IF EXISTS `mcc_option_value_description`;
 CREATE TABLE `mcc_option_value_description` (
@@ -2456,8 +3248,11 @@ CREATE TABLE `mcc_option_value_description` (
   `option_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_value_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_option_value_description`
+--
 
 INSERT INTO `mcc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
 (24, 2, 2, '复选框2'),
@@ -2503,6 +3298,11 @@ INSERT INTO `mcc_option_value_description` (`option_value_id`, `language_id`, `o
 (48, 2, 11, 'Large'),
 (48, 3, 11, '大号');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order`
+--
 
 DROP TABLE IF EXISTS `mcc_order`;
 CREATE TABLE `mcc_order` (
@@ -2520,7 +3320,7 @@ CREATE TABLE `mcc_order` (
   `fax` varchar(32) NOT NULL,
   `custom_field` text NOT NULL,
   `payment_fullname` varchar(32) NOT NULL,
-  `payment_company` varchar(40) NOT NULL,
+  `payment_company` varchar(60) NOT NULL,
   `payment_address` varchar(128) NOT NULL,
   `payment_city` varchar(128) NOT NULL,
   `payment_postcode` varchar(10) NOT NULL,
@@ -2564,9 +3364,13 @@ CREATE TABLE `mcc_order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_order_custom_field`
+--
 
 DROP TABLE IF EXISTS `mcc_order_custom_field`;
 CREATE TABLE `mcc_order_custom_field` (
@@ -2579,8 +3383,13 @@ CREATE TABLE `mcc_order_custom_field` (
   `type` varchar(32) NOT NULL,
   `location` varchar(16) NOT NULL,
   PRIMARY KEY (`order_custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_history`
+--
 
 DROP TABLE IF EXISTS `mcc_order_history`;
 CREATE TABLE `mcc_order_history` (
@@ -2591,8 +3400,13 @@ CREATE TABLE `mcc_order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_option`
+--
 
 DROP TABLE IF EXISTS `mcc_order_option`;
 CREATE TABLE `mcc_order_option` (
@@ -2605,8 +3419,13 @@ CREATE TABLE `mcc_order_option` (
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL,
   PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_product`
+--
 
 DROP TABLE IF EXISTS `mcc_order_product`;
 CREATE TABLE `mcc_order_product` (
@@ -2621,8 +3440,13 @@ CREATE TABLE `mcc_order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_recurring`
+--
 
 DROP TABLE IF EXISTS `mcc_order_recurring`;
 CREATE TABLE `mcc_order_recurring` (
@@ -2647,8 +3471,13 @@ CREATE TABLE `mcc_order_recurring` (
   `status` tinyint(4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_recurring_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_recurring_transaction`
+--
 
 DROP TABLE IF EXISTS `mcc_order_recurring_transaction`;
 CREATE TABLE `mcc_order_recurring_transaction` (
@@ -2659,8 +3488,13 @@ CREATE TABLE `mcc_order_recurring_transaction` (
   `amount` decimal(10,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_recurring_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_status`
+--
 
 DROP TABLE IF EXISTS `mcc_order_status`;
 CREATE TABLE `mcc_order_status` (
@@ -2670,6 +3504,9 @@ CREATE TABLE `mcc_order_status` (
   PRIMARY KEY (`order_status_id`,`language_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
+--
+-- Dumping data for table `mcc_order_status`
+--
 
 INSERT INTO `mcc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 (2, 3, '处理中'),
@@ -2712,6 +3549,12 @@ INSERT INTO `mcc_order_status` (`order_status_id`, `language_id`, `name`) VALUES
 (13, 3, '拒付'),
 (5, 3, '完成');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_order_total`
+--
+
 DROP TABLE IF EXISTS `mcc_order_total`;
 CREATE TABLE `mcc_order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -2722,44 +3565,13 @@ CREATE TABLE `mcc_order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
-INSERT INTO `mcc_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
-(1, 1, 'sub_total', '小计', '707.0000', 1),
-(2, 1, 'shipping', '固定运费率', '0.0000', 3),
-(3, 1, 'tax', '增值税 (20%)', '141.4000', 5),
-(4, 1, 'tax', '生态税(-2.00)', '14.0000', 5),
-(5, 1, 'credit', '账户余额', '-500.0000', 7),
-(6, 1, 'total', '总计', '362.4000', 9),
-(7, 2, 'sub_total', '小计', '707.0000', 1),
-(8, 2, 'shipping', '固定运费率', '0.0000', 3),
-(9, 2, 'tax', '增值税 (20%)', '141.4000', 5),
-(10, 2, 'tax', '生态税(-2.00)', '14.0000', 5),
-(11, 2, 'credit', '账户余额', '-500.0000', 7),
-(12, 2, 'total', '总计', '362.4000', 9),
-(13, 3, 'sub_total', '小计', '1.0000', 1),
-(14, 3, 'total', '总计', '1.0000', 9),
-(15, 4, 'sub_total', '小计', '1.0000', 1),
-(16, 4, 'total', '总计', '1.0000', 9),
-(17, 5, 'sub_total', '小计', '1.0000', 1),
-(18, 5, 'total', '总计', '1.0000', 9),
-(19, 6, 'sub_total', '小计', '101.0000', 1),
-(20, 6, 'shipping', '固定运费率', '0.0000', 3),
-(21, 6, 'tax', '增值税 (20%)', '20.2000', 5),
-(22, 6, 'tax', '生态税(-2.00)', '2.0000', 5),
-(23, 6, 'total', '总计', '123.2000', 9),
-(24, 7, 'sub_total', '小计', '101.0000', 1),
-(25, 7, 'shipping', '固定运费率', '0.0000', 3),
-(26, 7, 'tax', '增值税 (20%)', '20.2000', 5),
-(27, 7, 'tax', '生态税(-2.00)', '2.0000', 5),
-(28, 7, 'total', '总计', '123.2000', 9),
-(29, 8, 'sub_total', '小计', '202.0000', 1),
-(30, 8, 'shipping', '固定运费率', '0.0000', 3),
-(31, 8, 'tax', '增值税 (20%)', '40.4000', 5),
-(32, 8, 'tax', '生态税(-2.00)', '4.0000', 5),
-(33, 8, 'total', '总计', '246.4000', 9);
-
+--
+-- Table structure for table `mcc_order_voucher`
+--
 
 DROP TABLE IF EXISTS `mcc_order_voucher`;
 CREATE TABLE `mcc_order_voucher` (
@@ -2776,9 +3588,13 @@ CREATE TABLE `mcc_order_voucher` (
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
   PRIMARY KEY (`order_voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_press`
+--
 
 DROP TABLE IF EXISTS `mcc_press`;
 CREATE TABLE `mcc_press` (
@@ -2791,19 +3607,27 @@ CREATE TABLE `mcc_press` (
   PRIMARY KEY (`press_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
+--
+-- Dumping data for table `mcc_press`
+--
 
 INSERT INTO `mcc_press` (`press_id`, `image`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (1, '', 1, 1, '2015-12-29 19:27:12', '2016-02-25 13:55:10'),
 (2, '', 2, 1, '2016-02-18 14:02:30', '2016-02-18 14:02:51'),
 (3, '', 1, 1, '2016-02-18 14:35:34', '0000-00-00 00:00:00'),
-(4, '', 1, 1, '2016-02-25 10:35:26', '0000-00-00 00:00:00'),
-(5, '', 1, 1, '2016-02-25 10:40:23', '0000-00-00 00:00:00'),
+(4, '', 1, 1, '2016-02-25 10:35:26', '2016-08-22 12:06:16'),
+(5, '', 1, 1, '2016-02-25 10:40:23', '2016-08-22 12:06:23'),
 (6, '', 1, 1, '2016-02-25 10:40:51', '0000-00-00 00:00:00'),
 (7, '', 1, 1, '2016-02-25 10:41:20', '0000-00-00 00:00:00'),
 (8, '', 1, 1, '2016-02-25 10:41:47', '0000-00-00 00:00:00'),
 (9, '', 1, 1, '2016-02-25 10:42:17', '0000-00-00 00:00:00'),
-(10, '', 1, 1, '2016-02-25 10:42:48', '0000-00-00 00:00:00');
+(10, '', 1, 1, '2016-02-25 10:42:48', '2016-08-22 12:06:01');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_category`
+--
 
 DROP TABLE IF EXISTS `mcc_press_category`;
 CREATE TABLE `mcc_press_category` (
@@ -2816,13 +3640,21 @@ CREATE TABLE `mcc_press_category` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`press_category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
+--
+-- Dumping data for table `mcc_press_category`
+--
 
 INSERT INTO `mcc_press_category` (`press_category_id`, `image`, `parent_id`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (1, '', 0, 0, 1, '2015-12-29 19:20:03', '2016-02-09 21:35:11'),
 (2, 'catalog/demo/28_2.jpg', 0, 0, 1, '2015-12-29 19:25:58', '2016-02-09 21:35:26');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_category_description`
+--
 
 DROP TABLE IF EXISTS `mcc_press_category_description`;
 CREATE TABLE `mcc_press_category_description` (
@@ -2835,8 +3667,11 @@ CREATE TABLE `mcc_press_category_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`press_category_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_category_description`
+--
 
 INSERT INTO `mcc_press_category_description` (`press_category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (1, 3, '新闻分类一', '&lt;p&gt;新闻分类一&lt;br&gt;&lt;/p&gt;', '新闻分类一', '新闻分类一', '新闻分类一'),
@@ -2846,6 +3681,11 @@ INSERT INTO `mcc_press_category_description` (`press_category_id`, `language_id`
 (2, 2, '新闻分类二', '&lt;p&gt;新闻分类二&lt;br&gt;&lt;/p&gt;', '新闻分类二', '新闻分类二', '新闻分类二'),
 (2, 3, '新闻分类二', '&lt;p&gt;新闻分类二&lt;br&gt;&lt;/p&gt;', '新闻分类二', '新闻分类二', '新闻分类二');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_category_path`
+--
 
 DROP TABLE IF EXISTS `mcc_press_category_path`;
 CREATE TABLE `mcc_press_category_path` (
@@ -2853,13 +3693,21 @@ CREATE TABLE `mcc_press_category_path` (
   `path_id` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`press_category_id`,`path_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_category_path`
+--
 
 INSERT INTO `mcc_press_category_path` (`press_category_id`, `path_id`, `level`) VALUES
 (1, 1, 0),
 (2, 2, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_category_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_press_category_to_layout`;
 CREATE TABLE `mcc_press_category_to_layout` (
@@ -2867,26 +3715,42 @@ CREATE TABLE `mcc_press_category_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`press_category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_category_to_layout`
+--
 
 INSERT INTO `mcc_press_category_to_layout` (`press_category_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
 (2, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_category_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_press_category_to_store`;
 CREATE TABLE `mcc_press_category_to_store` (
   `press_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`press_category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_category_to_store`
+--
 
 INSERT INTO `mcc_press_category_to_store` (`press_category_id`, `store_id`) VALUES
 (1, 0),
 (2, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_description`
+--
 
 DROP TABLE IF EXISTS `mcc_press_description`;
 CREATE TABLE `mcc_press_description` (
@@ -2901,6 +3765,9 @@ CREATE TABLE `mcc_press_description` (
   KEY `name` (`title`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_description`
+--
 
 INSERT INTO `mcc_press_description` (`press_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
 (1, 3, '新闻一', '&lt;p&gt;新闻一&lt;br&gt;&lt;/p&gt;', '新闻一', '新闻一', '新闻一'),
@@ -2912,12 +3779,12 @@ INSERT INTO `mcc_press_description` (`press_id`, `language_id`, `title`, `descri
 (3, 1, '新闻三', '&lt;p&gt;新闻三&lt;br&gt;&lt;/p&gt;', '新闻三', '新闻三', '新闻三'),
 (3, 2, '新闻三', '&lt;p&gt;新闻三&lt;br&gt;&lt;/p&gt;', '新闻三', '新闻三', '新闻三'),
 (3, 3, '新闻三', '&lt;p&gt;新闻三&lt;br&gt;&lt;/p&gt;', '新闻三', '新闻三', '新闻三'),
-(4, 1, '新闻4', '&lt;p&gt;新闻4&lt;br&gt;&lt;/p&gt;', '新闻4', '新闻4', '新闻4'),
-(4, 2, '新闻4', '&lt;p&gt;新闻4&lt;br&gt;&lt;/p&gt;', '新闻4', '新闻4', '新闻4'),
 (4, 3, '新闻4', '&lt;p&gt;新闻4&lt;br&gt;&lt;/p&gt;', '新闻4', '新闻4', '新闻4'),
-(5, 1, '新闻5', '&lt;p&gt;新闻5&lt;br&gt;&lt;/p&gt;', '新闻5', '新闻5', '新闻5'),
-(5, 2, '新闻5', '&lt;p&gt;新闻5&lt;br&gt;&lt;/p&gt;', '新闻5', '新闻5', '新闻5'),
+(4, 2, '新闻4', '&lt;p&gt;新闻4&lt;br&gt;&lt;/p&gt;', '新闻4', '新闻4', '新闻4'),
+(4, 1, '新闻4', '&lt;p&gt;新闻4&lt;br&gt;&lt;/p&gt;', '新闻4', '新闻4', '新闻4'),
 (5, 3, '新闻5', '&lt;p&gt;新闻5&lt;br&gt;&lt;/p&gt;', '新闻5', '新闻5', '新闻5'),
+(5, 2, '新闻5', '&lt;p&gt;新闻5&lt;br&gt;&lt;/p&gt;', '新闻5', '新闻5', '新闻5'),
+(5, 1, '新闻5', '&lt;p&gt;新闻5&lt;br&gt;&lt;/p&gt;', '新闻5', '新闻5', '新闻5'),
 (6, 1, '新闻6', '&lt;p&gt;新闻6&lt;br&gt;&lt;/p&gt;', '新闻6', '新闻6', '新闻6'),
 (6, 2, '新闻6', '&lt;p&gt;新闻6&lt;br&gt;&lt;/p&gt;', '新闻6', '新闻6', '新闻6'),
 (6, 3, '新闻6', '&lt;p&gt;新闻6&lt;br&gt;&lt;/p&gt;', '新闻6', '新闻6', '新闻6'),
@@ -2930,10 +3797,15 @@ INSERT INTO `mcc_press_description` (`press_id`, `language_id`, `title`, `descri
 (9, 1, '新闻9', '&lt;p&gt;新闻9&lt;br&gt;&lt;/p&gt;', '新闻9', '新闻9', '新闻9'),
 (9, 2, '新闻9', '&lt;p&gt;新闻9&lt;br&gt;&lt;/p&gt;', '新闻9', '新闻9', '新闻9'),
 (9, 3, '新闻9', '&lt;p&gt;新闻9&lt;br&gt;&lt;/p&gt;', '新闻9', '新闻9', '新闻9'),
-(10, 1, '新闻10', '&lt;p&gt;新闻10&lt;br&gt;&lt;/p&gt;', '新闻10', '新闻10', '新闻10'),
+(10, 3, '新闻10', '&lt;p&gt;新闻10&lt;br&gt;&lt;/p&gt;', '新闻10', '新闻10', '新闻10'),
 (10, 2, '新闻10', '&lt;p&gt;新闻10&lt;br&gt;&lt;/p&gt;', '新闻10', '新闻10', '新闻10'),
-(10, 3, '新闻10', '&lt;p&gt;新闻10&lt;br&gt;&lt;/p&gt;', '新闻10', '新闻10', '新闻10');
+(10, 1, '新闻10', '&lt;p&gt;新闻10&lt;br&gt;&lt;/p&gt;', '新闻10', '新闻10', '新闻10');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_product`
+--
 
 DROP TABLE IF EXISTS `mcc_press_product`;
 CREATE TABLE `mcc_press_product` (
@@ -2942,6 +3814,9 @@ CREATE TABLE `mcc_press_product` (
   UNIQUE KEY `press_id` (`press_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_product`
+--
 
 INSERT INTO `mcc_press_product` (`press_id`, `related_id`) VALUES
 (1, 28),
@@ -2952,6 +3827,11 @@ INSERT INTO `mcc_press_product` (`press_id`, `related_id`) VALUES
 (2, 41),
 (2, 47);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_press_to_layout`;
 CREATE TABLE `mcc_press_to_layout` (
@@ -2961,6 +3841,9 @@ CREATE TABLE `mcc_press_to_layout` (
   PRIMARY KEY (`press_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_to_layout`
+--
 
 INSERT INTO `mcc_press_to_layout` (`press_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
@@ -2974,6 +3857,11 @@ INSERT INTO `mcc_press_to_layout` (`press_id`, `store_id`, `layout_id`) VALUES
 (9, 0, 0),
 (10, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_to_press_category`
+--
 
 DROP TABLE IF EXISTS `mcc_press_to_press_category`;
 CREATE TABLE `mcc_press_to_press_category` (
@@ -2983,6 +3871,9 @@ CREATE TABLE `mcc_press_to_press_category` (
   KEY `press_category_id` (`press_category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_to_press_category`
+--
 
 INSERT INTO `mcc_press_to_press_category` (`press_id`, `press_category_id`) VALUES
 (1, 2),
@@ -2997,6 +3888,11 @@ INSERT INTO `mcc_press_to_press_category` (`press_id`, `press_category_id`) VALU
 (9, 2),
 (10, 2);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_press_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_press_to_store`;
 CREATE TABLE `mcc_press_to_store` (
@@ -3005,6 +3901,9 @@ CREATE TABLE `mcc_press_to_store` (
   PRIMARY KEY (`press_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_press_to_store`
+--
 
 INSERT INTO `mcc_press_to_store` (`press_id`, `store_id`) VALUES
 (1, 0),
@@ -3018,6 +3917,11 @@ INSERT INTO `mcc_press_to_store` (`press_id`, `store_id`) VALUES
 (9, 0),
 (10, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product`
+--
 
 DROP TABLE IF EXISTS `mcc_product`;
 CREATE TABLE `mcc_product` (
@@ -3052,37 +3956,39 @@ CREATE TABLE `mcc_product` (
   `viewed` int(5) NOT NULL DEFAULT '0',
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
-  `sent` tinyint(1) NOT NULL,
-  `weidian_product_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
+--
+-- Dumping data for table `mcc_product`
+--
 
-INSERT INTO `mcc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`, `sent`, `weidian_product_id`) VALUES
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/29_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0, 0),
-(30, 'Product 3', '', '', '', '', '', '', '', 5, 6, 'catalog/demo/30_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2015-11-18 15:02:21', 0, 0),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/31_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 0, 0),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/32_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2015-06-04 22:28:17', 0, 0),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/33.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2015-06-04 22:11:40', 0, 0),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/34_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0, 0),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/35_1.jpg', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0, 0),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/36_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0, 0),
-(40, 'product 11', '', '', '', '', '', '', '', 960, 5, 'catalog/demo/40_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 4, '2009-02-03 21:07:12', '2015-06-04 22:25:46', 0, 0),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/41_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 0, 0),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/42_1.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 5, '2009-02-03 21:07:37', '2016-03-11 09:27:35', 0, 0),
-(43, 'Product 16', '', '', '', '', '', '', '', 926, 5, 'catalog/demo/43_1.jpg', 8, 0, '1.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 2, '2009-02-03 21:07:49', '2016-03-12 15:53:55', 0, 0),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/44_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0, 0),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/45_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0, 0),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/46_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0, 0),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/47_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 2, '2009-02-03 21:08:40', '2015-06-12 20:14:35', 0, 0),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/48_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0, 0),
-(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/49_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2015-06-04 22:20:15', 0, 0),
-(50, '', '', '', '', '', '', '', '', 100, 5, NULL, 0, 1, '0.0000', 0, 0, '2015-12-08', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 0, 0, '2015-12-08 11:24:23', '0000-00-00 00:00:00', 0, 0),
-(51, '', '', '', '', '', '', '', '', 100, 5, NULL, 0, 1, '0.0000', 0, 0, '2015-12-08', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 0, 0, '2015-12-08 11:25:13', '0000-00-00 00:00:00', 0, 0),
-(52, '', '', '', '', '', '', '', '', 100, 5, NULL, 0, 1, '0.0000', 0, 0, '2015-12-08', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 0, 0, '2015-12-08 11:26:59', '0000-00-00 00:00:00', 0, 0),
-(53, '', '', '', '', '', '', '', '', 100, 5, NULL, 0, 1, '0.0000', 0, 0, '2015-12-08', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 0, 0, '2015-12-08 11:29:40', '0000-00-00 00:00:00', 0, 0),
-(54, '', '', '', '', '', '', '', '', 100, 5, NULL, 0, 1, '0.0000', 0, 0, '2015-12-08', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 0, 0, '2015-12-08 11:30:29', '0000-00-00 00:00:00', 0, 0),
-(28, 'Product 1', '', '', '', '', '', '', '', 937, 7, 'catalog/demo/28_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 4, '2009-02-03 16:06:50', '2015-12-04 16:03:53', 0, 0);
+INSERT INTO `mcc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
+(28, 'Product 17', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/product/product_3/product3_1.jpg', 5, 1, '0.9900', 200, 0, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2016-08-23 08:57:18'),
+(29, 'Product 14', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/product/product_13/product13_1.jpg', 6, 1, '1.9900', 0, 0, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2016-08-23 08:56:28'),
+(30, 'Product 13', '', '', '', '', '', '', '', 6, 6, 'catalog/demo/product/product21/product21_1.jpg', 9, 1, '100.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2016-08-13 14:04:40'),
+(31, 'Product 12', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/product/product_12/product12_1.jpg', 0, 1, '1.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2016-08-23 08:56:07'),
+(32, 'Product 11', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/product/product_8/product8_1.jpg', 8, 1, '1.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2016-08-23 08:55:50'),
+(33, 'Product 2', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/product/product17/product17_1.jpg', 0, 1, '1.0000', 0, 0, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2016-08-23 09:56:25'),
+(34, 'Product 15', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/product/product_7/product7_1.jpg', 8, 1, '1.0000', 0, 0, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2016-08-23 08:56:50'),
+(35, 'Product 10', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/product/product_14/product14_1.jpg', 0, 0, '1.0000', 0, 0, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2016-08-23 08:55:32'),
+(36, 'Product 6', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/product/product_6/product6_1.jpg', 8, 0, '1.0000', 100, 0, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2016-08-23 08:54:16'),
+(40, 'Product 19', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/product/product19/product19_1.jpg', 8, 1, '6.9900', 0, 0, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2016-08-23 08:58:04'),
+(41, 'Product 4', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/product/product_4/product4_1.jpg', 8, 1, '1.0000', 0, 0, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2016-08-23 08:53:47'),
+(42, 'Product 1', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/product/product_1/product1_1.jpg', 8, 1, '100.0000', 400, 0, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 0, '2009-02-03 21:07:37', '2016-08-23 09:56:14'),
+(43, 'Product 8', '', '', '', '', '', '', '', 885, 5, 'catalog/demo/product/product_9/product9_1.jpg', 8, 0, '0.0100', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2016-08-23 18:59:05'),
+(44, 'Product 9', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/product/product_10/product10_1.jpg', 8, 1, '2.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2016-08-23 08:55:07'),
+(45, 'Product 5', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/product/product_11/product11_1.jpg', 8, 1, '2.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2016-08-23 08:54:02'),
+(46, 'Product 3', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/product/product16/product16_1.jpg', 10, 1, '1.0000', 0, 0, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2016-08-23 09:56:36'),
+(47, 'Product 7', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/product/product_2/product2_1.jpg', 7, 1, '1.0000', 400, 0, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2016-08-23 08:54:32'),
+(48, 'Product 18', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/product/product_5/product5_1.jpg', 8, 1, '2.9900', 0, 0, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2016-08-23 08:57:42'),
+(49, 'Product 16', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/product/product15/product15_1.jpg', 0, 1, '199.9900', 0, 0, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2011-04-26 08:57:34', '2016-08-13 14:04:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_attribute`
+--
 
 DROP TABLE IF EXISTS `mcc_product_attribute`;
 CREATE TABLE `mcc_product_attribute` (
@@ -3091,26 +3997,34 @@ CREATE TABLE `mcc_product_attribute` (
   `language_id` int(11) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_attribute`
+--
 
 INSERT INTO `mcc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-(43, 2, 1, '1'),
+(43, 4, 2, '8gb'),
+(42, 3, 1, '100mhz'),
+(43, 4, 1, '8gb'),
+(42, 3, 2, '100mhz'),
 (42, 3, 3, '100mhz'),
 (47, 4, 2, '16GB'),
-(43, 2, 3, '1'),
-(42, 3, 2, '100mhz'),
 (47, 4, 1, '16GB'),
-(43, 2, 2, '1'),
+(43, 4, 3, '8gb'),
 (47, 2, 3, '4'),
-(43, 4, 1, '8gb'),
-(42, 3, 1, '100mhz'),
+(43, 2, 3, '1'),
 (47, 2, 2, '4'),
-(47, 4, 3, '16GB'),
 (47, 2, 1, '4'),
-(43, 4, 2, '8gb'),
-(43, 4, 3, '8gb');
+(47, 4, 3, '16GB'),
+(43, 2, 2, '1'),
+(43, 2, 1, '1');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_description`
+--
 
 DROP TABLE IF EXISTS `mcc_product_description`;
 CREATE TABLE `mcc_product_description` (
@@ -3124,69 +4038,77 @@ CREATE TABLE `mcc_product_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`product_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_description`
+--
 
 INSERT INTO `mcc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(48, 1, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(40, 2, 'iPhone 6 Plus', 'iPhone is a revolutionary new mobile phone that allows you to make a \ncall by simply tapping a name or number in your address book, a \nfavorites list, or a call log. It also automatically syncs all your \ncontacts from a PC, Mac, or Internet service. And it lets you select and\n listen to voicemail messages in whatever order you want just like \nemail.', '', 'iPhone 6 Plus', '', ''),
-(40, 3, '苹果iPhone 6 Plus', '2015年3月6日，苹果iPhone6 Plus（行货）在&quot;拍易得&quot;现货促销，现在在其网上购买苹果iPhone6 Plus仅需95元即可秒杀。这款手机的配件包括：充电器、耳机和数据线等。苹果iPhone6 Plus是一款配置有光学防抖技术的智能手机。', '', '苹果iPhone 6 Plus', '', ''),
-(44, 1, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', '', ''),
-(45, 1, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(29, 1, 'Palm Treo Pro', '&lt;p&gt;\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\n	&lt;li&gt;\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\n	&lt;li&gt;\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\n	&lt;li&gt;\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\n	&lt;li&gt;\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\n	&lt;li&gt;\n		Built-in GPS&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\n	&lt;li&gt;\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\n	&lt;li&gt;\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\n	&lt;li&gt;\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\n	&lt;li&gt;\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\n	&lt;li&gt;\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\n	&lt;li&gt;\n		3.5mm stereo headset jack&lt;/li&gt;\n	&lt;li&gt;\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\n&lt;/ul&gt;\n', '', '', '', ''),
-(36, 2, 'iPod Nano', '&lt;div&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', ''),
-(46, 1, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', '', ''),
+(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
+(40, 1, '躺式沙发', '2015年3月6日，苹果iPhone6 Plus（行货）在&quot;拍易得&quot;现货促销，现在在其网上购买苹果iPhone6 Plus仅需95元即可秒杀。这款手机的配件包括：充电器、耳机和数据线等。苹果iPhone6 Plus是一款配置有光学防抖技术的智能手机。', '', '躺式沙发', '躺式沙发', '躺式沙发'),
+(44, 1, '田方格书架', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '田方格书架', '田方格书架', '田方格书架'),
+(45, 1, '时尚储物柜', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '时尚储物柜', '时尚储物柜', '时尚储物柜'),
+(29, 2, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
+(36, 2, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
+(46, 3, '復古鏤空展廚', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
+(47, 1, '木艺设计', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you''re at the office&lt;/p&gt;\r\n', '', ' 木艺设计', '木艺设计', '木艺设计'),
+(32, 2, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', 'iPod Touch', '', ''),
+(41, 3, '布藝沙發', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
+(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
+(49, 1, '缘木立柜', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;äö&lt;/p&gt;\r\n', '', '缘木立柜', '缘木立柜', '缘木立柜'),
+(48, 1, '莲式木几', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '莲式木几', '莲式木几', '莲式木几'),
+(40, 2, 'iPhone 6 Plus', 'iPhone is a revolutionary new mobile phone that allows you to make a \r\ncall by simply tapping a name or number in your address book, a \r\nfavorites list, or a call log. It also automatically syncs all your \r\ncontacts from a PC, Mac, or Internet service. And it lets you select and\r\n listen to voicemail messages in whatever order you want just like \r\nemail.', '', 'iPhone 6 Plus', '', ''),
+(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
+(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
+(29, 1, '纯香家具', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '纯香家具', '纯香家具', '纯香家具'),
+(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
 (47, 2, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you''re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(32, 2, 'iPod Touch', '&lt;p&gt;\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\n	&amp;nbsp;&lt;/p&gt;\n', '', 'iPod Touch', '', ''),
-(41, 1, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', '', ''),
-(43, 1, 'MacBook', '&lt;p&gt;在本次3月份苹果春季新品发布会上，除了最为耀眼的新款MacBook外，苹果还对MacBook Air与13英寸的Retina MacBook Pro进行了常规硬件升级。其中13英寸的Retina MacBook Pro更新最受关注，因为其在性能上做出了许多重大升级，包括第五代Intel Broadwell处理器、Iris 6100核心显卡、读写速度翻倍的PCIe SSD固态硬盘、更高频率的内存，同时电池续航还增加了一个小时。除此之外，它还首先搭载了与新款MacBook一样的全新Force Touch触控板。&lt;/p&gt;&lt;p&gt;由于国行版的13英寸的Retina MacBook Pro现在已经全面铺货，笔者也得以体验到这款搭载全新压感触控设计的触控板。苹果电脑的触控板体验一直很优秀，配合OS X系统中的多指手势操作，可以轻松完成拖拽文件、切换应用程序、切换不同桌面等操作。如今压力感应操作的加入可以说在原本多指手势的基础上加入了一个全新的维度，使得在触控板上可以进行更多的操作命令。&lt;/p&gt;&lt;p&gt;苹果如此重视笔记本电脑上触控板的用户体验，使得MacBook用户几乎可以不用鼠标，也提升了用户的便利性。由于其长续航的特性，外出也基本不需要携带电源，只需要带一台笔记本就足够。笔者在体验了一天2015款苹果MacBook Pro后，写下这篇评测文章，希望能给关注这款产品的网友一些参考&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;', '', 'MacBook', '', ''),
-(31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\n	&lt;div&gt;\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\n		&lt;br /&gt;\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(49, 3, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;äö&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(36, 3, 'iPod Nano', '&lt;div&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', ''),
-(40, 1, '苹果iPhone 6 Plus', '2015年3月6日，苹果iPhone6 Plus（行货）在&quot;拍易得&quot;现货促销，现在在其网上购买苹果iPhone6 Plus仅需95元即可秒杀。这款手机的配件包括：充电器、耳机和数据线等。苹果iPhone6 Plus是一款配置有光学防抖技术的智能手机。', '', '苹果iPhone 6 Plus', '', ''),
-(44, 2, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', '', ''),
-(45, 2, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(29, 3, 'Palm Treo Pro', '&lt;p&gt;\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\n	&lt;li&gt;\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\n	&lt;li&gt;\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\n	&lt;li&gt;\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\n	&lt;li&gt;\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\n	&lt;li&gt;\n		Built-in GPS&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\n	&lt;li&gt;\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\n	&lt;li&gt;\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\n	&lt;li&gt;\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\n	&lt;li&gt;\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\n	&lt;li&gt;\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\n	&lt;li&gt;\n		3.5mm stereo headset jack&lt;/li&gt;\n	&lt;li&gt;\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\n&lt;/ul&gt;\n', '', '', '', ''),
-(29, 2, 'Palm Treo Pro', '&lt;p&gt;\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\n	&lt;li&gt;\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\n	&lt;li&gt;\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\n	&lt;li&gt;\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\n	&lt;li&gt;\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\n	&lt;li&gt;\n		Built-in GPS&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\n	&lt;li&gt;\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\n	&lt;li&gt;\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\n	&lt;li&gt;\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\n	&lt;li&gt;\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\n	&lt;li&gt;\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\n	&lt;li&gt;\n		3.5mm stereo headset jack&lt;/li&gt;\n	&lt;li&gt;\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\n&lt;/ul&gt;\n', '', '', '', ''),
-(46, 2, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', '', ''),
-(47, 3, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you''re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(32, 1, 'iPod Touch', '&lt;p&gt;\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\n	&amp;nbsp;&lt;/p&gt;\n', '', 'iPod Touch', '', ''),
-(41, 2, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', '', ''),
-(32, 3, 'iPod Touch', '&lt;p&gt;\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\n	&amp;nbsp;&lt;/p&gt;\n', '', 'iPod Touch', '', ''),
+(32, 1, '立式书架', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '立式书架', '立式书架', '立式书架'),
+(41, 2, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
+(32, 3, '立式書架', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', 'iPod Touch', '', ''),
 (43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
-(31, 3, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\n	&lt;div&gt;\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\n		&lt;br /&gt;\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
+(31, 3, '簡約小桌', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
 (49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;äö&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 3, 'Apple Cinema 30&quot;', '&lt;p&gt;AMD 785G，一个定位于AMD 780G和AMD \r\n790GX之间的产品，近期成为所有主板厂商推广的重点，同时也是所有DIY用户关注的焦点。抛开其整合DirectX 10.1规格的Radeon \r\nHD 4200图形显示核心不提，全新升级的UVD2.0高清解码引擎，让AMD \r\n785G更适合高清应用。诚然，目前在卖场里攒HTPC专用电脑的人并不多，但随着广大民众生活水平的不断提高，这种个性化应用必将是未来大势所趋，故在\r\nAMD 785G上设计更多的HTPC应用功能，也成为有实力的主板品牌必须做的一件事。&lt;/p&gt;&lt;p&gt;一向以代工著称的富士康在个性化产品上的设计近年来有了很大的改观，除了推出面向超频玩家的&quot;Quantum Force（量子力量）&quot;系列外，还针对高品质家庭用户推出了Digital Life（数字家庭）系列，其在DIY产品线上的用心程度不言而喻。&lt;br&gt;&lt;/p&gt;', '', 'Apple Cinema 30&quot;', '', ''),
-(31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\n	&lt;div&gt;\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\n		&lt;br /&gt;\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\n		&lt;br /&gt;\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(48, 3, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(28, 2, 'HTC Touch HD', '&lt;p&gt;\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Processor Qualcomm&reg; MSM 7201A&trade; 528 MHz&lt;/li&gt;\n	&lt;li&gt;\n		Windows Mobile&reg; 6.1 Professional Operating System&lt;/li&gt;\n	&lt;li&gt;\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\n	&lt;li&gt;\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\n	&lt;li&gt;\n		Device Control via HTC TouchFLO&trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\n	&lt;li&gt;\n		GPS and A-GPS ready&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth&reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\n	&lt;li&gt;\n		Wi-Fi&reg;: IEEE 802.11 b/g&lt;/li&gt;\n	&lt;li&gt;\n		HTC ExtUSB&trade; (11-pin mini-USB 2.0)&lt;/li&gt;\n	&lt;li&gt;\n		5 megapixel color camera with auto focus&lt;/li&gt;\n	&lt;li&gt;\n		VGA CMOS color camera&lt;/li&gt;\n	&lt;li&gt;\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\n	&lt;li&gt;\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\n	&lt;li&gt;\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\n	&lt;li&gt;\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\n	&lt;li&gt;\n		Expansion Slot: microSD&trade; memory card (SD 2.0 compatible)&lt;/li&gt;\n	&lt;li&gt;\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\n	&lt;li&gt;\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\n&lt;/ul&gt;\n', '', 'HTC Touch HD', '', ''),
-(28, 3, 'HTC Touch HD', '&lt;p&gt;\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Processor Qualcomm&reg; MSM 7201A&trade; 528 MHz&lt;/li&gt;\n	&lt;li&gt;\n		Windows Mobile&reg; 6.1 Professional Operating System&lt;/li&gt;\n	&lt;li&gt;\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\n	&lt;li&gt;\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\n	&lt;li&gt;\n		Device Control via HTC TouchFLO&trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\n	&lt;li&gt;\n		GPS and A-GPS ready&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth&reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\n	&lt;li&gt;\n		Wi-Fi&reg;: IEEE 802.11 b/g&lt;/li&gt;\n	&lt;li&gt;\n		HTC ExtUSB&trade; (11-pin mini-USB 2.0)&lt;/li&gt;\n	&lt;li&gt;\n		5 megapixel color camera with auto focus&lt;/li&gt;\n	&lt;li&gt;\n		VGA CMOS color camera&lt;/li&gt;\n	&lt;li&gt;\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\n	&lt;li&gt;\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\n	&lt;li&gt;\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\n	&lt;li&gt;\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\n	&lt;li&gt;\n		Expansion Slot: microSD&trade; memory card (SD 2.0 compatible)&lt;/li&gt;\n	&lt;li&gt;\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\n	&lt;li&gt;\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\n&lt;/ul&gt;\n', '', 'HTC Touch HD', '', ''),
-(44, 3, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', '', ''),
-(45, 3, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', '', ''),
-(30, 3, '佳能EOS-5D', '&lt;p&gt;佳能EOS-5D终于揭开了其神秘的面纱，相信大家都对佳能EOS-5D的性能感到满意，但是佳能EOS-5D拍出来的片子如何呢？为此，我们特地从佳能网站上找到几张原尺寸的佳能EOS-5D实拍样张。&lt;/p&gt;', '', '佳能EOS-5D', '', ''),
-(30, 2, 'Canon EOS 5D', '&lt;p&gt;\n	Canon&#039;s press material for the EOS 5D states that it &#039;defines (a) new D-SLR category&#039;, while we&#039;re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably &#039;chunkier&#039;). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR&#039;s, an important difference when compared to the latter is that the EOS 5D doesn&#039;t have any environmental seals. While Canon don&#039;t specifically refer to the EOS 5D as a &#039;professional&#039; digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they&#039;ve not bought too many EF-S lenses...) &auml;&euml;&lt;/p&gt;\n', '', 'Canon EOS 5D', '', ''),
-(30, 1, '佳能EOS-5D', '&lt;p&gt;佳能EOS-5D终于揭开了其神秘的面纱，相信大家都对佳能EOS-5D的性能感到满意，但是佳能EOS-5D拍出来的片子如何呢？为此，我们特地从佳能网站上找到几张原尺寸的佳能EOS-5D实拍样张。&lt;/p&gt;', '', '佳能EOS-5D', '', ''),
-(46, 3, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', '', ''),
-(41, 3, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', '', ''),
-(33, 1, '三星 941BW', '是一款19英寸，拥有16:10黄金屏幕比例的产品。这款产品在外观上采用了黑色烤漆工艺，底边框位置我们看到了其印有品牌LOGO，非常精致。而我们在其它边框位置看到了产品信息，方便了用户购买时挑选。\n', '', '三星 941BW', '', ''),
-(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\n	Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&#039;s not hard to imagine.&lt;/div&gt;\n', '', 'Samsung SyncMaster 941BW', '', ''),
-(33, 3, '三星 941BW', '是一款19英寸，拥有16:10黄金屏幕比例的产品。这款产品在外观上采用了黑色烤漆工艺，底边框位置我们看到了其印有品牌LOGO，非常精致。而我们在其它边框位置看到了产品信息，方便了用户购买时挑选。\n', '', '三星 941BW', '', ''),
-(34, 1, 'iPod Shuffle', '&lt;div&gt;\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\n	&lt;p&gt;\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\n	&lt;p&gt;\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', ''),
-(34, 2, 'iPod Shuffle', '&lt;div&gt;\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\n	&lt;p&gt;\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\n	&lt;p&gt;\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', '');
-INSERT INTO `mcc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(34, 3, 'iPod Shuffle', '&lt;div&gt;\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\n	&lt;p&gt;\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\n	&lt;p&gt;\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', ''),
-(35, 1, 'Product 8', '&lt;p&gt;\n	Product 8&lt;/p&gt;\n', '', '', '', ''),
-(35, 2, 'Product 8', '&lt;p&gt;\n	Product 8&lt;/p&gt;\n', '', '', '', ''),
-(35, 3, 'Product 8', '&lt;p&gt;\n	Product 8&lt;/p&gt;\n', '', '', '', ''),
-(36, 1, 'iPod Nano', '&lt;div&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\n	&lt;p&gt;\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\n	&lt;p&gt;\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\n&lt;/div&gt;\n', '', '', '', ''),
-(49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;äö&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 1, 'Apple Cinema 30&quot;', '&lt;p&gt;AMD 785G，一个定位于AMD 780G和AMD 790GX之间的产品，近期成为所有主板厂商推广的重点，同时也是所有DIY用户关注的焦点。抛开其整合DirectX 10.1规格的Radeon HD 4200图形显示核心不提，全新升级的UVD2.0高清解码引擎，让AMD 785G更适合高清应用。诚然，目前在卖场里攒HTPC专用电脑的人并不多，但随着广大民众生活水平的不断提高，这种个性化应用必将是未来大势所趋，故在AMD 785G上设计更多的HTPC应用功能，也成为有实力的主板品牌必须做的一件事。&lt;/p&gt;&lt;p&gt;一向以代工著称的富士康在个性化产品上的设计近年来有了很大的改观，除了推出面向超频玩家的&quot;Quantum Force（量子力量）&quot;系列外，还针对高品质家庭用户推出了Digital Life（数字家庭）系列，其在DIY产品线上的用心程度不言而喻。&lt;br&gt;&lt;/p&gt;', '', 'Apple Cinema 30&quot;', '', ''),
 (42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font size=&quot;2&quot; face=&quot;helvetica,geneva,arial&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;Helvetica&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there''s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font size=&quot;2&quot; face=&quot;Helvetica&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it''s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font size=&quot;2&quot; face=&quot;Helvetica&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple''s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font size=&quot;2&quot; face=&quot;Helvetica&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font size=&quot;2&quot; face=&quot;Helvetica&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for \r\nconnection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: \r\n50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO ''03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30&quot;', '', ''),
-(43, 3, 'MacBook', '&lt;p&gt;在本次3月份苹果春季新品发布会上，除了最为耀眼的新款MacBook外，苹果还对MacBook Air与13英寸的Retina \r\nMacBook Pro进行了常规硬件升级。其中13英寸的Retina MacBook \r\nPro更新最受关注，因为其在性能上做出了许多重大升级，包括第五代Intel Broadwell处理器、Iris \r\n6100核心显卡、读写速度翻倍的PCIe \r\nSSD固态硬盘、更高频率的内存，同时电池续航还增加了一个小时。除此之外，它还首先搭载了与新款MacBook一样的全新Force \r\nTouch触控板。&lt;/p&gt;&lt;p&gt;由于国行版的13英寸的Retina MacBook \r\nPro现在已经全面铺货，笔者也得以体验到这款搭载全新压感触控设计的触控板。苹果电脑的触控板体验一直很优秀，配合OS \r\nX系统中的多指手势操作，可以轻松完成拖拽文件、切换应用程序、切换不同桌面等操作。如今压力感应操作的加入可以说在原本多指手势的基础上加入了一个全新\r\n的维度，使得在触控板上可以进行更多的操作命令。&lt;/p&gt;&lt;p&gt;苹果如此重视笔记本电脑上触控板的用户体验，使得MacBook用户几乎可以不用鼠标，也\r\n提升了用户的便利性。由于其长续航的特性，外出也基本不需要携带电源，只需要带一台笔记本就足够。笔者在体验了一天2015款苹果MacBook \r\nPro后，写下这篇评测文章，希望能给关注这款产品的网友一些参考&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;', '', 'MacBook', '', ''),
-(47, 1, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you''re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(28, 1, 'HTC Touch HD', '&lt;p&gt;\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\n&lt;p&gt;\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n	&lt;li&gt;\n		Processor Qualcomm&reg; MSM 7201A&trade; 528 MHz&lt;/li&gt;\n	&lt;li&gt;\n		Windows Mobile&reg; 6.1 Professional Operating System&lt;/li&gt;\n	&lt;li&gt;\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\n	&lt;li&gt;\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\n	&lt;li&gt;\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\n	&lt;li&gt;\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\n	&lt;li&gt;\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\n	&lt;li&gt;\n		Device Control via HTC TouchFLO&trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\n	&lt;li&gt;\n		GPS and A-GPS ready&lt;/li&gt;\n	&lt;li&gt;\n		Bluetooth&reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\n	&lt;li&gt;\n		Wi-Fi&reg;: IEEE 802.11 b/g&lt;/li&gt;\n	&lt;li&gt;\n		HTC ExtUSB&trade; (11-pin mini-USB 2.0)&lt;/li&gt;\n	&lt;li&gt;\n		5 megapixel color camera with auto focus&lt;/li&gt;\n	&lt;li&gt;\n		VGA CMOS color camera&lt;/li&gt;\n	&lt;li&gt;\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\n	&lt;li&gt;\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\n	&lt;li&gt;\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\n	&lt;li&gt;\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\n	&lt;li&gt;\n		Expansion Slot: microSD&trade; memory card (SD 2.0 compatible)&lt;/li&gt;\n	&lt;li&gt;\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\n	&lt;li&gt;\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\n&lt;/ul&gt;\n', '', 'HTC Touch HD', '', '');
+(31, 1, '简约小桌', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '简约小桌', '简约小桌', '简约小桌'),
+(28, 3, '藝術坐椅', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'HTC Touch HD', '', ''),
+(28, 2, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'HTC Touch HD', '', ''),
+(30, 3, '簡約座椅', '&lt;p&gt;佳能EOS-5D终于揭开了其神秘的面纱，相信大家都对佳能EOS-5D的性能感到满意，但是佳能EOS-5D拍出来的片子如何呢？为此，我们特地从佳能网站上找到几张原尺寸的佳能EOS-5D实拍样张。&lt;/p&gt;', '', '佳能EOS-5D', '', ''),
+(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'Canon EOS 5D', '', ''),
+(30, 1, '简约座椅', '&lt;p&gt;佳能EOS-5D终于揭开了其神秘的面纱，相信大家都对佳能EOS-5D的性能感到满意，但是佳能EOS-5D拍出来的片子如何呢？为此，我们特地从佳能网站上找到几张原尺寸的佳能EOS-5D实拍样张。&lt;/p&gt;', '', '简约座椅', '简约座椅', '简约座椅'),
+(41, 1, '布艺沙发', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '布艺沙发', '布艺沙发', '布艺沙发'),
+(33, 3, '古色展廚', '是一款19英寸，拥有16:10黄金屏幕比例的产品。这款产品在外观上采用了黑色烤漆工艺，底边框位置我们看到了其印有品牌LOGO，非常精致。而我们在其它边框位置看到了产品信息，方便了用户购买时挑选。\r\n', '', '三星 941BW', '', ''),
+(34, 3, '線條式展架', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', '');
+INSERT INTO `mcc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(34, 1, '线条式展架', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '线条式展架', '线条式展架', '线条式展架'),
+(34, 2, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
+(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
+(35, 3, '真皮座椅', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
+(36, 1, '时尚简约办公小桌', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '时尚简约办公小桌', '时尚简约办公小桌', '时尚简约办公小桌'),
+(49, 3, '緣木立櫃', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;äö&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
+(42, 1, '包式座椅', '&lt;p&gt;AMD 785G，一个定位于AMD 780G和AMD \r\n790GX之间的产品，近期成为所有主板厂商推广的重点，同时也是所有DIY用户关注的焦点。抛开其整合DirectX 10.1规格的Radeon \r\nHD 4200图形显示核心不提，全新升级的UVD2.0高清解码引擎，让AMD \r\n785G更适合高清应用。诚然，目前在卖场里攒HTPC专用电脑的人并不多，但随着广大民众生活水平的不断提高，这种个性化应用必将是未来大势所趋，故在\r\nAMD 785G上设计更多的HTPC应用功能，也成为有实力的主板品牌必须做的一件事。&lt;/p&gt;&lt;p&gt;一向以代工著称的富士康在个性化产品上的设计近年来有了很大的改观，除了推出面向超频玩家的&quot;Quantum Force（量子力量）&quot;系列外，还针对高品质家庭用户推出了Digital Life（数字家庭）系列，其在DIY产品线上的用心程度不言而喻。&lt;br&gt;&lt;/p&gt;', '', '包式座椅', '包式座椅', '包式座椅'),
+(43, 3, '玻璃茶幾', '&lt;p&gt;在本次3月份苹果春季新品发布会上，除了最为耀眼的新款MacBook外，苹果还对MacBook Air与13英寸的Retina \r\nMacBook Pro进行了常规硬件升级。其中13英寸的Retina MacBook \r\nPro更新最受关注，因为其在性能上做出了许多重大升级，包括第五代Intel Broadwell处理器、Iris \r\n6100核心显卡、读写速度翻倍的PCIe \r\nSSD固态硬盘、更高频率的内存，同时电池续航还增加了一个小时。除此之外，它还首先搭载了与新款MacBook一样的全新Force \r\nTouch触控板。&lt;/p&gt;&lt;p&gt;由于国行版的13英寸的Retina MacBook \r\nPro现在已经全面铺货，笔者也得以体验到这款搭载全新压感触控设计的触控板。苹果电脑的触控板体验一直很优秀，配合OS \r\nX系统中的多指手势操作，可以轻松完成拖拽文件、切换应用程序、切换不同桌面等操作。如今压力感应操作的加入可以说在原本多指手势的基础上加入了一个全新\r\n的维度，使得在触控板上可以进行更多的操作命令。&lt;/p&gt;&lt;p&gt;苹果如此重视笔记本电脑上触控板的用户体验，使得MacBook用户几乎可以不用鼠标，也\r\n提升了用户的便利性。由于其长续航的特性，外出也基本不需要携带电源，只需要带一台笔记本就足够。笔者在体验了一天2015款苹果MacBook \r\nPro后，写下这篇评测文章，希望能给关注这款产品的网友一些参考&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;', '', 'MacBook', '', ''),
+(28, 1, '艺术坐椅', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm® MSM 7201A™ 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile® 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO™ 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth® 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi®: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB™ (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD™ memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '艺术坐椅', '艺术坐椅', '艺术坐椅'),
+(48, 3, '蓮式木幾', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
+(29, 3, '純香家具', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
+(35, 1, '真皮座椅', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '真皮座椅', '真皮座椅', '真皮座椅'),
+(40, 3, '躺式沙發', '2015年3月6日，苹果iPhone6 Plus（行货）在&quot;拍易得&quot;现货促销，现在在其网上购买苹果iPhone6 Plus仅需95元即可秒杀。这款手机的配件包括：充电器、耳机和数据线等。苹果iPhone6 Plus是一款配置有光学防抖技术的智能手机。', '', '苹果iPhone 6 Plus', '', ''),
+(33, 2, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it''s not hard to imagine.&lt;/div&gt;\r\n', '', 'Samsung SyncMaster 941BW', '', ''),
+(46, 1, '复古镂空展厨', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '复古镂空展厨', '复古镂空展厨', '复古镂空展厨'),
+(45, 3, '時尚儲物櫃', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
+(44, 3, '田方格書架', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
+(36, 3, '時尚簡約辦公小桌', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
+(47, 3, '木藝設計', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you''re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
+(42, 3, '包式座椅', '&lt;p&gt;AMD 785G，一个定位于AMD 780G和AMD \r\n790GX之间的产品，近期成为所有主板厂商推广的重点，同时也是所有DIY用户关注的焦点。抛开其整合DirectX 10.1规格的Radeon \r\nHD 4200图形显示核心不提，全新升级的UVD2.0高清解码引擎，让AMD \r\n785G更适合高清应用。诚然，目前在卖场里攒HTPC专用电脑的人并不多，但随着广大民众生活水平的不断提高，这种个性化应用必将是未来大势所趋，故在\r\nAMD 785G上设计更多的HTPC应用功能，也成为有实力的主板品牌必须做的一件事。&lt;/p&gt;&lt;p&gt;一向以代工著称的富士康在个性化产品上的设计近年来有了很大的改观，除了推出面向超频玩家的&quot;Quantum Force（量子力量）&quot;系列外，还针对高品质家庭用户推出了Digital Life（数字家庭）系列，其在DIY产品线上的用心程度不言而喻。&lt;br&gt;&lt;/p&gt;', '', 'Apple Cinema 30&quot;', '', ''),
+(33, 1, '古色展厨', '是一款19英寸，拥有16:10黄金屏幕比例的产品。这款产品在外观上采用了黑色烤漆工艺，底边框位置我们看到了其印有品牌LOGO，非常精致。而我们在其它边框位置看到了产品信息，方便了用户购买时挑选。\r\n', '', '古色展厨', '古色展厨', '古色展厨'),
+(43, 1, '玻璃茶几', '&lt;p&gt;在本次3月份苹果春季新品发布会上，除了最为耀眼的新款MacBook外，苹果还对MacBook Air与13英寸的Retina MacBook Pro进行了常规硬件升级。其中13英寸的Retina MacBook Pro更新最受关注，因为其在性能上做出了许多重大升级，包括第五代Intel Broadwell处理器、Iris 6100核心显卡、读写速度翻倍的PCIe SSD固态硬盘、更高频率的内存，同时电池续航还增加了一个小时。除此之外，它还首先搭载了与新款MacBook一样的全新Force Touch触控板。&lt;/p&gt;&lt;p&gt;由于国行版的13英寸的Retina MacBook Pro现在已经全面铺货，笔者也得以体验到这款搭载全新压感触控设计的触控板。苹果电脑的触控板体验一直很优秀，配合OS X系统中的多指手势操作，可以轻松完成拖拽文件、切换应用程序、切换不同桌面等操作。如今压力感应操作的加入可以说在原本多指手势的基础上加入了一个全新的维度，使得在触控板上可以进行更多的操作命令。&lt;/p&gt;&lt;p&gt;苹果如此重视笔记本电脑上触控板的用户体验，使得MacBook用户几乎可以不用鼠标，也提升了用户的便利性。由于其长续航的特性，外出也基本不需要携带电源，只需要带一台笔记本就足够。笔者在体验了一天2015款苹果MacBook Pro后，写下这篇评测文章，希望能给关注这款产品的网友一些参考&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;', '', '玻璃茶几', '玻璃茶几', '玻璃茶几');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_discount`
+--
 
 DROP TABLE IF EXISTS `mcc_product_discount`;
 CREATE TABLE `mcc_product_discount` (
@@ -3200,21 +4122,35 @@ CREATE TABLE `mcc_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=474 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=483 ;
 
+--
+-- Dumping data for table `mcc_product_discount`
+--
 
 INSERT INTO `mcc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(473, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
-(472, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
-(471, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
+(482, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
+(481, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
+(480, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_filter`
+--
 
 DROP TABLE IF EXISTS `mcc_product_filter`;
 CREATE TABLE `mcc_product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_image`
+--
 
 DROP TABLE IF EXISTS `mcc_product_image`;
 CREATE TABLE `mcc_product_image` (
@@ -3224,67 +4160,57 @@ CREATE TABLE `mcc_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2489 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2712 ;
 
+--
+-- Dumping data for table `mcc_product_image`
+--
 
 INSERT INTO `mcc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2441, 32, 'catalog/demo/32_4.jpg', 0),
-(2417, 47, 'catalog/demo/47_5.jpg', 0),
-(2436, 31, 'catalog/demo/31_3.jpg', 0),
-(2351, 41, 'catalog/demo/41_3.jpg', 0),
-(2447, 36, 'catalog/demo/36_3.jpg', 0),
-(2446, 36, 'catalog/demo/36_2.jpg', 0),
-(2445, 34, 'catalog/demo/34_5.jpg', 0),
-(2488, 43, 'catalog/demo/43_5.jpg', 0),
-(2487, 43, 'catalog/demo/43_4.jpg', 0),
-(1974, 44, 'catalog/demo/44_4.jpg', 0),
-(1973, 44, 'catalog/demo/44_2.jpg', 0),
-(1977, 45, 'catalog/demo/45_2.jpg', 0),
-(1976, 45, 'catalog/demo/45_3.jpg', 0),
-(2440, 32, 'catalog/demo/32_3.jpg', 0),
-(2439, 32, 'catalog/demo/32_2.jpg', 0),
-(1995, 46, 'catalog/demo/46_5.jpg', 0),
-(1994, 46, 'catalog/demo/46_4.jpg', 0),
-(1991, 48, 'catalog/demo/48_4.jpg', 0),
-(1990, 48, 'catalog/demo/48_3.jpg', 0),
-(2451, 40, 'catalog/demo/40_3.jpg', 0),
-(2450, 40, 'catalog/demo/40_2.jpg', 0),
-(2416, 47, 'catalog/demo/47_2.jpg', 0),
-(2435, 31, 'catalog/demo/31_2.jpg', 0),
-(2350, 41, 'catalog/demo/41_2.jpg', 0),
-(2453, 40, 'catalog/demo/40_5.jpg', 0),
-(2452, 40, 'catalog/demo/40_4.jpg', 0),
-(1989, 48, 'catalog/demo/48_2.jpg', 0),
-(2449, 36, 'catalog/demo/36_5.jpg', 0),
-(2448, 36, 'catalog/demo/36_4.jpg', 0),
-(2444, 34, 'catalog/demo/34_4.jpg', 0),
-(2443, 34, 'catalog/demo/34_3.jpg', 0),
-(2442, 34, 'catalog/demo/34_2.jpg', 0),
-(2486, 43, 'catalog/demo/43_2.jpg', 0),
-(2485, 43, 'catalog/demo/43_3.jpg', 0),
-(1972, 44, 'catalog/demo/44_3.jpg', 0),
-(1975, 45, 'catalog/demo/45_4.jpg', 0),
-(2437, 31, 'catalog/demo/31_4.jpg', 0),
-(2438, 31, 'catalog/demo/31_5.jpg', 0),
-(1993, 46, 'catalog/demo/46_2.jpg', 0),
-(1992, 46, 'catalog/demo/46_3.jpg', 0),
-(2415, 47, 'catalog/demo/47_4.jpg', 0),
-(2399, 49, 'catalog/demo/49_2.jpg', 0),
-(2398, 49, 'catalog/demo/49_3.jpg', 0),
-(2397, 49, 'catalog/demo/49_4.jpg', 0),
-(2396, 49, 'catalog/demo/49_5.jpg', 0),
-(2395, 49, 'catalog/demo/49_6.jpg', 0),
-(2484, 42, 'catalog/demo/42_1.jpg', 0),
-(2483, 42, 'catalog/demo/42_5.jpg', 0),
-(2482, 42, 'catalog/demo/42_4.jpg', 0),
-(2481, 42, 'catalog/demo/42_3.jpg', 0),
-(2434, 30, 'catalog/demo/30_3.jpg', 0),
-(2433, 30, 'catalog/demo/30_2.jpg', 0),
-(2432, 29, 'catalog/demo/29_3.jpg', 0),
-(2431, 29, 'catalog/demo/29_2.jpg', 0),
-(2430, 28, 'catalog/demo/28_3.jpg', 0),
-(2429, 28, 'catalog/demo/28_2.jpg', 0),
-(2480, 42, 'catalog/demo/42_2.jpg', 0);
+(2676, 44, 'catalog/demo/product/product_10/product10_3.jpg', 0),
+(2663, 45, 'catalog/demo/product/product_11/product11_4.jpg', 0),
+(2691, 28, 'catalog/demo/product/product_3/product3_5.jpg', 0),
+(2694, 48, 'catalog/demo/product/product_5/product5_5.jpg', 0),
+(2671, 47, 'catalog/demo/product/product_2/product2_5.jpg', 0),
+(2670, 47, 'catalog/demo/product/product_2/product2_6.jpg', 0),
+(2688, 34, 'catalog/demo/product/product_7/product7_2.jpg', 0),
+(2681, 32, 'catalog/demo/product/product_8/product8_4.jpg', 0),
+(2683, 31, 'catalog/demo/product/product_12/product12_5.jpg', 0),
+(2685, 29, 'catalog/demo/product/product_13/product13_2.jpg', 0),
+(2684, 29, 'catalog/demo/product/product_13/product13_2.jpg', 0),
+(2696, 42, 'catalog/demo/product/product_1/product1_3.jpg', 0),
+(2695, 42, 'catalog/demo/product/product_1/product1_2.jpg', 0),
+(2661, 41, 'catalog/demo/product/product_4/product4_7.jpg', 0),
+(2693, 48, 'catalog/demo/product/product_5/product5_7.jpg', 0),
+(2667, 36, 'catalog/demo/product/product_6/product6_6.jpg', 0),
+(2666, 36, 'catalog/demo/product/product_6/product6_4.jpg', 0),
+(2669, 47, 'catalog/demo/product/product_2/product2_3.jpg', 0),
+(2668, 47, 'catalog/demo/product/product_2/product2_4.jpg', 0),
+(2690, 28, 'catalog/demo/product/product_3/product3_4.jpg', 0),
+(2689, 28, 'catalog/demo/product/product_3/product3_2.jpg', 0),
+(2660, 41, 'catalog/demo/product/product_4/product4_3.jpg', 0),
+(2659, 41, 'catalog/demo/product/product_4/product4_2.jpg', 0),
+(2692, 48, 'catalog/demo/product/product_5/product5_4.jpg', 0),
+(2665, 36, 'catalog/demo/product/product_6/product6_3.jpg', 0),
+(2664, 36, 'catalog/demo/product/product_6/product6_5.jpg', 0),
+(2687, 34, 'catalog/demo/product/product_7/product7_5.jpg', 0),
+(2686, 34, 'catalog/demo/product/product_7/product7_4.jpg', 0),
+(2680, 32, 'catalog/demo/product/product_8/product8_2.jpg', 0),
+(2711, 43, 'catalog/demo/product/product_9/product9_4.jpg', 0),
+(2710, 43, 'catalog/demo/product/product_9/product9_5.jpg', 0),
+(2709, 43, 'catalog/demo/product/product_9/product9_2.jpg', 0),
+(2675, 44, 'catalog/demo/product/product_10/product10_2.jpg', 0),
+(2662, 45, 'catalog/demo/product/product_11/product11_2.jpg', 0),
+(2682, 31, 'catalog/demo/product/product_12/product12_3.jpg', 0),
+(2679, 35, 'catalog/demo/product/product_14/product14_7.jpg', 0),
+(2678, 35, 'catalog/demo/product/product_14/product14_6.jpg', 0),
+(2677, 35, 'catalog/demo/product/product_14/product14_4.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_option`
+--
 
 DROP TABLE IF EXISTS `mcc_product_option`;
 CREATE TABLE `mcc_product_option` (
@@ -3294,24 +4220,31 @@ CREATE TABLE `mcc_product_option` (
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=228 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=227 ;
 
+--
+-- Dumping data for table `mcc_product_option`
+--
 
 INSERT INTO `mcc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
-(227, 35, 11, '', 1),
+(224, 35, 11, '', 1),
 (225, 47, 12, '2011-04-22', 1),
-(220, 42, 10, '2011-02-20 22:25', 1),
-(226, 30, 5, '', 1),
 (221, 42, 9, '22:25', 1),
-(222, 42, 7, '', 1),
-(219, 42, 8, '2011-02-20', 1),
-(208, 42, 4, 'test', 1),
-(218, 42, 1, '', 1),
-(217, 42, 5, '', 1),
+(226, 30, 5, '', 1),
+(220, 42, 10, '2011-02-20 22:25', 1),
 (223, 42, 2, '', 1),
-(209, 42, 6, '', 1);
+(209, 42, 6, '', 1),
+(217, 42, 5, '', 1),
+(218, 42, 1, '', 1),
+(222, 42, 7, '', 1),
+(208, 42, 4, 'test', 1),
+(219, 42, 8, '2011-02-20', 1);
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_product_option_value`
+--
 
 DROP TABLE IF EXISTS `mcc_product_option_value`;
 CREATE TABLE `mcc_product_option_value` (
@@ -3331,25 +4264,33 @@ CREATE TABLE `mcc_product_option_value` (
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
+--
+-- Dumping data for table `mcc_product_option_value`
+--
 
 INSERT INTO `mcc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
-(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
-(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
-(13, 226, 30, 5, 40, 4, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(14, 227, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
-(15, 227, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
-(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
+(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
+(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
 (1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
 (3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
-(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
-(16, 227, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
-(12, 226, 30, 5, 39, 1, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
-(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
+(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
+(14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
+(13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
+(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(15, 226, 30, 5, 39, 1, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
+(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
+(12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
+(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
 (9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
-(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+');
+(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
+(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_recurring`
+--
 
 DROP TABLE IF EXISTS `mcc_product_recurring`;
 CREATE TABLE `mcc_product_recurring` (
@@ -3357,16 +4298,24 @@ CREATE TABLE `mcc_product_recurring` (
   `recurring_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`recurring_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_related`
+--
 
 DROP TABLE IF EXISTS `mcc_product_related`;
 CREATE TABLE `mcc_product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_related`
+--
 
 INSERT INTO `mcc_product_related` (`product_id`, `related_id`) VALUES
 (40, 42),
@@ -3374,6 +4323,11 @@ INSERT INTO `mcc_product_related` (`product_id`, `related_id`) VALUES
 (42, 40),
 (42, 41);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_reward`
+--
 
 DROP TABLE IF EXISTS `mcc_product_reward`;
 CREATE TABLE `mcc_product_reward` (
@@ -3382,28 +4336,27 @@ CREATE TABLE `mcc_product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=580 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=625 ;
 
-
+--
+-- Dumping data for table `mcc_product_reward`
+--
 
 INSERT INTO `mcc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(578, 42, 1, 100),
-(561, 47, 1, 300),
-(566, 28, 1, 400),
-(579, 43, 1, 600),
-(567, 29, 1, 0),
-(343, 48, 1, 0),
-(568, 30, 1, 200),
-(331, 44, 1, 700),
-(333, 45, 1, 800),
-(569, 31, 1, 0),
-(571, 35, 1, 0),
-(347, 46, 1, 0),
-(545, 41, 1, 0),
-(572, 36, 1, 0),
-(570, 34, 1, 0),
-(558, 49, 1, 1000);
+(619, 42, 1, 100),
+(615, 47, 1, 300),
+(618, 28, 1, 400),
+(624, 43, 1, 600),
+(604, 30, 1, 200),
+(617, 44, 1, 700),
+(614, 45, 1, 800),
+(603, 49, 1, 1000);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_special`
+--
 
 DROP TABLE IF EXISTS `mcc_product_special`;
 CREATE TABLE `mcc_product_special` (
@@ -3416,14 +4369,22 @@ CREATE TABLE `mcc_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=461 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=472 ;
 
+--
+-- Dumping data for table `mcc_product_special`
+--
 
 INSERT INTO `mcc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(460, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
-(454, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00'),
-(453, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00');
+(471, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
+(465, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
+(464, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_to_category`
+--
 
 DROP TABLE IF EXISTS `mcc_product_to_category`;
 CREATE TABLE `mcc_product_to_category` (
@@ -3431,49 +4392,78 @@ CREATE TABLE `mcc_product_to_category` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`category_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_to_category`
+--
 
 INSERT INTO `mcc_product_to_category` (`product_id`, `category_id`) VALUES
 (28, 20),
-(28, 24),
-(29, 20),
-(29, 24),
-(30, 20),
-(30, 33),
-(31, 33),
+(28, 26),
+(29, 25),
+(29, 28),
+(29, 36),
+(30, 25),
+(30, 28),
+(30, 57),
+(31, 25),
+(31, 28),
+(31, 36),
 (32, 34),
-(33, 20),
+(32, 43),
+(33, 25),
 (33, 28),
+(33, 35),
 (34, 34),
+(34, 43),
 (35, 20),
+(35, 27),
 (36, 34),
+(36, 44),
 (40, 20),
-(40, 24),
-(41, 27),
-(42, 20),
+(40, 27),
+(41, 25),
+(41, 29),
+(41, 32),
 (42, 28),
-(43, 18),
-(43, 20),
-(44, 18),
-(44, 20),
-(45, 18),
-(46, 18),
+(42, 36),
+(43, 25),
+(43, 28),
+(43, 36),
+(44, 25),
+(44, 30),
+(44, 32),
+(45, 17),
 (46, 20),
-(47, 18),
+(46, 27),
 (47, 20),
-(48, 20),
+(47, 26),
 (48, 34),
+(48, 52),
+(48, 58),
+(49, 25),
+(49, 28),
 (49, 57);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_to_download`
+--
 
 DROP TABLE IF EXISTS `mcc_product_to_download`;
 CREATE TABLE `mcc_product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_to_layout`
+--
 
 DROP TABLE IF EXISTS `mcc_product_to_layout`;
 CREATE TABLE `mcc_product_to_layout` (
@@ -3481,23 +4471,49 @@ CREATE TABLE `mcc_product_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_to_layout`
+--
 
 INSERT INTO `mcc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
 (42, 0, 0),
+(30, 0, 0),
 (47, 0, 0),
+(28, 0, 0),
+(41, 0, 0),
+(40, 0, 0),
+(48, 0, 0),
+(36, 0, 0),
+(34, 0, 0),
+(32, 0, 0),
 (43, 0, 0),
-(49, 0, 0);
+(44, 0, 0),
+(45, 0, 0),
+(31, 0, 0),
+(29, 0, 0),
+(35, 0, 0),
+(49, 0, 0),
+(33, 0, 0),
+(46, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_product_to_store`
+--
 
 DROP TABLE IF EXISTS `mcc_product_to_store`;
 CREATE TABLE `mcc_product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_product_to_store`
+--
 
 INSERT INTO `mcc_product_to_store` (`product_id`, `store_id`) VALUES
 (28, 0),
@@ -3520,28 +4536,26 @@ INSERT INTO `mcc_product_to_store` (`product_id`, `store_id`) VALUES
 (48, 0),
 (49, 0);
 
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `mcc_product_to_youzan`;
-CREATE TABLE `mcc_product_to_youzan` (
-  `product_id` int(11) NOT NULL,
-  `youzan_id` int(11) NOT NULL,
-  UNIQUE KEY `product_id` (`product_id`),
-  UNIQUE KEY `youzan_id` (`youzan_id`),
-  UNIQUE KEY `product_id_2` (`product_id`,`youzan_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
+--
+-- Table structure for table `mcc_pushurl`
+--
 
 DROP TABLE IF EXISTS `mcc_pushurl`;
-CREATE TABLE IF NOT EXISTS `mcc_pushurl` (
+CREATE TABLE `mcc_pushurl` (
   `pushurl_id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
   `pushed` tinyint(1) NOT NULL,
   `push_date` datetime NOT NULL,
   PRIMARY KEY (`pushurl_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=175 ;
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `mcc_recurring`
+--
 
 DROP TABLE IF EXISTS `mcc_recurring`;
 CREATE TABLE `mcc_recurring` (
@@ -3558,12 +4572,13 @@ CREATE TABLE `mcc_recurring` (
   `status` tinyint(4) NOT NULL,
   `sort_order` int(11) NOT NULL,
   PRIMARY KEY (`recurring_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
-INSERT INTO `mcc_recurring` (`recurring_id`, `price`, `frequency`, `duration`, `cycle`, `trial_status`, `trial_price`, `trial_frequency`, `trial_duration`, `trial_cycle`, `status`, `sort_order`) VALUES
-(1, '100.0000', 'month', 3, 1, 0, '0.0000', 'day', 0, 1, 1, 0);
-
+--
+-- Table structure for table `mcc_recurring_description`
+--
 
 DROP TABLE IF EXISTS `mcc_recurring_description`;
 CREATE TABLE `mcc_recurring_description` (
@@ -3571,14 +4586,13 @@ CREATE TABLE `mcc_recurring_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`recurring_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
-INSERT INTO `mcc_recurring_description` (`recurring_id`, `language_id`, `name`) VALUES
-(1, 3, '测试分期付款'),
-(1, 2, '测试分期付款'),
-(1, 1, '测试分期付款');
-
+--
+-- Table structure for table `mcc_return`
+--
 
 DROP TABLE IF EXISTS `mcc_return`;
 CREATE TABLE `mcc_return` (
@@ -3601,8 +4615,13 @@ CREATE TABLE `mcc_return` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`return_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_return_action`
+--
 
 DROP TABLE IF EXISTS `mcc_return_action`;
 CREATE TABLE `mcc_return_action` (
@@ -3612,6 +4631,9 @@ CREATE TABLE `mcc_return_action` (
   PRIMARY KEY (`return_action_id`,`language_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+--
+-- Dumping data for table `mcc_return_action`
+--
 
 INSERT INTO `mcc_return_action` (`return_action_id`, `language_id`, `name`) VALUES
 (1, 3, '已退款'),
@@ -3624,6 +4646,11 @@ INSERT INTO `mcc_return_action` (`return_action_id`, `language_id`, `name`) VALU
 (3, 1, '已换货配送'),
 (3, 3, '已换货配送');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_return_history`
+--
 
 DROP TABLE IF EXISTS `mcc_return_history`;
 CREATE TABLE `mcc_return_history` (
@@ -3634,8 +4661,13 @@ CREATE TABLE `mcc_return_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`return_history_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_return_reason`
+--
 
 DROP TABLE IF EXISTS `mcc_return_reason`;
 CREATE TABLE `mcc_return_reason` (
@@ -3645,6 +4677,9 @@ CREATE TABLE `mcc_return_reason` (
   PRIMARY KEY (`return_reason_id`,`language_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+--
+-- Dumping data for table `mcc_return_reason`
+--
 
 INSERT INTO `mcc_return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 (2, 3, '收到错误物品'),
@@ -3663,6 +4698,11 @@ INSERT INTO `mcc_return_reason` (`return_reason_id`, `language_id`, `name`) VALU
 (4, 1, '有瑕疵，请提供详细信息'),
 (5, 1, '其他，请提供详细信息');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_return_status`
+--
 
 DROP TABLE IF EXISTS `mcc_return_status`;
 CREATE TABLE `mcc_return_status` (
@@ -3672,6 +4712,9 @@ CREATE TABLE `mcc_return_status` (
   PRIMARY KEY (`return_status_id`,`language_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+--
+-- Dumping data for table `mcc_return_status`
+--
 
 INSERT INTO `mcc_return_status` (`return_status_id`, `language_id`, `name`) VALUES
 (2, 3, '等待商品退回'),
@@ -3684,6 +4727,11 @@ INSERT INTO `mcc_return_status` (`return_status_id`, `language_id`, `name`) VALU
 (2, 1, '等待商品退回'),
 (3, 3, '完成');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_review`
+--
 
 DROP TABLE IF EXISTS `mcc_review`;
 CREATE TABLE `mcc_review` (
@@ -3698,20 +4746,13 @@ CREATE TABLE `mcc_review` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`review_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
-INSERT INTO `mcc_review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
-(1, 42, 0, '中', '测试测试测试测试测试测试测试测试测试', 5, 1, '2015-06-10 21:29:09', '2015-11-18 15:08:25'),
-(2, 47, 1, '测试', '测试测试测试测试测试测试测试测试测试', 4, 0, '2015-06-10 21:40:11', '2015-11-18 15:07:56'),
-(3, 47, 1, 'JUST ', '测试测试测试测试测试测试测试测试', 4, 1, '2015-06-10 21:40:56', '2015-11-18 15:08:05');
-
-
-
-
-
-
-
+--
+-- Table structure for table `mcc_setting`
+--
 
 DROP TABLE IF EXISTS `mcc_setting`;
 CREATE TABLE `mcc_setting` (
@@ -3722,250 +4763,262 @@ CREATE TABLE `mcc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1826 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3563 ;
 
+--
+-- Dumping data for table `mcc_setting`
+--
 
 INSERT INTO `mcc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
-(1815, 0, 'bank_transfer', 'bank_transfer_bank1', '测试信息', 0),
-(1816, 0, 'bank_transfer', 'bank_transfer_bank2', 'Testing Info', 0),
-(1805, 0, 'theme_default', 'theme_default_image_location_height', '50', 0),
-(1804, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
-(1803, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
-(1802, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
-(1801, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
-(1799, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
-(1800, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
-(1798, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
-(1797, 0, 'theme_default', 'theme_default_image_related_height', '80', 0),
-(1796, 0, 'theme_default', 'theme_default_image_related_width', '80', 0),
-(1795, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
-(1793, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
-(1794, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
-(1792, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
-(1790, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
-(1791, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
-(1789, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
-(1788, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
-(1780, 0, 'config', 'config_youzan_appid', '4', 0),
-(1779, 0, 'config', 'config_weidian_secret', '3', 0),
-(1778, 0, 'config', 'config_weidian_appkey', '2', 0),
-(1777, 0, 'config', 'config_baidu_api', '1', 0),
-(1776, 0, 'config', 'config_error_filename', 'error.log', 0),
-(1751, 0, 'config', 'config_ftp_username', '', 0),
-(1752, 0, 'config', 'config_ftp_password', '', 0),
-(1753, 0, 'config', 'config_ftp_root', '', 0),
-(1754, 0, 'config', 'config_ftp_status', '0', 0),
-(1755, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(1756, 0, 'config', 'config_mail_parameter', '', 0),
-(1814, 0, 'cms_faq', 'cms_faq_items_per_page', '10', 0),
-(893, 0, 'press_latest', 'press_latest_status', '1', 0),
-(892, 0, 'press_category', 'press_category_status', '1', 0),
-(1775, 0, 'config', 'config_error_log', '1', 0),
-(1773, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(1774, 0, 'config', 'config_error_display', '1', 0),
-(1771, 0, 'config', 'config_file_max_size', '300000', 0),
-(1772, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(1766, 0, 'config', 'config_compression', '0', 0),
-(1767, 0, 'config', 'config_secure', '0', 0),
-(1768, 0, 'config', 'config_password', '1', 0),
-(1769, 0, 'config', 'config_shared', '0', 0),
-(1770, 0, 'config', 'config_encryption', '19IkcFywkFVlsKsXLepNzA77f5OQtKvwSv9lM8PGl67cuLlAjVHMYmxNxhu09en2JfQzgWlysETlQ7juqvDD2blzqBqmcDFY6tKQaiafdjKPrZ5psO6WPAtHq5Wj9cUCP8Q22hakhgLEcJLrEP8nEALBtlsc2NSevF400VmaIF6Djx32CQqTjlVa9FqNh4fGgFcK4ShGSNsPd63FR80OxZjRvsocjD1iqXGkds1Otpv8gn3Gqd4SCbtyuGnVecrC1qfopOPvRDSK87hNdx3BVfsAB2mEfFYCEJDgPtqx54Ewfqul4F22SfM99NPoJmHssA9zMECNC0dMHak4b3kylxnFaj4nu5sPHDR5EUbeVb6hJv2OVy0XGb4360WMoi4EZExw8T9zToSUmUhU7mc4Kk1V3NJms4m8aFNKIrbX8JXFiX4kdUiMfZlwRzOepyD4KWIBDn0Vh6vfuwCPlrco00KfFQlcQikL9s94SiBKG3a0rGWPB5SD6XNZy3riQSlFSCRm4U3RveYziuBlDEaMKSOnNor9Gv58ZCGacXRcEJN57qxLxBJxEDPI0nyngKJnyYU6Zlx2Et1lmSn3Zja0QSN4MmlM3UgrKJ4XqDFEozFBptx3dEJCiqFC2NKk2Tq6k7MSY9E3e2OWoncL3wTi9qnoIRMfzFx7H5iUVN73mWO6aS74pibmwYPrybi7CEX34E9HmYyp4v3LI8Swl1xKMxvk0o6y1iMlhCshXLXhXFfeMUaOijzF17Cl3KfH6weGNbRlqEiWAHZpYsV4QYnz57RycWNSyzsq5JeUz9EB728AwuWVKATeATZR3QKCWsJVE5t6JbxeQKfPntXRvVSWhX7gMwsYkR5HpbRhFTQmL7Bw2TXcRYxq926lhTtqqFq1I2I3CAArtc57elOpBonxVdfGg6XOcS7BQ2OUES7rzT529Ou0VPVPiMSCJt0revvCDHk6zDJWmIkCjhHbjCymVj0zuMatbjc3w1qyzuIKVaiC7v6FRryelbMq35m7WiAL', 0),
-(1763, 0, 'config', 'config_maintenance', '0', 0),
-(1764, 0, 'config', 'config_seo_url', '0', 0),
-(1765, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(1750, 0, 'config', 'config_ftp_port', '21', 0),
-(1749, 0, 'config', 'config_ftp_hostname', 'localhost', 0),
-(1748, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(1747, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(1746, 0, 'config', 'config_captcha_page', '["register","review","return","contact","comment"]', 1),
-(1583, 0, 'basic_captcha', 'basic_captcha_status', '1', 0),
-(130, 0, 'cod', 'cod_status', '1', 0),
-(129, 0, 'cod', 'cod_geo_zone_id', '0', 0),
-(128, 0, 'cod', 'cod_order_status_id', '2', 0),
-(127, 0, 'cod', 'cod_total', '0.01', 0),
-(122, 0, 'flat', 'flat_cost', '', 0),
-(123, 0, 'flat', 'flat_tax_class_id', '0', 0),
-(124, 0, 'flat', 'flat_geo_zone_id', '0', 0),
-(125, 0, 'flat', 'flat_status', '1', 0),
-(126, 0, 'flat', 'flat_sort_order', '', 0),
-(131, 0, 'cod', 'cod_sort_order', '1', 0),
-(1824, 0, 'free_checkout', 'free_checkout_status', '1', 0),
-(1823, 0, 'free_checkout', 'free_checkout_order_status_id', '2', 0),
-(135, 0, 'precharge', 'precharge_total', '0.01', 0),
-(136, 0, 'precharge', 'precharge_order_status_id', '2', 0),
-(137, 0, 'precharge', 'precharge_geo_zone_id', '0', 0),
-(138, 0, 'precharge', 'precharge_status', '1', 0),
-(139, 0, 'precharge', 'precharge_sort_order', '', 0),
-(145, 0, 'coupon', 'coupon_sort_order', '4', 0),
-(144, 0, 'coupon', 'coupon_status', '1', 0),
-(147, 0, 'credit', 'credit_sort_order', '7', 0),
-(146, 0, 'credit', 'credit_status', '1', 0),
-(148, 0, 'reward', 'reward_status', '1', 0),
-(149, 0, 'reward', 'reward_sort_order', '2', 0),
-(150, 0, 'shipping', 'shipping_estimator', '1', 0),
-(151, 0, 'shipping', 'shipping_status', '1', 0),
-(152, 0, 'shipping', 'shipping_sort_order', '3', 0),
-(153, 0, 'sub_total', 'sub_total_status', '1', 0),
-(154, 0, 'sub_total', 'sub_total_sort_order', '1', 0),
-(155, 0, 'tax', 'tax_status', '1', 0),
-(156, 0, 'tax', 'tax_sort_order', '5', 0),
-(157, 0, 'total', 'total_status', '1', 0),
-(158, 0, 'total', 'total_sort_order', '9', 0),
-(159, 0, 'voucher', 'voucher_status', '1', 0),
-(160, 0, 'voucher', 'voucher_sort_order', '8', 0),
-(161, 0, 'youzan', 'youzan_appid', '79f376e99d1f0cf2cf', 0),
-(162, 0, 'youzan', 'youzan_appsecret', 'dd960bafcd962a2e3381ca830d3cdf01', 0),
-(1745, 0, 'config', 'config_captcha', 'basic_captcha', 0),
-(1744, 0, 'config', 'config_return_status_id', '2', 0),
-(1743, 0, 'config', 'config_return_id', '0', 0),
-(1742, 0, 'config', 'config_affiliate_mail', '0', 0),
-(1741, 0, 'config', 'config_affiliate_id', '4', 0),
-(1740, 0, 'config', 'config_affiliate_commission', '5', 0),
-(1739, 0, 'config', 'config_affiliate_auto', '0', 0),
-(1738, 0, 'config', 'config_affiliate_approval', '0', 0),
-(1737, 0, 'config', 'config_stock_checkout', '0', 0),
-(1736, 0, 'config', 'config_stock_warning', '0', 0),
-(1735, 0, 'config', 'config_stock_display', '0', 0),
-(1734, 0, 'config', 'config_api_id', '1', 0),
-(1733, 0, 'config', 'config_order_mail', '0', 0),
-(1732, 0, 'config', 'config_fraud_status_id', '7', 0),
-(1731, 0, 'config', 'config_complete_status', '["5","3"]', 1),
-(1730, 0, 'config', 'config_processing_status', '["2","5","3","1"]', 1),
-(1729, 0, 'config', 'config_order_status_id', '1', 0),
-(1728, 0, 'config', 'config_checkout_id', '5', 0),
-(1727, 0, 'config', 'config_checkout_guest', '1', 0),
-(1726, 0, 'config', 'config_cart_weight', '1', 0),
-(1725, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(1724, 0, 'config', 'config_account_mail', '0', 0),
-(1723, 0, 'config', 'config_account_id', '3', 0),
-(1722, 0, 'config', 'config_login_attempts', '5', 0),
-(1721, 0, 'config', 'config_customer_price', '0', 0),
-(1720, 0, 'config', 'config_customer_group_display', '["1"]', 1),
-(1719, 0, 'config', 'config_customer_group_id', '1', 0),
-(1813, 0, 'cms_faq', 'cms_faq_seo_keyword', 'faq', 0),
-(1247, 0, 'cms_blog', 'cms_blog_comment_length', '20', 0),
-(1246, 0, 'cms_blog', 'cms_blog_brief_length', '200', 0),
-(1245, 0, 'cms_blog', 'cms_blog_show_need_login_to_comment', '0', 0),
-(1244, 0, 'cms_blog', 'cms_blog_show_recaptcha', '1', 0),
-(1243, 0, 'cms_blog', 'cms_blog_comment_email', '0', 0),
-(1242, 0, 'cms_blog', 'cms_blog_show_auto_publish_comment', '1', 0),
-(1241, 0, 'cms_blog', 'cms_blog_show_comment_form', '1', 0),
-(1240, 0, 'cms_blog', 'cms_blog_show_comment_counter', '1', 0),
-(1239, 0, 'cms_blog', 'cms_blog_show_hits', '1', 0),
-(1238, 0, 'cms_blog', 'cms_blog_show_created_date', '1', 0),
-(1237, 0, 'cms_blog', 'cms_blog_show_blog_related', '1', 0),
-(1236, 0, 'cms_blog', 'cms_blog_show_product_related', '1', 0),
-(1235, 0, 'cms_blog', 'cms_blog_show_author', '1', 0),
-(1234, 0, 'cms_blog', 'cms_blog_show_image', '1', 0),
-(1233, 0, 'cms_blog', 'cms_blog_show_title', '1', 0),
-(1232, 0, 'cms_blog', 'cms_blog_image_type', 'l', 0),
-(1230, 0, 'cms_blog', 'cms_blog_category_page_show_hits', '1', 0),
-(1231, 0, 'cms_blog', 'cms_blog_category_page_show_comment_counter', '1', 0),
-(1229, 0, 'cms_blog', 'cms_blog_category_page_show_created_date', '1', 0),
-(1228, 0, 'cms_blog', 'cms_blog_category_page_show_author', '1', 0),
-(1227, 0, 'cms_blog', 'cms_blog_category_page_show_image', '1', 0),
-(1226, 0, 'cms_blog', 'cms_blog_category_page_show_readmore', '1', 0),
-(1225, 0, 'cms_blog', 'cms_blog_category_page_show_brief', '1', 0),
-(1224, 0, 'cms_blog', 'cms_blog_category_page_show_title', '1', 0),
-(1223, 0, 'cms_blog', 'cms_blog_items_per_page', '10', 0),
-(1222, 0, 'cms_blog', 'cms_blog_small_image_height', '80', 0),
-(1221, 0, 'cms_blog', 'cms_blog_small_image_width', '80', 0),
-(1220, 0, 'cms_blog', 'cms_blog_middle_image_height', '250', 0),
-(1215, 0, 'cms_blog', 'cms_blog_description', '{"1":{"title":"MyCnCart\\u535a\\u5ba2","meta_title":"MyCnCart\\u535a\\u5ba2","meta_description":"MyCnCart\\u535a\\u5ba2","meta_keyword":"MyCnCart\\u535a\\u5ba2"},"2":{"title":"MyCnCart Blog","meta_title":"MyCnCart Blog","meta_description":"MyCnCart Blog","meta_keyword":"MyCnCart Blog"},"3":{"title":"MyCnCart\\u535a\\u5ba2","meta_title":"MyCnCart\\u535a\\u5ba2","meta_description":"MyCnCart\\u535a\\u5ba2","meta_keyword":"MyCnCart\\u535a\\u5ba2"}}', 1),
-(511, 0, 'category', 'category_status', '1', 0),
-(891, 0, 'blog_category', 'blog_category_status', '1', 0),
-(1757, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(1758, 0, 'config', 'config_mail_smtp_username', '', 0),
-(1759, 0, 'config', 'config_mail_smtp_password', '', 0),
-(1760, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(1761, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(1762, 0, 'config', 'config_mail_alert', '', 0),
-(1718, 0, 'config', 'config_customer_online', '0', 0),
-(1717, 0, 'config', 'config_tax_customer', '', 0),
-(1716, 0, 'config', 'config_tax_default', '', 0),
-(1715, 0, 'config', 'config_tax', '0', 0),
-(1714, 0, 'config', 'config_voucher_max', '1000', 0),
-(1713, 0, 'config', 'config_voucher_min', '1', 0),
-(1712, 0, 'config', 'config_review_mail', '0', 0),
-(1711, 0, 'config', 'config_review_guest', '1', 0),
-(1710, 0, 'config', 'config_review_status', '1', 0),
-(1709, 0, 'config', 'config_limit_admin', '20', 0),
-(1708, 0, 'config', 'config_product_count', '1', 0),
-(1707, 0, 'config', 'config_weight_class_id', '1', 0),
-(1706, 0, 'config', 'config_length_class_id', '1', 0),
-(1705, 0, 'config', 'config_currency_auto', '1', 0),
-(1704, 0, 'config', 'config_currency', 'CNY', 0),
-(1703, 0, 'config', 'config_admin_language', 'zh-CN', 0),
-(1702, 0, 'config', 'config_language', 'zh-CN', 0),
-(1701, 0, 'config', 'config_zone_id', '685', 0),
-(1700, 0, 'config', 'config_country_id', '44', 0),
-(1699, 0, 'config', 'config_comment', '', 0),
-(1698, 0, 'config', 'config_open', '', 0),
-(1697, 0, 'config', 'config_image', '', 0),
-(1696, 0, 'config', 'config_fax', '', 0),
-(1695, 0, 'config', 'config_telephone', '123456789', 0),
-(1694, 0, 'config', 'config_email', 'opencart@qq.com', 0),
-(1693, 0, 'config', 'config_geocode', '116.403887,39.915232', 0),
-(1692, 0, 'config', 'config_map_select', 'baidu', 0),
-(1691, 0, 'config', 'config_miit', '', 0),
-(1689, 0, 'config', 'config_owner', '商店拥有者', 0),
-(1219, 0, 'cms_blog', 'cms_blog_middle_image_width', '250', 0),
-(1218, 0, 'cms_blog', 'cms_blog_large_image_height', '300', 0),
-(843, 0, 'blog_search', 'blog_search_status', '1', 0),
-(1811, 0, 'cms_press', 'cms_press_items_per_page', '10', 0),
-(887, 0, 'paydollar', 'paydollar_failed_status_id', '10', 0),
-(888, 0, 'paydollar', 'paydollar_voided_status_id', '16', 0),
-(886, 0, 'paydollar', 'paydollar_completed_status_id', '2', 0),
-(885, 0, 'paydollar', 'paydollar_status', '1', 0),
-(884, 0, 'paydollar', 'paydollar_geo_zone_id', '0', 0),
-(883, 0, 'paydollar', 'paydollar_sort_order', '1', 0),
-(882, 0, 'paydollar', 'paydollar_total', '0.01', 0),
-(881, 0, 'paydollar', 'paydollar_paymethod', 'ALL', 0),
-(880, 0, 'paydollar', 'paydollar_mpsmode', 'NIL', 0),
-(878, 0, 'paydollar', 'paydollar_debug', '1', 0),
-(879, 0, 'paydollar', 'paydollar_paytype', 'N', 0),
-(877, 0, 'paydollar', 'paydollar_test', '0', 0),
-(876, 0, 'paydollar', 'paydollar_securehash', '', 0),
-(875, 0, 'paydollar', 'paydollar_merchantid', 'testmerchant', 0),
-(1812, 0, 'cms_faq', 'cms_faq_description', '{"1":{"title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_description":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_keyword":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54"},"2":{"title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_description":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_keyword":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54"},"3":{"title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_description":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54","meta_keyword":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54"}}', 1),
-(896, 0, 'faq_category', 'faq_category_status', '1', 0),
-(1690, 0, 'config', 'config_address', '中国北京市', 0),
-(1688, 0, 'config', 'config_name', '我的B2C中国网店', 0),
-(1685, 0, 'config', 'config_meta_keyword', '我的B2C中国网店', 0),
-(1687, 0, 'config', 'config_layout_id', '4', 0),
-(1018, 0, 'wxpay', 'wxpay_mchid', '1264633601', 0),
-(1019, 0, 'wxpay', 'wxpay_appid', 'wx6d981cefafd6babc', 0),
-(1020, 0, 'wxpay', 'wxpay_key', 'LI27954210531XiaoXiaChangYuBeiJK', 0),
-(1021, 0, 'wxpay', 'wxpay_appsecret', 'e13c346c2dd11279502a40dcfda9039b', 0),
-(1022, 0, 'wxpay', 'wxpay_total', '0.01', 0),
-(1023, 0, 'wxpay', 'wxpay_sort_order', '', 0),
-(1024, 0, 'wxpay', 'wxpay_geo_zone_id', '0', 0),
-(1025, 0, 'wxpay', 'wxpay_status', '1', 0),
-(1026, 0, 'wxpay', 'wxpay_log', '0', 0),
-(1027, 0, 'wxpay', 'wxpay_trade_success_status_id', '5', 0),
-(1686, 0, 'config', 'config_theme', 'theme_default', 0),
-(1684, 0, 'config', 'config_meta_description', '我的B2C中国网店', 0),
-(1683, 0, 'config', 'config_meta_title', '我的B2C中国网店', 0),
-(1216, 0, 'cms_blog', 'cms_blog_seo_keyword', 'blog', 0),
-(1217, 0, 'cms_blog', 'cms_blog_large_image_width', '620', 0),
-(1809, 0, 'cms_press', 'cms_press_seo_keyword', 'press', 0),
-(1810, 0, 'cms_press', 'cms_press_brief_length', '50', 0),
-(1808, 0, 'cms_press', 'cms_press_description', '{"1":{"title":"MyCnCart \\u65b0\\u95fb","meta_title":"MyCnCart \\u65b0\\u95fb","meta_description":"MyCnCart \\u65b0\\u95fb","meta_keyword":"MyCnCart \\u65b0\\u95fb"},"2":{"title":"MyCnCart Press","meta_title":"MyCnCart Press","meta_description":"MyCnCart Press","meta_keyword":"MyCnCart Press"},"3":{"title":"MyCnCart \\u65b0\\u805e","meta_title":"MyCnCart \\u65b0\\u805e","meta_description":"MyCnCart \\u65b0\\u805e","meta_keyword":"MyCnCart \\u65b0\\u805e"}}', 1),
-(1787, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
-(1786, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
-(1785, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
-(1784, 0, 'theme_default', 'theme_default_product_limit', '15', 0),
-(1783, 0, 'theme_default', 'theme_default_status', '1', 0),
-(1782, 0, 'theme_default', 'theme_default_directory', 'default', 0),
-(1781, 0, 'config', 'config_youzan_appsecret', '5', 0),
-(1817, 0, 'bank_transfer', 'bank_transfer_bank3', '測試信息', 0),
-(1818, 0, 'bank_transfer', 'bank_transfer_total', '0.01', 0),
-(1819, 0, 'bank_transfer', 'bank_transfer_order_status_id', '2', 0),
-(1820, 0, 'bank_transfer', 'bank_transfer_geo_zone_id', '0', 0),
-(1821, 0, 'bank_transfer', 'bank_transfer_status', '1', 0),
-(1822, 0, 'bank_transfer', 'bank_transfer_sort_order', '', 0),
-(1825, 0, 'free_checkout', 'free_checkout_sort_order', '2', 0);
+(3544, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(3545, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(3546, 0, 'config', 'config_mail_alert', '["account","affiliate","order","review"]', 1),
+(3547, 0, 'config', 'config_mail_alert_email', '', 0),
+(3548, 0, 'config', 'config_maintenance', '0', 0),
+(3549, 0, 'config', 'config_seo_url', '0', 0),
+(3550, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(670, 0, 'voucher', 'voucher_sort_order', '8', 0),
+(669, 0, 'voucher', 'voucher_status', '1', 0),
+(95, 0, 'free_checkout', 'free_checkout_status', '1', 0),
+(96, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
+(97, 0, 'shipping', 'shipping_sort_order', '3', 0),
+(98, 0, 'sub_total', 'sub_total_sort_order', '1', 0),
+(99, 0, 'sub_total', 'sub_total_status', '1', 0),
+(100, 0, 'tax', 'tax_status', '1', 0),
+(101, 0, 'total', 'total_sort_order', '9', 0),
+(102, 0, 'total', 'total_status', '1', 0),
+(103, 0, 'tax', 'tax_sort_order', '5', 0),
+(104, 0, 'free_checkout', 'free_checkout_sort_order', '1', 0),
+(105, 0, 'cod', 'cod_sort_order', '5', 0),
+(106, 0, 'cod', 'cod_total', '0.01', 0),
+(107, 0, 'cod', 'cod_order_status_id', '1', 0),
+(108, 0, 'cod', 'cod_geo_zone_id', '0', 0),
+(109, 0, 'cod', 'cod_status', '1', 0),
+(110, 0, 'shipping', 'shipping_status', '1', 0),
+(111, 0, 'shipping', 'shipping_estimator', '1', 0),
+(112, 0, 'coupon', 'coupon_sort_order', '4', 0),
+(113, 0, 'coupon', 'coupon_status', '1', 0),
+(114, 0, 'flat', 'flat_sort_order', '1', 0),
+(115, 0, 'flat', 'flat_status', '1', 0),
+(116, 0, 'flat', 'flat_geo_zone_id', '0', 0),
+(117, 0, 'flat', 'flat_tax_class_id', '9', 0),
+(118, 0, 'flat', 'flat_cost', '5.00', 0),
+(119, 0, 'credit', 'credit_sort_order', '7', 0),
+(120, 0, 'credit', 'credit_status', '1', 0),
+(121, 0, 'reward', 'reward_sort_order', '2', 0),
+(122, 0, 'reward', 'reward_status', '1', 0),
+(123, 0, 'category', 'category_status', '1', 0),
+(124, 0, 'account', 'account_status', '1', 0),
+(125, 0, 'affiliate', 'affiliate_status', '1', 0),
+(665, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
+(664, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
+(663, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
+(662, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
+(661, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
+(660, 0, 'theme_default', 'theme_default_image_related_height', '200', 0),
+(659, 0, 'theme_default', 'theme_default_image_related_width', '200', 0),
+(658, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
+(657, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
+(656, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
+(655, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
+(654, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
+(653, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
+(652, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
+(651, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
+(650, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
+(649, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
+(648, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
+(647, 0, 'theme_default', 'theme_default_product_limit', '15', 0),
+(646, 0, 'theme_default', 'theme_default_status', '1', 0),
+(645, 0, 'theme_default', 'theme_default_directory', 'default', 0),
+(636, 0, 'dashboard_activity', 'dashboard_activity_sort_order', '7', 0),
+(635, 0, 'dashboard_activity', 'dashboard_activity_status', '1', 0),
+(152, 0, 'dashboard_sale', 'dashboard_sale_status', '1', 0),
+(153, 0, 'dashboard_sale', 'dashboard_sale_width', '3', 0),
+(154, 0, 'dashboard_chart', 'dashboard_chart_status', '1', 0),
+(155, 0, 'dashboard_chart', 'dashboard_chart_width', '6', 0),
+(156, 0, 'dashboard_customer', 'dashboard_customer_status', '1', 0),
+(157, 0, 'dashboard_customer', 'dashboard_customer_width', '3', 0),
+(158, 0, 'dashboard_map', 'dashboard_map_status', '1', 0),
+(159, 0, 'dashboard_map', 'dashboard_map_width', '6', 0),
+(160, 0, 'dashboard_online', 'dashboard_online_status', '1', 0),
+(161, 0, 'dashboard_online', 'dashboard_online_width', '3', 0),
+(162, 0, 'dashboard_order', 'dashboard_order_sort_order', '1', 0),
+(163, 0, 'dashboard_order', 'dashboard_order_status', '1', 0),
+(164, 0, 'dashboard_order', 'dashboard_order_width', '3', 0),
+(165, 0, 'dashboard_sale', 'dashboard_sale_sort_order', '2', 0),
+(166, 0, 'dashboard_customer', 'dashboard_customer_sort_order', '3', 0),
+(167, 0, 'dashboard_online', 'dashboard_online_sort_order', '4', 0),
+(168, 0, 'dashboard_map', 'dashboard_map_sort_order', '5', 0),
+(169, 0, 'dashboard_chart', 'dashboard_chart_sort_order', '6', 0),
+(170, 0, 'dashboard_recent', 'dashboard_recent_status', '1', 0),
+(171, 0, 'dashboard_recent', 'dashboard_recent_sort_order', '8', 0),
+(634, 0, 'dashboard_activity', 'dashboard_activity_width', '4', 0),
+(173, 0, 'dashboard_recent', 'dashboard_recent_width', '8', 0),
+(633, 0, 'basic_captcha', 'basic_captcha_status', '1', 0),
+(668, 0, 'theme_default', 'theme_default_image_location_height', '50', 0),
+(667, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
+(666, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
+(3542, 0, 'config', 'config_mail_smtp_username', '', 0),
+(3562, 0, 'config', 'config_baidu_api', '', 0),
+(3561, 0, 'config', 'config_error_filename', 'error.log', 0),
+(3560, 0, 'config', 'config_error_log', '1', 0),
+(3559, 0, 'config', 'config_error_display', '1', 0),
+(3558, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(3557, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(3556, 0, 'config', 'config_file_max_size', '300000', 0),
+(3551, 0, 'config', 'config_compression', '0', 0),
+(3552, 0, 'config', 'config_secure', '0', 0),
+(3553, 0, 'config', 'config_password', '1', 0),
+(3554, 0, 'config', 'config_shared', '0', 0),
+(3555, 0, 'config', 'config_encryption', 'R7kMT0bkdOsnVrysclRXC354fGXZYXlg6x9vBw0b5pY3VFqS6uY201KzrO2vqFet3ul4zJ5HOPdxdbrBqNP1OQopKN3MAbgIeWnCK7MrgKsXwJZrx7FE79WwA2glI7ByleeKoooiG3gFpHn6mExeKdMCketRSwnUjvVTGj2Pyg3IYKAL8LdgjnvSBxBkslEZy1HnL4sbMF4dknLGKBad2H0pfxfL594eyNCVWYS1rQGVHeruXDdSHaNsgLZe3HkSsOxyBfPM7lnx8T0zqWeKYUGjdO1zi6w59PcGyhc9tifuVQpk2FKqNl2bjKjlxIZVuMSSBZKPjM3GcO5g9SIlBV6wvfAyGqiTyJFDl0v5xZqmDct1tnjn6OPyUgXnkdzo698tcWr0EwyyRNGRWmxtdeiDt1LKbGFnZ9GsneUeb5lNJ3RaIyFC5L6NzykHorQDCgJuVdWTd1mKMqM8zDXR1d0cyXf0aLR9dMlK4pW9v2u6pnG8RenHHvIwpdSWP9Pz2l0szY4XGcXeUkEEj56Zp7e1cqLfsaO6RwReiIwS8rMljUyU9SWM0mqadVjzisDCtLpCFkfbVYj3RMXsha2LDsUTnyVn0I75KUzr6aEK4XCh5mq1d0HcDItBPR1Q8LbhgZqPwdYwHfSMpabY9uhNcRjsw29cN6CuWdR6BovHeufY4kaDjGXrIMRCPpvtvrOSk9MAZ30C3GIs2phm2JENxS99g6GCjF38VQVqAlZucvy79cMGwPtttUz5TJHU6ZRXwa2jSNsDpKL7qUq2RAns96iovhYRW7YDzAVRlqT0xfyt3RMUjt0SIYiUQfXRvPYuyzM8Vgi0jxWQESb4NrVHL95RMptqej8CuQsO8bd9IsyGogqxXlXmo1iaoihhujZiszziXcaUKwOA8pBvVGhgdzaLputlFUfvPPxc1HPdqzRSRnag79iYhKTlMp5SjGuEocsFWkzRxJvvIMRdWNm7xX6tHNaHen8Ew2ZhBO6ZWe1Yo9GLQLJWk6DHAu92emDV', 0),
+(3543, 0, 'config', 'config_mail_smtp_password', '', 0),
+(3541, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(3540, 0, 'config', 'config_mail_parameter', '', 0),
+(3539, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(3538, 0, 'config', 'config_ftp_status', '0', 0),
+(3537, 0, 'config', 'config_ftp_root', '', 0),
+(3534, 0, 'config', 'config_ftp_port', '21', 0),
+(3535, 0, 'config', 'config_ftp_username', '', 0),
+(3536, 0, 'config', 'config_ftp_password', '', 0),
+(3533, 0, 'config', 'config_ftp_hostname', '', 0),
+(3532, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(3531, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(3530, 0, 'config', 'config_limit_autocomplete', '50', 0),
+(3529, 0, 'config', 'config_sms', '', 0),
+(2107, 0, 'cms_press', 'cms_press_seo_keyword', 'press', 0),
+(2108, 0, 'cms_press', 'cms_press_brief_length', '200', 0),
+(2106, 0, 'cms_press', 'cms_press_description', '{"1":{"title":"MyCnCart \\u65b0\\u95fb","meta_title":"MyCnCart \\u65b0\\u95fb","meta_description":"MyCnCart \\u65b0\\u95fb","meta_keyword":"MyCnCart, \\u65b0\\u95fb"},"2":{"title":"MyCnCart News","meta_title":"MyCnCart News","meta_description":"MyCnCart News","meta_keyword":"MyCnCart, News"},"3":{"title":"MyCnCart \\u65b0\\u805e","meta_title":"MyCnCart \\u65b0\\u805e","meta_description":"MyCnCart \\u65b0\\u805e","meta_keyword":"MyCnCart, \\u65b0\\u805e"}}', 1),
+(2351, 0, 'cms_blog', 'cms_blog_comment_length', '200', 0),
+(2350, 0, 'cms_blog', 'cms_blog_brief_length', '200', 0),
+(2349, 0, 'cms_blog', 'cms_blog_show_need_login_to_comment', '1', 0),
+(2348, 0, 'cms_blog', 'cms_blog_show_recaptcha', '1', 0),
+(2347, 0, 'cms_blog', 'cms_blog_comment_email', '1', 0),
+(2346, 0, 'cms_blog', 'cms_blog_show_auto_publish_comment', '1', 0),
+(2345, 0, 'cms_blog', 'cms_blog_show_comment_form', '1', 0),
+(2344, 0, 'cms_blog', 'cms_blog_show_comment_counter', '1', 0),
+(2343, 0, 'cms_blog', 'cms_blog_show_hits', '1', 0),
+(2304, 0, 'cms_blog', 'cms_blog_description', '{"1":{"title":"MyCnCart \\u535a\\u5ba2","meta_title":"MyCnCart \\u535a\\u5ba2","meta_description":"MyCnCart \\u535a\\u5ba2","meta_keyword":"MyCnCart, \\u535a\\u5ba2"},"2":{"title":"MyCnCart Blog","meta_title":"MyCnCart Blog","meta_description":"MyCnCart Blog","meta_keyword":"MyCnCart, Blog"},"3":{"title":"MyCnCart \\u535a\\u5ba2","meta_title":"MyCnCart \\u535a\\u5ba2","meta_description":"MyCnCart \\u535a\\u5ba2","meta_keyword":"MyCnCart, \\u535a\\u5ba2"}}', 1),
+(2342, 0, 'cms_blog', 'cms_blog_show_created_date', '1', 0),
+(2341, 0, 'cms_blog', 'cms_blog_article_related_per_row', '6', 0),
+(2340, 0, 'cms_blog', 'cms_blog_article_scroll_related', '0', 0),
+(2339, 0, 'cms_blog', 'cms_blog_show_blog_related', '1', 0),
+(2338, 0, 'cms_blog', 'cms_blog_product_related_per_row', '3', 0),
+(2337, 0, 'cms_blog', 'cms_blog_product_scroll_related', '0', 0),
+(2336, 0, 'cms_blog', 'cms_blog_show_product_related', '1', 0),
+(2335, 0, 'cms_blog', 'cms_blog_show_category', '1', 0),
+(2334, 0, 'cms_blog', 'cms_blog_show_author', '1', 0),
+(2333, 0, 'cms_blog', 'cms_blog_show_image', '1', 0),
+(2332, 0, 'cms_blog', 'cms_blog_show_title', '1', 0),
+(2331, 0, 'cms_blog', 'cms_blog_image_type', 'l', 0),
+(2328, 0, 'cms_blog', 'cms_blog_category_page_show_created_date', '1', 0),
+(2330, 0, 'cms_blog', 'cms_blog_category_page_show_comment_counter', '1', 0),
+(2329, 0, 'cms_blog', 'cms_blog_category_page_show_hits', '1', 0),
+(2327, 0, 'cms_blog', 'cms_blog_category_page_show_category', '1', 0),
+(2326, 0, 'cms_blog', 'cms_blog_category_page_show_author', '1', 0),
+(2325, 0, 'cms_blog', 'cms_blog_category_page_show_image', '1', 0),
+(2324, 0, 'cms_blog', 'cms_blog_category_page_show_readmore', '1', 0),
+(2323, 0, 'cms_blog', 'cms_blog_category_page_show_brief', '1', 0),
+(2321, 0, 'cms_blog', 'cms_blog_category_columns_secondary_blogs', '', 0),
+(2322, 0, 'cms_blog', 'cms_blog_category_page_show_title', '1', 0),
+(2320, 0, 'cms_blog', 'cms_blog_category_columns_leading_blog', '', 0),
+(2319, 0, 'cms_blog', 'cms_blog_category_secondary_image_type', 's', 0),
+(2318, 0, 'cms_blog', 'cms_blog_category_leading_image_type', 'l', 0),
+(2317, 0, 'cms_blog', 'cms_blog_category_limit_secondary_blog', '', 0),
+(2316, 0, 'cms_blog', 'cms_blog_category_limit_leading_blog', '', 0),
+(2315, 0, 'cms_blog', 'cms_blog_general_cheight', '', 0),
+(2314, 0, 'cms_blog', 'cms_blog_general_cwidth', '', 0),
+(2313, 0, 'cms_blog', 'cms_blog_children_columns', '', 0),
+(2312, 0, 'cms_blog', 'cms_blog_items_per_page', '10', 0),
+(2311, 0, 'cms_blog', 'cms_blog_small_image_height', '300', 0),
+(2353, 0, 'cms_faq', 'cms_faq_seo_keyword', 'faq', 0),
+(2352, 0, 'cms_faq', 'cms_faq_description', '{"1":{"title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54(FAQs)","meta_title":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54(FAQs)","meta_description":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54(FAQs)","meta_keyword":"\\u5e38\\u89c1\\u95ee\\u9898\\u4e0e\\u89e3\\u7b54(FAQs)"},"2":{"title":"FAQs","meta_title":"FAQs","meta_description":"FAQs","meta_keyword":"FAQs"},"3":{"title":"\\u5e38\\u898b\\u554f\\u984c\\u8207\\u89e3\\u7b54(FAQs)","meta_title":"\\u5e38\\u898b\\u554f\\u984c\\u8207\\u89e3\\u7b54(FAQs)","meta_description":"\\u5e38\\u898b\\u554f\\u984c\\u8207\\u89e3\\u7b54(FAQs)","meta_keyword":"\\u5e38\\u898b\\u554f\\u984c\\u8207\\u89e3\\u7b54(FAQs)"}}', 1),
+(1663, 0, 'blog_search', 'blog_search_status', '1', 0),
+(1664, 0, 'blog_category', 'blog_category_status', '1', 0),
+(2305, 0, 'cms_blog', 'cms_blog_seo_keyword', 'blog', 0),
+(2306, 0, 'cms_blog', 'cms_blog_large_image_width', '845', 0),
+(2307, 0, 'cms_blog', 'cms_blog_large_image_height', '300', 0),
+(2308, 0, 'cms_blog', 'cms_blog_middle_image_width', '620', 0),
+(2309, 0, 'cms_blog', 'cms_blog_middle_image_height', '300', 0),
+(2310, 0, 'cms_blog', 'cms_blog_small_image_width', '620', 0),
+(1761, 0, 'press_latest', 'press_latest_status', '1', 0),
+(1762, 0, 'press_category', 'press_category_status', '1', 0),
+(1763, 0, 'faq_category', 'faq_category_status', '1', 0),
+(3512, 0, 'config', 'config_checkout_id', '5', 0),
+(2109, 0, 'cms_press', 'cms_press_items_per_page', '10', 0),
+(2354, 0, 'cms_faq', 'cms_faq_items_per_page', '10', 0),
+(3528, 0, 'config', 'config_captcha_page', '["register","guest","review","return","contact","comment"]', 1),
+(3527, 0, 'config', 'config_captcha', 'basic_captcha', 0),
+(3525, 0, 'config', 'config_return_id', '0', 0),
+(3526, 0, 'config', 'config_return_status_id', '2', 0),
+(3513, 0, 'config', 'config_order_status_id', '1', 0),
+(3514, 0, 'config', 'config_processing_status', '["2","5","3","1"]', 1),
+(3515, 0, 'config', 'config_complete_status', '["5","3"]', 1),
+(3516, 0, 'config', 'config_fraud_status_id', '7', 0),
+(2571, 0, 'free', 'free_total', '0.01', 0),
+(2572, 0, 'free', 'free_geo_zone_id', '0', 0),
+(2573, 0, 'free', 'free_status', '1', 0),
+(2574, 0, 'free', 'free_sort_order', '2', 0),
+(3517, 0, 'config', 'config_api_id', '1', 0),
+(3518, 0, 'config', 'config_stock_display', '1', 0),
+(3519, 0, 'config', 'config_stock_warning', '0', 0),
+(3520, 0, 'config', 'config_stock_checkout', '0', 0),
+(3521, 0, 'config', 'config_affiliate_approval', '0', 0),
+(3522, 0, 'config', 'config_affiliate_auto', '0', 0),
+(3523, 0, 'config', 'config_affiliate_commission', '5', 0),
+(3524, 0, 'config', 'config_affiliate_id', '4', 0),
+(3472, 0, 'config', 'config_owner', '青岛万物一体网络科技有限公司', 0),
+(3511, 0, 'config', 'config_checkout_guest', '1', 0),
+(3510, 0, 'config', 'config_cart_weight', '1', 0),
+(3509, 0, 'config', 'config_invoice_prefix', 'INV-2016-00', 0),
+(3508, 0, 'config', 'config_account_id', '3', 0),
+(3506, 0, 'config', 'config_customer_price', '0', 0),
+(3507, 0, 'config', 'config_login_attempts', '5', 0),
+(3505, 0, 'config', 'config_customer_group_display', '["1"]', 1),
+(3504, 0, 'config', 'config_customer_group_id', '1', 0),
+(3503, 0, 'config', 'config_customer_search', '0', 0),
+(3502, 0, 'config', 'config_customer_activity', '0', 0),
+(3501, 0, 'config', 'config_customer_online', '0', 0),
+(3500, 0, 'config', 'config_tax_customer', '', 0),
+(3499, 0, 'config', 'config_tax_default', '', 0),
+(3498, 0, 'config', 'config_tax', '0', 0),
+(3497, 0, 'config', 'config_voucher_max', '1000', 0),
+(3495, 0, 'config', 'config_review_guest', '1', 0),
+(3496, 0, 'config', 'config_voucher_min', '1', 0),
+(3484, 0, 'config', 'config_country_id', '44', 0),
+(3485, 0, 'config', 'config_zone_id', '707', 0),
+(3486, 0, 'config', 'config_language', 'zh-cn', 0),
+(3487, 0, 'config', 'config_admin_language', 'zh-cn', 0),
+(3488, 0, 'config', 'config_currency', 'CNY', 0),
+(3489, 0, 'config', 'config_currency_auto', '0', 0),
+(3490, 0, 'config', 'config_length_class_id', '1', 0),
+(3491, 0, 'config', 'config_weight_class_id', '1', 0),
+(3492, 0, 'config', 'config_product_count', '1', 0),
+(3493, 0, 'config', 'config_limit_admin', '20', 0),
+(3494, 0, 'config', 'config_review_status', '1', 0),
+(3483, 0, 'config', 'config_comment', '', 0),
+(3482, 0, 'config', 'config_open', '', 0),
+(3480, 0, 'config', 'config_fax', '', 0),
+(3481, 0, 'config', 'config_image', '', 0),
+(3479, 0, 'config', 'config_sms_telephone', '18561800618', 0),
+(3478, 0, 'config', 'config_telephone', '18561800618', 0),
+(3477, 0, 'config', 'config_email', 'opencart@qq.com', 0),
+(3475, 0, 'config', 'config_map_select', 'baidu', 0),
+(3476, 0, 'config', 'config_geocode', '120.191457,35.959145', 0),
+(3473, 0, 'config', 'config_address', '中国山东省青岛市长江中路汇商国际大厦', 0),
+(3474, 0, 'config', 'config_miit', '鲁ICP备16025901号', 0),
+(3470, 0, 'config', 'config_layout_id', '4', 0),
+(3471, 0, 'config', 'config_name', '我的B2C中国网店', 0),
+(3469, 0, 'config', 'config_theme', 'theme_default', 0),
+(3468, 0, 'config', 'config_meta_keyword', 'MyCnCart, 我的B2C中国网店', 0),
+(3466, 0, 'config', 'config_meta_title', 'MyCnCart - 我的B2C中国网店', 0),
+(3467, 0, 'config', 'config_meta_description', 'MyCnCart - 我的B2C中国网店', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_sms_mobile`
+--
 
 DROP TABLE IF EXISTS `mcc_sms_mobile`;
 CREATE TABLE `mcc_sms_mobile` (
@@ -3973,8 +5026,20 @@ CREATE TABLE `mcc_sms_mobile` (
   `sms_mobile` varchar(15) CHARACTER SET utf8 NOT NULL,
   `verify_code` varchar(6) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`sms_mobile_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
+--
+-- Dumping data for table `mcc_sms_mobile`
+--
+
+INSERT INTO `mcc_sms_mobile` (`sms_mobile_id`, `sms_mobile`, `verify_code`) VALUES
+(11, '13888888888', '110406');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_stock_status`
+--
 
 DROP TABLE IF EXISTS `mcc_stock_status`;
 CREATE TABLE `mcc_stock_status` (
@@ -3984,6 +5049,9 @@ CREATE TABLE `mcc_stock_status` (
   PRIMARY KEY (`stock_status_id`,`language_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
+--
+-- Dumping data for table `mcc_stock_status`
+--
 
 INSERT INTO `mcc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 (7, 3, '有库存'),
@@ -3999,6 +5067,11 @@ INSERT INTO `mcc_stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 (5, 1, '库存不足'),
 (6, 1, '等待 2 -3 天');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_store`
+--
 
 DROP TABLE IF EXISTS `mcc_store`;
 CREATE TABLE `mcc_store` (
@@ -4007,8 +5080,13 @@ CREATE TABLE `mcc_store` (
   `url` varchar(255) NOT NULL,
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_tax_class`
+--
 
 DROP TABLE IF EXISTS `mcc_tax_class`;
 CREATE TABLE `mcc_tax_class` (
@@ -4020,11 +5098,19 @@ CREATE TABLE `mcc_tax_class` (
   PRIMARY KEY (`tax_class_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
+--
+-- Dumping data for table `mcc_tax_class`
+--
 
 INSERT INTO `mcc_tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 (9, '应税商品', '应税商品', '2009-01-06 23:21:53', '2015-04-01 22:30:09'),
 (10, '下载类商品', '下载类', '2011-09-21 22:19:39', '2015-04-01 22:29:46');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_tax_rate`
+--
 
 DROP TABLE IF EXISTS `mcc_tax_rate`;
 CREATE TABLE `mcc_tax_rate` (
@@ -4038,24 +5124,40 @@ CREATE TABLE `mcc_tax_rate` (
   PRIMARY KEY (`tax_rate_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
+--
+-- Dumping data for table `mcc_tax_rate`
+--
 
 INSERT INTO `mcc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 (86, 3, '增值税 (20%)', '20.0000', 'P', '2011-03-09 21:17:10', '2015-04-01 22:33:10'),
 (87, 3, '生态税(-2.00)', '2.0000', 'F', '2011-09-21 21:49:23', '2015-04-01 22:33:22');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_tax_rate_to_customer_group`
+--
 
 DROP TABLE IF EXISTS `mcc_tax_rate_to_customer_group`;
 CREATE TABLE `mcc_tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_tax_rate_to_customer_group`
+--
 
 INSERT INTO `mcc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 (86, 1),
 (87, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_tax_rule`
+--
 
 DROP TABLE IF EXISTS `mcc_tax_rule`;
 CREATE TABLE `mcc_tax_rule` (
@@ -4065,15 +5167,56 @@ CREATE TABLE `mcc_tax_rule` (
   `based` varchar(10) NOT NULL,
   `priority` int(5) NOT NULL DEFAULT '1',
   PRIMARY KEY (`tax_rule_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=133 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=129 ;
 
+--
+-- Dumping data for table `mcc_tax_rule`
+--
 
 INSERT INTO `mcc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
-(129, 10, 86, 'payment', 1),
-(132, 9, 87, 'shipping', 2),
-(131, 9, 86, 'shipping', 1),
-(130, 10, 87, 'store', 0);
+(121, 10, 86, 'payment', 1),
+(120, 10, 87, 'store', 0),
+(128, 9, 86, 'shipping', 1),
+(127, 9, 87, 'shipping', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_theme`
+--
+
+DROP TABLE IF EXISTS `mcc_theme`;
+CREATE TABLE `mcc_theme` (
+  `theme_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `theme` varchar(64) NOT NULL,
+  `route` varchar(64) NOT NULL,
+  `code` text NOT NULL,
+  PRIMARY KEY (`theme_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_translation`
+--
+
+DROP TABLE IF EXISTS `mcc_translation`;
+CREATE TABLE `mcc_translation` (
+  `translation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `route` varchar(64) NOT NULL,
+  `key` varchar(64) NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`translation_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_upload`
+--
 
 DROP TABLE IF EXISTS `mcc_upload`;
 CREATE TABLE `mcc_upload` (
@@ -4083,8 +5226,14 @@ CREATE TABLE `mcc_upload` (
   `code` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`upload_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_url_alias`
+--
 
 DROP TABLE IF EXISTS `mcc_url_alias`;
 CREATE TABLE `mcc_url_alias` (
@@ -4094,109 +5243,88 @@ CREATE TABLE `mcc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1185 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1051 ;
+
+--
+-- Dumping data for table `mcc_url_alias`
+--
 
 INSERT INTO `mcc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-(824, 'product_id=48', 'ipod-classic'),
-(1054, 'category_id=45', 'windows'),
-(1152, 'manufacturer_id=8', 'apple'),
-(897, 'information_id=4', 'about_us'),
-(1151, 'product_id=42', 'test'),
-(1071, 'category_id=43', 'test11'),
-(1072, 'category_id=44', 'test12'),
-(1073, 'category_id=47', 'test15'),
-(1074, 'category_id=48', 'test16'),
-(1075, 'category_id=49', 'test17'),
-(1076, 'category_id=50', 'test18'),
-(1077, 'category_id=51', 'test19'),
-(1078, 'category_id=52', 'test20'),
-(1079, 'category_id=53', 'test21'),
-(1080, 'category_id=54', 'test22'),
-(1055, 'category_id=46', 'macs'),
-(1056, 'category_id=26', 'pc'),
-(1057, 'category_id=27', 'mac'),
-(1058, 'category_id=28', 'monitor'),
-(1059, 'category_id=29', 'mouse'),
-(1060, 'category_id=30', 'printer'),
-(1061, 'category_id=31', 'scanner'),
-(1062, 'category_id=32', 'web-camera'),
-(1063, 'category_id=35', 'test1'),
-(1064, 'category_id=36', 'test2'),
-(1065, 'category_id=37', 'test5'),
-(1066, 'category_id=38', 'test4'),
-(1067, 'category_id=39', 'test6'),
-(1068, 'category_id=40', 'test7'),
-(1069, 'category_id=41', 'test8'),
-(1070, 'category_id=42', 'test9'),
-(1087, 'product_id=31', 'nikon-d300'),
-(986, 'product_id=47', 'hp-lp3065'),
-(1086, 'product_id=30', 'canon-eos-5d'),
-(1154, 'product_id=43', 'macbook'),
-(813, 'product_id=44', 'macbook-air'),
-(814, 'product_id=45', 'macbook-pro'),
-(1088, 'product_id=32', 'ipod-touch'),
-(1089, 'product_id=33', 'samsung-syncmaster-941bw'),
-(948, 'product_id=49', 'samsung-galaxy-tab-10-1'),
-(1090, 'product_id=34', 'ipod-shuffle'),
-(821, 'product_id=46', 'sony-vaio'),
-(837, 'product_id=41', 'imac'),
-(1093, 'product_id=40', 'iphone'),
-(1092, 'product_id=36', 'ipod-nano'),
-(1091, 'product_id=35', 'product-8'),
+(1041, 'product_id=48', 'ipod-classic'),
+(885, 'category_id=20', 'kitchen'),
+(887, 'category_id=26', 'chop-board'),
+(886, 'category_id=27', 'dining-set'),
+(730, 'manufacturer_id=8', 'apple'),
+(772, 'information_id=4', 'about_us'),
+(1043, 'product_id=42', 'test'),
+(1015, 'category_id=34', 'home-decor'),
+(895, 'category_id=36', 'chair'),
+(888, 'category_id=25', 'solid-wood'),
+(893, 'category_id=29', 'beds'),
+(889, 'category_id=28', 'living-room'),
+(894, 'category_id=35', 'sofa'),
+(892, 'category_id=30', 'dressing-table'),
+(891, 'category_id=31', 'reading-table'),
+(890, 'category_id=32', 'bed-room'),
+(896, 'category_id=57', 'coffee-table'),
+(897, 'category_id=17', 'lighting'),
+(790, 'category_id=43', 'test11'),
+(791, 'category_id=44', 'test12'),
+(792, 'category_id=47', 'test15'),
+(793, 'category_id=48', 'test16'),
+(794, 'category_id=49', 'test17'),
+(795, 'category_id=50', 'test18'),
+(796, 'category_id=51', 'test19'),
+(797, 'category_id=52', 'test20'),
+(798, 'category_id=58', 'test25'),
+(799, 'category_id=53', 'test21'),
+(800, 'category_id=54', 'test22'),
+(801, 'category_id=55', 'test23'),
+(802, 'category_id=56', 'test24'),
+(803, 'category_id=38', 'test4'),
+(804, 'category_id=37', 'test5'),
+(805, 'category_id=39', 'test6'),
+(806, 'category_id=40', 'test7'),
+(807, 'category_id=41', 'test8'),
+(808, 'category_id=42', 'test9'),
+(998, 'product_id=30', 'canon-eos-5d'),
+(1032, 'product_id=47', 'hp-lp3065'),
+(1040, 'product_id=28', 'htc-touch-hd'),
+(1050, 'product_id=43', 'macbook'),
+(1034, 'product_id=44', 'macbook-air'),
+(1030, 'product_id=45', 'macbook-pro'),
+(1037, 'product_id=31', 'nikon-d300'),
+(1038, 'product_id=29', 'palm-treo-pro'),
+(1035, 'product_id=35', 'product-8'),
+(995, 'product_id=49', 'samsung-galaxy-tab-10-1'),
+(1044, 'product_id=33', 'samsung-syncmaster-941bw'),
+(1045, 'product_id=46', 'sony-vaio'),
+(1029, 'product_id=41', 'imac'),
+(1042, 'product_id=40', 'iphone'),
+(1031, 'product_id=36', 'ipod-nano'),
+(1039, 'product_id=34', 'ipod-shuffle'),
+(1036, 'product_id=32', 'ipod-touch'),
 (828, 'manufacturer_id=9', 'canon'),
 (829, 'manufacturer_id=5', 'htc'),
 (830, 'manufacturer_id=7', 'hewlett-packard'),
 (831, 'manufacturer_id=6', 'palm'),
 (832, 'manufacturer_id=10', 'sony'),
-(894, 'information_id=6', 'delivery'),
-(896, 'information_id=3', 'privacy'),
-(895, 'information_id=5', 'terms'),
-(1120, 'press_category_id=1', 'press-category-one1'),
-(1121, 'press_category_id=2', 'press-category-two'),
-(1144, 'press_id=1', 'pressone'),
-(1053, 'category_id=34', 'mp3-players'),
-(1052, 'category_id=33', 'camera'),
-(1051, 'category_id=24', 'smartphone'),
-(1050, 'category_id=17', 'software'),
-(1049, 'category_id=57', 'tablet'),
-(1048, 'category_id=25', 'component'),
-(1047, 'category_id=18', 'laptop-notebook'),
-(1046, 'category_id=20', 'desktops'),
-(1085, 'product_id=29', 'palm-treo-pro'),
-(1084, 'product_id=28', 'htc-touch-hd'),
-(1081, 'category_id=55', 'test23'),
-(1082, 'category_id=56', 'test24'),
-(1083, 'category_id=58', 'test25'),
-(1095, 'blog_category_id=1', 'blog_category_one'),
-(1171, 'blog_id=2', 'blogtwo'),
-(1179, 'blog_id=6', 'blog-6.html'),
-(1176, 'blog_id=8', 'blog-8.html'),
-(1175, 'blog_id=7', 'blog-7.html'),
-(1123, 'press_id=2', 'press-2.html'),
-(1124, 'press_id=3', 'press-3.html'),
-(1125, 'faq_category_id=13', 'faq-category-one'),
-(1126, 'faq_category_id=14', 'faq-category-two'),
-(1127, 'faq_category_id=15', 'faq-category-apple'),
-(1130, 'faq_category_id=16', 'faq-category-orange'),
-(1181, 'blog_id=3', 'blog-3.html'),
-(1184, 'blog_id=4', 'blog-4.html'),
-(1182, 'blog_id=5', 'blog-5.html'),
-(1135, 'press_id=4', 'press-4.html'),
-(1136, 'press_id=5', 'press-5.html'),
-(1137, 'press_id=6', 'press-6.html'),
-(1138, 'press_id=7', 'press-7.html'),
-(1139, 'press_id=8', 'press-8.html'),
-(1140, 'press_id=9', 'press-9.html'),
-(1141, 'press_id=10', 'press-10.html'),
-(1156, 'blog_id=1', 'blog-1.html'),
-(1183, 'blog_id=9', 'blog-9.html'),
-(1174, 'blog_id=10', 'blog-10.html'),
-(1178, 'blog_id=11', 'blog-11.html'),
-(1173, 'blog_id=12', 'blog-12.html'),
-(1180, 'blog_id=13', 'blog-13.html'),
-(1177, 'blog_id=14', 'blog-14.html'),
-(1172, 'blog_id=15', 'blog-15.html');
+(841, 'information_id=6', 'delivery'),
+(842, 'information_id=3', 'privacy'),
+(843, 'information_id=5', 'terms'),
+(949, 'blog_id=4', 'blog-4.html'),
+(1016, 'press_id=10', 'press-10.html'),
+(1017, 'press_id=4', 'press-4.html'),
+(1018, 'press_id=5', 'press-5.html'),
+(1019, 'blog_id=2', 'blog-2.html'),
+(1020, 'blog_id=15', 'blog-15.html'),
+(1023, 'blog_id=10', 'blog-10.html');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_user`
+--
 
 DROP TABLE IF EXISTS `mcc_user`;
 CREATE TABLE `mcc_user` (
@@ -4213,8 +5341,20 @@ CREATE TABLE `mcc_user` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `mcc_user`
+--
+
+INSERT INTO `mcc_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `fullname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
+(1, 1, 'admin', 'ab5341d84a42222b94af5cdaba72665cae53d421', 'd7pVbiy74', '?????', 'opencart@qq.com', '', '', '119.182.217.156', 1, '2016-09-02 20:59:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_user_group`
+--
 
 DROP TABLE IF EXISTS `mcc_user_group`;
 CREATE TABLE `mcc_user_group` (
@@ -4224,11 +5364,19 @@ CREATE TABLE `mcc_user_group` (
   PRIMARY KEY (`user_group_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
+--
+-- Dumping data for table `mcc_user_group`
+--
 
 INSERT INTO `mcc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, '超级管理员群组', '{"access":["analytics\\/google_analytics","baidu\\/pushurl","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","catalog\\/url_alias","cms\\/blog","cms\\/blog_category","cms\\/blog_comment","cms\\/blog_config","cms\\/faq","cms\\/faq_category","cms\\/faq_config","cms\\/press","cms\\/press_category","cms\\/press_config","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/language","design\\/layout","design\\/theme","event\\/theme","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/sms","extension\\/theme","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/banner","module\\/bestseller","module\\/blog_category","module\\/blog_comment","module\\/blog_latest","module\\/blog_search","module\\/carousel","module\\/category","module\\/faq_category","module\\/featured","module\\/filter","module\\/html","module\\/information","module\\/latest","module\\/laybuy_layout","module\\/pp_button","module\\/pp_login","module\\/press_category","module\\/press_latest","module\\/sagepay_direct_cards","module\\/sagepay_server_cards","module\\/slideshow","module\\/special","module\\/store","module\\/wx_login","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","openbay\\/fba","payment\\/alipay_direct","payment\\/alipay_guarantee","payment\\/alipay_wap","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cardinity","payment\\/cheque","payment\\/chinapay","payment\\/cod","payment\\/ebatong","payment\\/eway","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/laybuy","payment\\/liqpay","payment\\/nochex","payment\\/paydollar","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/precharge","payment\\/qrcode_wxpay","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/upop","payment\\/web_payment_software","payment\\/worldpay","payment\\/wxpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","sms\\/chengyu","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","theme\\/theme_default","tool\\/backup","tool\\/error_log","tool\\/excelexportimport","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","weidian\\/category","weidian\\/product","youzan\\/product","payment\\/bank_transfer"],"modify":["analytics\\/google_analytics","baidu\\/pushurl","captcha\\/basic_captcha","captcha\\/google_captcha","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","catalog\\/url_alias","cms\\/blog","cms\\/blog_category","cms\\/blog_comment","cms\\/blog_config","cms\\/faq","cms\\/faq_category","cms\\/faq_config","cms\\/press","cms\\/press_category","cms\\/press_config","common\\/column_left","common\\/filemanager","common\\/menu","common\\/profile","common\\/stats","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/language","design\\/layout","design\\/theme","event\\/theme","extension\\/analytics","extension\\/captcha","extension\\/feed","extension\\/fraud","extension\\/installer","extension\\/modification","extension\\/module","extension\\/openbay","extension\\/payment","extension\\/shipping","extension\\/sms","extension\\/theme","extension\\/total","feed\\/google_base","feed\\/google_sitemap","feed\\/openbaypro","fraud\\/fraudlabspro","fraud\\/ip","fraud\\/maxmind","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","module\\/account","module\\/affiliate","module\\/banner","module\\/bestseller","module\\/blog_category","module\\/blog_comment","module\\/blog_latest","module\\/blog_search","module\\/carousel","module\\/category","module\\/faq_category","module\\/featured","module\\/filter","module\\/html","module\\/information","module\\/latest","module\\/laybuy_layout","module\\/pp_button","module\\/pp_login","module\\/press_category","module\\/press_latest","module\\/sagepay_direct_cards","module\\/sagepay_server_cards","module\\/slideshow","module\\/special","module\\/store","module\\/wx_login","openbay\\/amazon","openbay\\/amazon_listing","openbay\\/amazon_product","openbay\\/amazonus","openbay\\/amazonus_listing","openbay\\/amazonus_product","openbay\\/ebay","openbay\\/ebay_profile","openbay\\/ebay_template","openbay\\/etsy","openbay\\/etsy_product","openbay\\/etsy_shipping","openbay\\/etsy_shop","openbay\\/fba","payment\\/alipay_direct","payment\\/alipay_guarantee","payment\\/alipay_wap","payment\\/amazon_login_pay","payment\\/authorizenet_aim","payment\\/authorizenet_sim","payment\\/bank_transfer","payment\\/bluepay_hosted","payment\\/bluepay_redirect","payment\\/cardinity","payment\\/cheque","payment\\/chinapay","payment\\/cod","payment\\/ebatong","payment\\/eway","payment\\/firstdata","payment\\/firstdata_remote","payment\\/free_checkout","payment\\/g2apay","payment\\/globalpay","payment\\/globalpay_remote","payment\\/klarna_account","payment\\/klarna_invoice","payment\\/laybuy","payment\\/liqpay","payment\\/nochex","payment\\/paydollar","payment\\/paymate","payment\\/paypoint","payment\\/payza","payment\\/perpetual_payments","payment\\/pp_express","payment\\/pp_payflow","payment\\/pp_payflow_iframe","payment\\/pp_pro","payment\\/pp_pro_iframe","payment\\/pp_standard","payment\\/precharge","payment\\/qrcode_wxpay","payment\\/realex","payment\\/realex_remote","payment\\/sagepay_direct","payment\\/sagepay_server","payment\\/sagepay_us","payment\\/securetrading_pp","payment\\/securetrading_ws","payment\\/skrill","payment\\/twocheckout","payment\\/upop","payment\\/web_payment_software","payment\\/worldpay","payment\\/wxpay","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","shipping\\/auspost","shipping\\/citylink","shipping\\/fedex","shipping\\/flat","shipping\\/free","shipping\\/item","shipping\\/parcelforce_48","shipping\\/pickup","shipping\\/royal_mail","shipping\\/ups","shipping\\/usps","shipping\\/weight","sms\\/chengyu","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","theme\\/theme_default","tool\\/backup","tool\\/error_log","tool\\/excelexportimport","tool\\/upload","total\\/coupon","total\\/credit","total\\/handling","total\\/klarna_fee","total\\/low_order_fee","total\\/reward","total\\/shipping","total\\/sub_total","total\\/tax","total\\/total","total\\/voucher","user\\/api","user\\/user","user\\/user_permission","weidian\\/category","weidian\\/product","youzan\\/product","payment\\/bank_transfer"]}'),
-(10, '演示用管理员群组', '');
+(1, '超级管理员群组', '{"access":["baidu\\/pushurl","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","catalog\\/url_alias","cms\\/blog","cms\\/blog_category","cms\\/blog_comment","cms\\/blog_config","cms\\/faq","cms\\/faq_category","cms\\/faq_config","cms\\/press","cms\\/press_category","cms\\/press_config","common\\/column_left","common\\/filemanager","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/language","design\\/layout","design\\/menu","design\\/theme","design\\/translation","event\\/compatibility","event\\/theme","extension\\/analytics\\/baidu_analytics","extension\\/analytics\\/google_analytics","extension\\/captcha\\/basic_captcha","extension\\/captcha\\/google_captcha","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/event","extension\\/extension","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/shipping","extension\\/extension\\/sms","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/feed\\/openbaypro","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/installer","extension\\/modification","extension\\/module\\/account","extension\\/module\\/affiliate","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/blog_category","extension\\/module\\/blog_comment","extension\\/module\\/blog_latest","extension\\/module\\/blog_popular","extension\\/module\\/blog_search","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/divido_calculator","extension\\/module\\/ebay_listing","extension\\/module\\/faq_category","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/pp_button","extension\\/module\\/pp_login","extension\\/module\\/press_category","extension\\/module\\/press_latest","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/openbay","extension\\/openbay\\/amazon","extension\\/openbay\\/amazon_listing","extension\\/openbay\\/amazon_product","extension\\/openbay\\/amazonus","extension\\/openbay\\/amazonus_listing","extension\\/openbay\\/amazonus_product","extension\\/openbay\\/ebay","extension\\/openbay\\/ebay_profile","extension\\/openbay\\/ebay_template","extension\\/openbay\\/etsy","extension\\/openbay\\/etsy_product","extension\\/openbay\\/etsy_shipping","extension\\/openbay\\/etsy_shop","extension\\/openbay\\/fba","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/divido","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/pp_express","extension\\/payment\\/pp_payflow","extension\\/payment\\/pp_payflow_iframe","extension\\/payment\\/pp_pro","extension\\/payment\\/pp_pro_iframe","extension\\/payment\\/pp_standard","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/shipping\\/auspost","extension\\/shipping\\/citylink","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/sms\\/chuanglan","extension\\/store","extension\\/theme\\/theme_default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/customer_search","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/compatibility","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/excelexportimport","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission","extension\\/payment\\/alipay_direct","extension\\/shipping\\/free","extension\\/payment\\/alipay_wap","extension\\/payment\\/wxpay","extension\\/module\\/weibo_login","extension\\/payment\\/qrcode_wxpay","extension\\/module\\/wx_login","extension\\/module\\/qq_login","extension\\/shipping\\/weight","extension\\/module\\/weixin_login","extension\\/payment\\/alipay_transfer","extension\\/payment\\/alipay_transfer","extension\\/payment\\/precharge","extension\\/sms\\/chuanglan"],"modify":["baidu\\/pushurl","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","catalog\\/url_alias","cms\\/blog","cms\\/blog_category","cms\\/blog_comment","cms\\/blog_config","cms\\/faq","cms\\/faq_category","cms\\/faq_config","cms\\/press","cms\\/press_category","cms\\/press_config","common\\/column_left","common\\/filemanager","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/language","design\\/layout","design\\/menu","design\\/theme","design\\/translation","event\\/compatibility","event\\/theme","extension\\/analytics\\/baidu_analytics","extension\\/analytics\\/google_analytics","extension\\/captcha\\/basic_captcha","extension\\/captcha\\/google_captcha","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/event","extension\\/extension","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/shipping","extension\\/extension\\/sms","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/feed\\/openbaypro","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/installer","extension\\/modification","extension\\/module\\/account","extension\\/module\\/affiliate","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/blog_category","extension\\/module\\/blog_comment","extension\\/module\\/blog_latest","extension\\/module\\/blog_popular","extension\\/module\\/blog_search","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/divido_calculator","extension\\/module\\/ebay_listing","extension\\/module\\/faq_category","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/pp_button","extension\\/module\\/pp_login","extension\\/module\\/press_category","extension\\/module\\/press_latest","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/openbay","extension\\/openbay\\/amazon","extension\\/openbay\\/amazon_listing","extension\\/openbay\\/amazon_product","extension\\/openbay\\/amazonus","extension\\/openbay\\/amazonus_listing","extension\\/openbay\\/amazonus_product","extension\\/openbay\\/ebay","extension\\/openbay\\/ebay_profile","extension\\/openbay\\/ebay_template","extension\\/openbay\\/etsy","extension\\/openbay\\/etsy_product","extension\\/openbay\\/etsy_shipping","extension\\/openbay\\/etsy_shop","extension\\/openbay\\/fba","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/divido","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/pp_express","extension\\/payment\\/pp_payflow","extension\\/payment\\/pp_payflow_iframe","extension\\/payment\\/pp_pro","extension\\/payment\\/pp_pro_iframe","extension\\/payment\\/pp_standard","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/shipping\\/auspost","extension\\/shipping\\/citylink","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/sms\\/chuanglan","extension\\/store","extension\\/theme\\/theme_default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/customer_search","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/compatibility","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/excelexportimport","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission","extension\\/payment\\/alipay_direct","extension\\/shipping\\/free","extension\\/payment\\/alipay_wap","extension\\/payment\\/wxpay","extension\\/module\\/weibo_login","extension\\/payment\\/qrcode_wxpay","extension\\/module\\/wx_login","extension\\/module\\/qq_login","extension\\/shipping\\/weight","extension\\/module\\/weixin_login","extension\\/payment\\/alipay_transfer","extension\\/payment\\/alipay_transfer","extension\\/payment\\/precharge","extension\\/sms\\/chuanglan"]}'),
+(10, '演示群组', '{"access":["baidu\\/pushurl","catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","catalog\\/url_alias","cms\\/blog","cms\\/blog_category","cms\\/blog_comment","cms\\/blog_config","cms\\/faq","cms\\/faq_category","cms\\/faq_config","cms\\/press","cms\\/press_category","cms\\/press_config","common\\/column_left","common\\/filemanager","customer\\/custom_field","customer\\/customer","customer\\/customer_group","design\\/banner","design\\/language","design\\/layout","design\\/menu","design\\/theme","design\\/translation","event\\/compatibility","event\\/theme","extension\\/analytics\\/baidu_analytics","extension\\/analytics\\/google_analytics","extension\\/captcha\\/basic_captcha","extension\\/captcha\\/google_captcha","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/event","extension\\/extension","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/shipping","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/feed\\/openbaypro","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/installer","extension\\/modification","extension\\/module\\/account","extension\\/module\\/affiliate","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/blog_category","extension\\/module\\/blog_comment","extension\\/module\\/blog_latest","extension\\/module\\/blog_popular","extension\\/module\\/blog_search","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/divido_calculator","extension\\/module\\/ebay_listing","extension\\/module\\/faq_category","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/pp_button","extension\\/module\\/pp_login","extension\\/module\\/press_category","extension\\/module\\/press_latest","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/openbay","extension\\/openbay\\/amazon","extension\\/openbay\\/amazon_listing","extension\\/openbay\\/amazon_product","extension\\/openbay\\/amazonus","extension\\/openbay\\/amazonus_listing","extension\\/openbay\\/amazonus_product","extension\\/openbay\\/ebay","extension\\/openbay\\/ebay_profile","extension\\/openbay\\/ebay_template","extension\\/openbay\\/etsy","extension\\/openbay\\/etsy_product","extension\\/openbay\\/etsy_shipping","extension\\/openbay\\/etsy_shop","extension\\/openbay\\/fba","extension\\/shipping\\/auspost","extension\\/shipping\\/citylink","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/store","extension\\/theme\\/theme_default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","marketing\\/affiliate","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","report\\/affiliate","report\\/affiliate_activity","report\\/affiliate_login","report\\/customer_activity","report\\/customer_credit","report\\/customer_login","report\\/customer_online","report\\/customer_order","report\\/customer_reward","report\\/customer_search","report\\/marketing","report\\/product_purchased","report\\/product_viewed","report\\/sale_coupon","report\\/sale_order","report\\/sale_return","report\\/sale_shipping","report\\/sale_tax","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/compatibility","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/excelexportimport","tool\\/log","tool\\/upload","user\\/api"]}');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_voucher`
+--
 
 DROP TABLE IF EXISTS `mcc_voucher`;
 CREATE TABLE `mcc_voucher` (
@@ -4245,8 +5393,13 @@ CREATE TABLE `mcc_voucher` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_voucher_history`
+--
 
 DROP TABLE IF EXISTS `mcc_voucher_history`;
 CREATE TABLE `mcc_voucher_history` (
@@ -4256,8 +5409,13 @@ CREATE TABLE `mcc_voucher_history` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`voucher_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_voucher_theme`
+--
 
 DROP TABLE IF EXISTS `mcc_voucher_theme`;
 CREATE TABLE `mcc_voucher_theme` (
@@ -4266,12 +5424,20 @@ CREATE TABLE `mcc_voucher_theme` (
   PRIMARY KEY (`voucher_theme_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
+--
+-- Dumping data for table `mcc_voucher_theme`
+--
 
 INSERT INTO `mcc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
 (8, 'catalog/demo/canon_eos_5d_2.jpg'),
 (7, 'catalog/demo/gift-voucher-birthday.jpg'),
 (6, 'catalog/demo/apple_logo.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_voucher_theme_description`
+--
 
 DROP TABLE IF EXISTS `mcc_voucher_theme_description`;
 CREATE TABLE `mcc_voucher_theme_description` (
@@ -4279,8 +5445,11 @@ CREATE TABLE `mcc_voucher_theme_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_voucher_theme_description`
+--
 
 INSERT INTO `mcc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 (6, 2, 'Spring Festival'),
@@ -4293,6 +5462,11 @@ INSERT INTO `mcc_voucher_theme_description` (`voucher_theme_id`, `language_id`, 
 (6, 1, '春节'),
 (7, 3, '生日');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_weight_class`
+--
 
 DROP TABLE IF EXISTS `mcc_weight_class`;
 CREATE TABLE `mcc_weight_class` (
@@ -4301,6 +5475,9 @@ CREATE TABLE `mcc_weight_class` (
   PRIMARY KEY (`weight_class_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
+--
+-- Dumping data for table `mcc_weight_class`
+--
 
 INSERT INTO `mcc_weight_class` (`weight_class_id`, `value`) VALUES
 (1, '1.00000000'),
@@ -4308,6 +5485,11 @@ INSERT INTO `mcc_weight_class` (`weight_class_id`, `value`) VALUES
 (5, '2.20460000'),
 (6, '35.27400000');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_weight_class_description`
+--
 
 DROP TABLE IF EXISTS `mcc_weight_class_description`;
 CREATE TABLE `mcc_weight_class_description` (
@@ -4316,8 +5498,11 @@ CREATE TABLE `mcc_weight_class_description` (
   `title` varchar(32) NOT NULL,
   `unit` varchar(4) NOT NULL,
   PRIMARY KEY (`weight_class_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mcc_weight_class_description`
+--
 
 INSERT INTO `mcc_weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 (1, 3, '公斤', 'kg'),
@@ -4333,6 +5518,11 @@ INSERT INTO `mcc_weight_class_description` (`weight_class_id`, `language_id`, `t
 (6, 1, '盎司', 'oz'),
 (5, 3, '磅', 'lb');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_zone`
+--
 
 DROP TABLE IF EXISTS `mcc_zone`;
 CREATE TABLE `mcc_zone` (
@@ -4344,6 +5534,9 @@ CREATE TABLE `mcc_zone` (
   PRIMARY KEY (`zone_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4227 ;
 
+--
+-- Dumping data for table `mcc_zone`
+--
 
 INSERT INTO `mcc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1, 1, 'Badakhshan', 'BDS', 1),
@@ -8450,6 +9643,11 @@ INSERT INTO `mcc_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUE
 (4225, 44, '西藏自治区', 'TB', 1),
 (4226, 44, '台湾省', 'TW', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcc_zone_to_geo_zone`
+--
 
 DROP TABLE IF EXISTS `mcc_zone_to_geo_zone`;
 CREATE TABLE `mcc_zone_to_geo_zone` (
@@ -8462,6 +9660,9 @@ CREATE TABLE `mcc_zone_to_geo_zone` (
   PRIMARY KEY (`zone_to_geo_zone_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
 
+--
+-- Dumping data for table `mcc_zone_to_geo_zone`
+--
 
 INSERT INTO `mcc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 (110, 44, 712, 4, '2015-04-01 22:11:53', '0000-00-00 00:00:00'),
@@ -8496,3 +9697,4 @@ INSERT INTO `mcc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_i
 (113, 44, 708, 3, '2015-04-01 22:23:18', '0000-00-00 00:00:00'),
 (111, 44, 4225, 4, '2015-04-01 22:11:53', '0000-00-00 00:00:00'),
 (112, 44, 705, 4, '2015-04-01 22:11:53', '0000-00-00 00:00:00');
+

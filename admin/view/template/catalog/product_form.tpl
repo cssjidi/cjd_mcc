@@ -324,7 +324,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-manufacturer"><span data-toggle="tooltip" title="<?php echo $help_manufacturer; ?>"><?php echo $entry_manufacturer; ?></span></label>
                 <div class="col-sm-10">
-                  <input type="text" name="manufacturer" value="<?php echo $manufacturer ?>" placeholder="<?php echo $entry_manufacturer; ?>" id="input-manufacturer" class="form-control" />
+                  <input type="text" name="manufacturer" value="<?php echo $manufacturer; ?>" placeholder="<?php echo $entry_manufacturer; ?>" id="input-manufacturer" class="form-control" />
                   <input type="hidden" name="manufacturer_id" value="<?php echo $manufacturer_id; ?>" />
                 </div>
               </div>
@@ -556,7 +556,6 @@
                               <td class="text-right"><?php echo $entry_price; ?></td>
                               <td class="text-right"><?php echo $entry_option_points; ?></td>
                               <td class="text-right"><?php echo $entry_weight; ?></td>
-                              <td class="text-right"><?php echo $entry_image; ?></td>
                               <td></td>
                             </tr>
                           </thead>
@@ -624,9 +623,6 @@
                                   <?php } ?>
                                 </select>
                                 <input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][weight]" value="<?php echo $product_option_value['weight']; ?>" placeholder="<?php echo $entry_weight; ?>" class="form-control" /></td>
-                              <td class="text-left">
-                                <a href="" id="thumb-option-image<?php echo $option_value_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $product_option_value['option_image_thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input id="input-option-image<?php echo $option_value_row; ?>" type="hidden" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][option_image]" value="<?php echo $product_option_value['option_image']; ?>"  />
-                              </td>
                               <td class="text-left"><button type="button" onclick="$(this).tooltip('destroy');$('#option-value-row<?php echo $option_value_row; ?>').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                             </tr>
                             <?php $option_value_row++; ?>
@@ -926,6 +922,9 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
   <script type="text/javascript"><!--
 // Manufacturer
 $('input[name=\'manufacturer\']').autocomplete({
@@ -1208,16 +1207,14 @@ $('input[name=\'option\']').autocomplete({
 			html += '        <td class="text-right"><?php echo $entry_price; ?></td>';
 			html += '        <td class="text-right"><?php echo $entry_option_points; ?></td>';
 			html += '        <td class="text-right"><?php echo $entry_weight; ?></td>';
-            html += '        <td class="text-right"><?php echo $entry_image; ?></td>';
 			html += '        <td></td>';
 			html += '      </tr>';
 			html += '  	 </thead>';
 			html += '  	 <tbody>';
-
 			html += '    </tbody>';
 			html += '    <tfoot>';
 			html += '      <tr>';
-			html += '        <td colspan="7"></td>';
+			html += '        <td colspan="6"></td>';
 			html += '        <td class="text-left"><button type="button" onclick="addOptionValue(' + option_row + ');" data-toggle="tooltip" title="<?php echo $button_option_value_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>';
 			html += '      </tr>';
 			html += '    </tfoot>';
@@ -1236,7 +1233,7 @@ $('input[name=\'option\']').autocomplete({
 
 		$('#tab-option .tab-content').append(html);
 
-		$('#option > li:last-child').before('<li><a href="#tab-option' + option_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$(\'a[href=\\\'#tab-option' + option_row + '\\\']\').parent().remove(); $(\'#tab-option' + option_row + '\').remove(); $(\'#option a:first\').tab(\'show\')"></i> ' + item['label'] + '</li>');
+		$('#option > li:last-child').before('<li><a href="#tab-option' + option_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick=" $(\'#option a:first\').tab(\'show\');$(\'a[href=\\\'#tab-option' + option_row + '\\\']\').parent().remove(); $(\'#tab-option' + option_row + '\').remove();"></i>' + item['label'] + '</li>');
 
 		$('#option a[href=\'#tab-option' + option_row + '\']').tab('show');
 		
@@ -1290,15 +1287,11 @@ function addOptionValue(option_row) {
 	html += '    <option value="-">-</option>';
 	html += '  </select>';
 	html += '  <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][weight]" value="" placeholder="<?php echo $entry_weight; ?>" class="form-control" /></td>';
-  html += '  <td class="text-left"><a href="" id="thumb-option-image' + option_value_row + '" data-toggle="image" class="img-thumbnail">';
-  html += '    <img src="<?php echo $thumb ?>" alt="" title="" data-placeholder="" /></a>';
-  html += '    <input type="hidden" id="input-option-image' + option_value_row + '" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_image]" value="" />';
-  html += '  </td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(this).tooltip(\'destroy\');$(\'#option-value-row' + option_value_row + '\').remove();" data-toggle="tooltip" rel="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
 
 	$('#option-value' + option_row + ' tbody').append(html);
-        $('[rel=tooltip]').tooltip();
+	$('[rel=tooltip]').tooltip();
 
 	option_value_row++;
 }
@@ -1375,10 +1368,7 @@ function addImage() {
 var recurring_row = <?php echo $recurring_row; ?>;
 
 function addRecurring() {
-	recurring_row++;
-
-	html  = '';
-	html += '<tr id="recurring-row' + recurring_row + '">';
+	html  = '<tr id="recurring-row' + recurring_row + '">';
 	html += '  <td class="left">';
 	html += '    <select name="product_recurring[' + recurring_row + '][recurring_id]" class="form-control">>';
 	<?php foreach ($recurrings as $recurring) { ?>
@@ -1399,6 +1389,8 @@ function addRecurring() {
 	html += '</tr>';
 
 	$('#tab-recurring table tbody').append(html);
+	
+	recurring_row++;
 }
 //--></script>
   <script type="text/javascript"><!--

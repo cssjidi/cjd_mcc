@@ -24,6 +24,7 @@ class ControllerCommonFooter extends Controller {
 
 		$data['informations'] = array();
 
+
 		foreach ($this->model_catalog_information->getInformations() as $result) {
 			if ($result['bottom']) {
 				$data['informations'][] = array(

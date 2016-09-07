@@ -1,6 +1,4 @@
 .idea
-logs/*.log
-logs/
-/logs/
-system/storage/logs/*
-system/storage/cache/*
+logs/*
+/logs/*
+*/logs/*

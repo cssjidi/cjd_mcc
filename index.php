@@ -1,6 +1,6 @@
 <?php
 // Version
-define('VERSION', '1.4.0.0');
+define('VERSION', '1.5.0.0');
 
 // Configuration
 if (is_file('config.php')) {
@@ -13,16 +13,10 @@ if (!defined('DIR_APPLICATION')) {
 	exit;
 }
 
+define('PAY_METHOD_CALLBACK', '');
 date_default_timezone_set('PRC');
 
-// VirtualQMOD
-require_once('./vqmod/vqmod.php');
-VQMod::bootup();
+// Startup
+require_once(DIR_SYSTEM . 'startup.php');
 
-// VQMODDED Startup
-require_once(VQMod::modCheck(DIR_SYSTEM . 'startup.php'));
-
-$application_config = 'catalog';
-
-// Application
-require_once(VQMod::modCheck(DIR_SYSTEM . 'framework.php'));
+start('catalog');

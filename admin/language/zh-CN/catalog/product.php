@@ -84,7 +84,6 @@ $_['entry_tag']          	 = '商品标签';
 $_['entry_reward']           = '奖励积分';
 $_['entry_layout']           = '布局排版覆盖';
 $_['entry_recurring']        = '分期付款';
-$_['entry_image']            = '图像';
 
 // Help
 $_['help_keyword']           = '不要用空格，使用-链接 SEO URL 关键字，确保该关键词为全站唯一。';

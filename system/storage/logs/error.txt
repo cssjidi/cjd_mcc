@@ -1,0 +1,8 @@
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:10 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:30 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10
+2016-09-07 17:04:30 - PHP Notice:  Undefined index: status in D:\www\mycncart\src\admin\controller\startup\event.php on line 10

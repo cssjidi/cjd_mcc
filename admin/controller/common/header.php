@@ -3,8 +3,6 @@ class ControllerCommonHeader extends Controller {
 	public function index() {
 		$data['title'] = $this->document->getTitle();
 
-		//$data['cjd_nav'] = $this->load->controller('module/cjd_nav');
-
 		if ($this->request->server['HTTPS']) {
 			$data['base'] = HTTPS_SERVER;
 		} else {
@@ -99,7 +97,7 @@ class ControllerCommonHeader extends Controller {
 			// Reviews
 			$this->load->model('catalog/review');
 
-			$review_total = $this->model_catalog_review->getTotalReviews(array('filter_status' => false));
+			$review_total = $this->model_catalog_review->getTotalReviews(array('filter_status' => 0));
 
 			$data['review_total'] = $review_total;
 

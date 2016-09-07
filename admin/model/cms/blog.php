@@ -322,4 +322,5 @@ class ModelCmsBlog extends Model {
 		
 		return $blog_related_data;
 	}
+	
 }

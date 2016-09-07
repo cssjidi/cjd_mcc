@@ -356,6 +356,8 @@ class ControllerCmsBlog extends Controller {
 		$data['text_minus'] = $this->language->get('text_minus');
 		$data['text_default'] = $this->language->get('text_default');
 		$data['text_select'] = $this->language->get('text_select');
+		$data['text_slider'] = $this->language->get('text_slider');
+		$data['text_classic'] = $this->language->get('text_classic');
 
 		$data['entry_title'] = $this->language->get('entry_title');
 		$data['entry_brief'] = $this->language->get('entry_brief');
@@ -375,6 +377,12 @@ class ControllerCmsBlog extends Controller {
 		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_text'] = $this->language->get('entry_text');
 		$data['entry_required'] = $this->language->get('entry_required');
+		$data['entry_youtube'] = $this->language->get('entry_youtube');
+		$data['entry_soundcloud'] = $this->language->get('entry_soundcloud');
+		$data['entry_type'] = $this->language->get('entry_type');
+		$data['entry_link'] = $this->language->get('entry_link');
+		$data['entry_width'] = $this->language->get('entry_width');
+		$data['entry_height'] = $this->language->get('entry_height');
 		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
 		$data['entry_status'] = $this->language->get('entry_status');
 		$data['entry_layout'] = $this->language->get('entry_layout');
@@ -642,8 +650,7 @@ class ControllerCmsBlog extends Controller {
 				);
 			}
 		}
-
-
+		
 		if (isset($this->request->post['blog_layout'])) {
 			$data['blog_layout'] = $this->request->post['blog_layout'];
 		} elseif (isset($this->request->get['blog_id'])) {
@@ -729,7 +736,7 @@ class ControllerCmsBlog extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$limit = $this->request->get['limit'];
 			} else {
-				$limit = 5;
+				$limit = $this->config->get('config_limit_autocomplete');
 			}
 
 			$filter_data = array(

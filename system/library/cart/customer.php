@@ -11,6 +11,7 @@ class Customer {
 	private $address_id;
 
 	public function __construct($registry) {
+		$this->config = $registry->get('config');
 		$this->db = $registry->get('db');
 		$this->request = $registry->get('request');
 		$this->session = $registry->get('session');
@@ -28,7 +29,7 @@ class Customer {
 				$this->newsletter = $customer_query->row['newsletter'];
 				$this->address_id = $customer_query->row['address_id'];
 
-				$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+				$this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
 
@@ -60,7 +61,7 @@ class Customer {
 			$this->newsletter = $customer_query->row['newsletter'];
 			$this->address_id = $customer_query->row['address_id'];
 
-			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET language_id = '" . (int)$this->config->get('config_language_id') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 			
 			//if pc weixin login
 			if(isset($this->session->data['weixin_pclogin_openid']) &&  isset($this->session->data['weixin_pclogin_unionid'])) {
@@ -86,6 +87,15 @@ class Customer {
 				
 				//clear other customer's same weibo info
 				$this->db->query("UPDATE " . DB_PREFIX . "customer SET weibo_login_access_token = '', weibo_login_uid = '' WHERE weibo_login_access_token LIKE  '" . $this->db->escape($this->session->data['weibo_login_access_token']) . "' AND weibo_login_uid LIKE '" . $this->db->escape($this->session->data['weibo_login_uid']) . "' AND customer_id != '" . (int)$this->customer_id . "'");
+						
+			}
+			
+			//if qq login
+			if(isset($this->session->data['qq_openid'])) {
+				$this->db->query("UPDATE " . DB_PREFIX . "customer SET qq_openid = '" . $this->db->escape($this->session->data['qq_openid']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+				
+				//clear other customer's same qq info
+				$this->db->query("UPDATE " . DB_PREFIX . "customer SET qq_openid = '' WHERE qq_openid LIKE  '" . $this->db->escape($this->session->data['qq_openid']) . "' AND customer_id != '" . (int)$this->customer_id . "'");
 						
 			}
 
@@ -186,7 +196,6 @@ class Customer {
 			$this->newsletter = $customer->row['newsletter'];
 			$this->customer_group_id = $customer->row['customer_group_id'];
 			$this->address_id = $customer->row['address_id'];
-			$this->heavy_id = $customer->row['heavy_id'];
 
 			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 			
@@ -199,11 +208,64 @@ class Customer {
 		
 
 	}
+	
+	public function login_qq($qq_openid){
+		$customer = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE qq_openid = '" . $this->db->escape($qq_openid) . "'");
+
+		
+		if ($customer->num_rows) {
+			$this->session->data['customer_id'] = $customer->row['customer_id'];
+
+			if ($customer->row['cart'] && is_string($customer->row['cart'])) {
+				$cart = unserialize($customer->row['cart']);
+
+				foreach ($cart as $key => $value) {
+					if (!array_key_exists($key, $this->session->data['cart'])) {
+						$this->session->data['cart'][$key] = $value;
+					} else {
+						$this->session->data['cart'][$key] += $value;
+					}
+				}
+			}
+
+			if ($customer->row['wishlist'] && is_string($customer->row['wishlist'])) {
+				if (!isset($this->session->data['wishlist'])) {
+					$this->session->data['wishlist'] = array();
+				}
+
+				$wishlist = unserialize($customer->row['wishlist']);
+
+				foreach ($wishlist as $product_id) {
+					if (!in_array($product_id, $this->session->data['wishlist'])) {
+						$this->session->data['wishlist'][] = $product_id;
+					}
+				}
+			}
+
+			$this->customer_id = $customer->row['customer_id'];
+			$this->fullname = $customer->row['fullname'];
+			$this->email = $customer->row['email'];
+			$this->telephone = $customer->row['telephone'];
+			$this->fax = $customer->row['fax'];
+			$this->newsletter = $customer->row['newsletter'];
+			$this->customer_group_id = $customer->row['customer_group_id'];
+			$this->address_id = $customer->row['address_id'];
+
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+			
+			return true;
+		} else {
+			return false;
+		}
+		
+
+	}
 
 	public function logout() {
 		unset($this->session->data['customer_id']);
 		unset($this->session->data['weibo_login_access_token']);
 		unset($this->session->data['weibo_login_uid']);
+		unset($this->session->data['qq_openid']);
 
 		$this->customer_id = '';
 		$this->fullname = '';

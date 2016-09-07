@@ -319,12 +319,16 @@
                 </table>
               </div>
             </div>
+            
           </div>
         
         </form>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+  <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
+  <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
   <script type="text/javascript"><!--
 // Category
 $('input[name=\'blog_category\']').autocomplete({

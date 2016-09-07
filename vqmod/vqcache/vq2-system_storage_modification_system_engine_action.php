@@ -1,9 +1,12 @@
 <?php
 class Action {
+	private $id;
 	private $route;
 	private $method = 'index';
 
 	public function __construct($route) {
+		$this->id = $route;
+		
 		$parts = explode('/', preg_replace('/[^a-zA-Z0-9_\/]/', '', (string)$route));
 
 		// Break apart the route
@@ -19,7 +22,11 @@ class Action {
 			}
 		}
 	}
-
+	
+	public function getId() {
+		return $this->id;
+	}
+	
 	public function execute($registry, array $args = array()) {
 		// Stop any magical methods being called
 		if (substr($this->method, 0, 2) == '__') {
@@ -31,7 +38,7 @@ class Action {
 		
 		// Initialize the class
 		if (is_file($file)) {
-			include_once(\VQMod::modCheck(modification($file), $file));
+			include_once(\VQMod::modCheck($file));
 		
 			$controller = new $class($registry);
 		} else {
