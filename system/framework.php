@@ -108,3 +108,5 @@ $controller->dispatch(new Action($config->get('action_router')), new Action($con
 // Output
 $response->setCompression($config->get('config_compression'));
 $response->output();
+
+//echo 1234;
